@@ -2,5 +2,5 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
-/.vs/MOBILE SUIT GUNDAM 00 Translation Tool/FileContentIndex
-/.vs/MOBILE SUIT GUNDAM 00 Translation Tool/v17/.suo
+/.vs/**/*
+/.vs/MOBILE SUIT GUNDAM 00 Translation Tool/DesignTimeBuild/.dtbcache.v2
