@@ -1,0 +1,277 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:domain="using:MSG00.Translation.Infrastructure.Domain.Conversation"
+			 xmlns:vm="using:MSG00.Translation.UI.ViewModels"
+			 xmlns:shared="using:MSG00.Translation.Infrastructure.Domain.Shared"
+			 xmlns:avalonia="using:Avalonia;assembly=Avalonia.Skia"
+			 xmlns:controls="using:MSG00.Translation.UI.Controls"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+			 x:DataType="vm:ConversationCsvbViewModel"
+             x:Class="MSG00.Translation.UI.Views.ConversationCsvbView"
+			 x:Name="conversationCsvbView">
+	<Design.DataContext>
+		<vm:ConversationCsvbViewModel />
+	</Design.DataContext>
+	<UserControl.Resources>
+		<controls:AddLineButtonVisibilityConverter x:Key="lineCountToBoolConverter"/>
+	</UserControl.Resources>
+	<Grid Background="White">
+		<Grid.RowDefinitions>
+			<RowDefinition/>
+			<RowDefinition Height="3"/>
+			<RowDefinition Height="75"/>
+		</Grid.RowDefinitions>
+		<Button 
+			Grid.Row="0"
+			VerticalAlignment="Center"
+			HorizontalAlignment="Center"
+			HorizontalContentAlignment="Center"
+			VerticalContentAlignment="Center"
+			Width="125"
+			Height="40"
+			ZIndex="9999"
+			Command="{Binding OpenFileCommand, Mode=OneTime}"
+			IsVisible="{Binding !IsFileLoaded, Mode=OneWay}">
+			<TextBlock Text="Open File" Foreground="Black" HorizontalAlignment="Center"/>
+		</Button>
+		
+		<ScrollViewer
+			Grid.Row="0"
+			VerticalAlignment="Center"
+			HorizontalAlignment="Stretch">
+			<ItemsControl
+			VerticalAlignment="Center"
+			HorizontalAlignment="Center"
+			ItemsSource="{Binding ConversationFile.PointerTable, Mode=OneWay}"
+			IsVisible="{Binding IsFileLoaded, Mode=OneWay}">
+				<ItemsControl.ItemsPanel>
+					<ItemsPanelTemplate>
+						<WrapPanel />
+					</ItemsPanelTemplate>
+				</ItemsControl.ItemsPanel>
+				<ItemsControl.ItemTemplate>
+					<DataTemplate DataType="">
+						<StackPanel>
+							<ItemsControl
+							VerticalAlignment="Top"
+							HorizontalAlignment="Center"
+							ItemsSource="{Binding TextBoxes, Mode=OneWay}">
+								<ItemsControl.ItemTemplate>
+									<controls:ConversationPointerTextDataTemplateSelector>
+										<DataTemplate x:Key="Normal" DataType="domain:ConversationTextBox">
+											<StackPanel Margin="12,6,12,6">
+												<TextBlock Text="{Binding Title, Mode=OneTime}" Foreground="Black" HorizontalAlignment="Center" Margin="0,0,0,6"/>
+												<ItemsControl
+													VerticalAlignment="Center"
+													HorizontalAlignment="Center"
+													ItemsSource="{Binding Lines, Mode=OneWay}">
+													<ItemsControl.ItemTemplate>
+														<DataTemplate DataType="shared:CsvbTextLine">
+															<TextBox Text="{Binding MutableText, Mode=TwoWay}" Foreground="Black" Width="292" MaxLength="38"/>
+														</DataTemplate>
+													</ItemsControl.ItemTemplate>
+												</ItemsControl>
+												<Button
+													VerticalAlignment="Center"
+													HorizontalAlignment="Center"
+													Margin="0,12,0,0"
+													x:CompileBindings="False"
+													Command="{Binding #conversationCsvbView.DataContext.AddLineCommand, Mode=OneTime}"
+													CommandParameter="{Binding ., Mode=OneTime}"
+													IsVisible="{Binding Lines, Mode=OneTime, Converter={StaticResource lineCountToBoolConverter}}">
+													<TextBlock Text="Add Line" Foreground="Black"/>
+												</Button>
+											</StackPanel>
+										</DataTemplate>
+										<DataTemplate x:Key="YesNo" DataType="domain:ConversationPointerTextWithYesNo">
+											<StackPanel Margin="12,6,12,6">
+												<Button
+													x:CompileBindings="False"
+													VerticalAlignment="Center"
+													HorizontalAlignment="Center"
+													Margin="0,0,0,12"
+													Command="{Binding #conversationCsvbView.DataContext.AddTextBoxInfrontCommand, Mode=OneTime}"
+													CommandParameter="{CompiledBinding ., Mode=OneTime}">
+													<TextBlock Text="Add Textbox Before YES/NO" Foreground="Black"/>
+												</Button>
+												<TextBlock Text="{Binding Title, Mode=OneTime}" Foreground="Black" HorizontalAlignment="Center" Margin="0,0,0,6"/>
+												<ItemsControl
+													VerticalAlignment="Center"
+													HorizontalAlignment="Center"
+													ItemsSource="{Binding Lines, Mode=OneWay}">
+													<ItemsControl.ItemTemplate>
+														<DataTemplate DataType="shared:CsvbTextLine">
+															<TextBox Text="{Binding MutableText, Mode=TwoWay}" Foreground="Black" Width="292" MaxLength="38"/>
+														</DataTemplate>
+													</ItemsControl.ItemTemplate>
+												</ItemsControl>
+												<Button
+													VerticalAlignment="Center"
+													HorizontalAlignment="Center"
+													Margin="0,12,0,0"
+													x:CompileBindings="False"
+													Command="{Binding #conversationCsvbView.DataContext.AddLineCommand, Mode=OneTime}"
+													CommandParameter="{CompiledBinding ., Mode=OneTime}"
+													IsVisible="{CompiledBinding Lines, Mode=OneTime, Converter={StaticResource lineCountToBoolConverter}}">
+													<TextBlock Text="Add Line" Foreground="Black"/>
+												</Button>
+												<StackPanel Orientation="Horizontal">
+													<StackPanel>
+														<ItemsControl
+															VerticalAlignment="Center"
+															HorizontalAlignment="Center"
+															ItemsSource="{Binding YesPointer, Mode=OneWay}">
+															<ItemsControl.ItemTemplate>
+																<DataTemplate DataType="domain:ConversationPointerCharacter">
+																	<StackPanel>
+																		<ItemsControl
+																		VerticalAlignment="Top"
+																		HorizontalAlignment="Center"
+																		ItemsSource="{Binding TextBoxes, Mode=OneWay}">
+																			<ItemsControl.ItemTemplate>
+																				<DataTemplate DataType="domain:ConversationPointerText">
+																					<StackPanel Margin="12,6,12,6">
+																						<TextBlock Text="{Binding Title, Mode=OneTime}" Foreground="Black" HorizontalAlignment="Center" Margin="0,0,0,6"/>
+																						<ItemsControl
+																							VerticalAlignment="Center"
+																							HorizontalAlignment="Center"
+																							ItemsSource="{Binding Lines, Mode=OneWay}">
+																							<ItemsControl.ItemTemplate>
+																								<DataTemplate DataType="shared:CsvbTextLine">
+																									<TextBox Text="{Binding MutableText, Mode=TwoWay}" Foreground="Black" Width="292" MaxLength="38"/>
+																								</DataTemplate>
+																							</ItemsControl.ItemTemplate>
+																						</ItemsControl>
+																						<Button
+																							VerticalAlignment="Center"
+																							HorizontalAlignment="Center"
+																							Margin="0,12,0,0"
+																							x:CompileBindings="False"
+																							Command="{Binding #conversationCsvbView.DataContext.AddLineCommand, Mode=OneTime}"
+																							CommandParameter="{Binding ., Mode=OneTime}"
+																							IsVisible="{Binding Lines, Mode=OneTime, Converter={StaticResource lineCountToBoolConverter}}">
+																							<TextBlock Text="Add Line" Foreground="Black"/>
+																						</Button>
+																					</StackPanel>
+																				</DataTemplate>
+																			</ItemsControl.ItemTemplate>
+																		</ItemsControl>
+																		<Button
+																			x:CompileBindings="False"
+																			VerticalAlignment="Center"
+																			HorizontalAlignment="Center"
+																			Command="{Binding #conversationCsvbView.DataContext.AddTextBoxCommand, Mode=OneTime}"
+																			CommandParameter="{CompiledBinding ., Mode=OneTime}">
+																			<TextBlock Text="Add Textbox to [YES]" Foreground="Black"/>
+																		</Button>
+																	</StackPanel>
+																</DataTemplate>
+															</ItemsControl.ItemTemplate>
+														</ItemsControl>
+													</StackPanel>
+													<StackPanel>
+														<ItemsControl
+															VerticalAlignment="Center"
+															HorizontalAlignment="Center"
+															ItemsSource="{Binding NoPointer, Mode=OneWay}">
+															<ItemsControl.ItemTemplate>
+																<DataTemplate DataType="domain:ConversationPointerCharacter">
+																	<StackPanel>
+																		<ItemsControl
+																		VerticalAlignment="Top"
+																		HorizontalAlignment="Center"
+																		ItemsSource="{Binding TextBoxes, Mode=OneWay}">
+																			<ItemsControl.ItemTemplate>
+																				<DataTemplate DataType="domain:ConversationPointerText">
+																					<StackPanel Margin="12,6,12,6">
+																						<TextBlock Text="{Binding Title, Mode=OneTime}" Foreground="Black" HorizontalAlignment="Center" Margin="0,0,0,6"/>
+																						<ItemsControl
+																							VerticalAlignment="Center"
+																							HorizontalAlignment="Center"
+																							ItemsSource="{Binding Lines, Mode=OneWay}">
+																							<ItemsControl.ItemTemplate>
+																								<DataTemplate DataType="shared:CsvbTextLine">
+																									<TextBox Text="{Binding MutableText, Mode=TwoWay}" Foreground="Black" Width="292" MaxLength="38"/>
+																								</DataTemplate>
+																							</ItemsControl.ItemTemplate>
+																						</ItemsControl>
+																						<Button
+																							VerticalAlignment="Center"
+																							HorizontalAlignment="Center"
+																							Margin="0,12,0,0"
+																							x:CompileBindings="False"
+																							Command="{Binding #conversationCsvbView.DataContext.AddLineCommand, Mode=OneTime}"
+																							CommandParameter="{Binding ., Mode=OneTime}"
+																							IsVisible="{Binding Lines, Mode=OneTime, Converter={StaticResource lineCountToBoolConverter}}">
+																							<TextBlock Text="Add Line" Foreground="Black"/>
+																						</Button>
+																					</StackPanel>
+																				</DataTemplate>
+																			</ItemsControl.ItemTemplate>
+																		</ItemsControl>
+																		<Button
+																			x:CompileBindings="False"
+																			VerticalAlignment="Center"
+																			HorizontalAlignment="Center"
+																			Command="{Binding #conversationCsvbView.DataContext.AddTextBoxCommand, Mode=OneTime}"
+																			CommandParameter="{CompiledBinding ., Mode=OneTime}">
+																			<TextBlock Text="Add Textbox to [NO]" Foreground="Black"/>
+																		</Button>
+																	</StackPanel>
+																</DataTemplate>
+															</ItemsControl.ItemTemplate>
+														</ItemsControl>
+													</StackPanel>
+												</StackPanel>
+											</StackPanel>
+										</DataTemplate>
+									</controls:ConversationPointerTextDataTemplateSelector>
+								</ItemsControl.ItemTemplate>
+							</ItemsControl>
+							<Button
+								x:CompileBindings="False"
+								VerticalAlignment="Center"
+								HorizontalAlignment="Center"
+								Command="{Binding #conversationCsvbView.DataContext.AddTextBoxCommand, Mode=OneTime}"
+								CommandParameter="{CompiledBinding ., Mode=OneTime}">
+								<TextBlock Text="Add Textbox" Foreground="Black"/>
+							</Button>
+						</StackPanel>
+					</DataTemplate>
+				</ItemsControl.ItemTemplate>
+			</ItemsControl>
+		</ScrollViewer>
+
+		<Button
+			Background="Transparent"
+			VerticalAlignment="Top"
+			HorizontalAlignment="Right"
+			Margin="0,12,18,0"
+			Command="{Binding CloseFileCommand, Mode=OneTime}"
+			IsVisible="{Binding IsFileLoaded, Mode=OneWay}">
+			<Svg
+				Path="/Assets/xmark-solid.svg"
+				Width="30"
+				Height="30"/>
+		</Button>
+		
+		<Separator 
+			Grid.Row="1"
+			Margin="-12,0,0,0"/>
+
+		<Button 
+			Grid.Row="2" 
+			VerticalAlignment="Center" 
+			HorizontalAlignment="Center" 
+			VerticalContentAlignment="Center" 
+			HorizontalContentAlignment="Center"
+			Width="125"
+			Height="40"
+			Command="{Binding SaveCommand, Mode=OneTime}"
+			IsEnabled="{Binding IsFileLoaded, Mode=OneWay}">
+			<TextBlock Text="Save" Foreground="Black"/>
+		</Button>
+	</Grid>
+</UserControl>

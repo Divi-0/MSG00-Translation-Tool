@@ -1,0 +1,11 @@
+D:\MOBILE SUIT GUNDAM 00 Translation Tool\MSG00.Translation.Domain\bin\Debug\net7.0\MSG00.Translation.Domain.deps.json
+D:\MOBILE SUIT GUNDAM 00 Translation Tool\MSG00.Translation.Domain\bin\Debug\net7.0\MSG00.Translation.Domain.dll
+D:\MOBILE SUIT GUNDAM 00 Translation Tool\MSG00.Translation.Domain\bin\Debug\net7.0\MSG00.Translation.Domain.pdb
+D:\MOBILE SUIT GUNDAM 00 Translation Tool\MSG00.Translation.Domain\obj\Debug\net7.0\MSG00.Translation.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\MOBILE SUIT GUNDAM 00 Translation Tool\MSG00.Translation.Domain\obj\Debug\net7.0\MSG00.Translation.Domain.AssemblyInfoInputs.cache
+D:\MOBILE SUIT GUNDAM 00 Translation Tool\MSG00.Translation.Domain\obj\Debug\net7.0\MSG00.Translation.Domain.AssemblyInfo.cs
+D:\MOBILE SUIT GUNDAM 00 Translation Tool\MSG00.Translation.Domain\obj\Debug\net7.0\MSG00.Translation.Domain.csproj.CoreCompileInputs.cache
+D:\MOBILE SUIT GUNDAM 00 Translation Tool\MSG00.Translation.Domain\obj\Debug\net7.0\MSG00.Translation.Domain.dll
+D:\MOBILE SUIT GUNDAM 00 Translation Tool\MSG00.Translation.Domain\obj\Debug\net7.0\refint\MSG00.Translation.Domain.dll
+D:\MOBILE SUIT GUNDAM 00 Translation Tool\MSG00.Translation.Domain\obj\Debug\net7.0\MSG00.Translation.Domain.pdb
+D:\MOBILE SUIT GUNDAM 00 Translation Tool\MSG00.Translation.Domain\obj\Debug\net7.0\ref\MSG00.Translation.Domain.dll

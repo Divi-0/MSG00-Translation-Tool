@@ -1,0 +1,144 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\MOBILE SUIT GUNDAM 00 Translation Tool\\MSG00.Translation.Infrastructure\\MSG00.Translation.Infrastructure.csproj": {}
+  },
+  "projects": {
+    "D:\\MOBILE SUIT GUNDAM 00 Translation Tool\\MSG00.Translation.Domain\\MSG00.Translation.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\MOBILE SUIT GUNDAM 00 Translation Tool\\MSG00.Translation.Domain\\MSG00.Translation.Domain.csproj",
+        "projectName": "MSG00.Translation.Domain",
+        "projectPath": "D:\\MOBILE SUIT GUNDAM 00 Translation Tool\\MSG00.Translation.Domain\\MSG00.Translation.Domain.csproj",
+        "packagesPath": "C:\\Users\\mberg\\.nuget\\packages\\",
+        "outputPath": "D:\\MOBILE SUIT GUNDAM 00 Translation Tool\\MSG00.Translation.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\mberg\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://pkgs.dev.azure.com/SceneGate/SceneGate/_packaging/SceneGate-Preview/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\MOBILE SUIT GUNDAM 00 Translation Tool\\MSG00.Translation.Infrastructure\\MSG00.Translation.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\MOBILE SUIT GUNDAM 00 Translation Tool\\MSG00.Translation.Infrastructure\\MSG00.Translation.Infrastructure.csproj",
+        "projectName": "MSG00.Translation.Infrastructure",
+        "projectPath": "D:\\MOBILE SUIT GUNDAM 00 Translation Tool\\MSG00.Translation.Infrastructure\\MSG00.Translation.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\mberg\\.nuget\\packages\\",
+        "outputPath": "D:\\MOBILE SUIT GUNDAM 00 Translation Tool\\MSG00.Translation.Infrastructure\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\mberg\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://pkgs.dev.azure.com/SceneGate/SceneGate/_packaging/SceneGate-Preview/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "D:\\MOBILE SUIT GUNDAM 00 Translation Tool\\MSG00.Translation.Domain\\MSG00.Translation.Domain.csproj": {
+                "projectPath": "D:\\MOBILE SUIT GUNDAM 00 Translation Tool\\MSG00.Translation.Domain\\MSG00.Translation.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.Extensions.DependencyInjection.Abstractions": {
+              "target": "Package",
+              "version": "[8.0.0-preview.4.23259.5, )"
+            },
+            "System.Text.Encoding.CodePages": {
+              "target": "Package",
+              "version": "[8.0.0-preview.4.23259.5, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

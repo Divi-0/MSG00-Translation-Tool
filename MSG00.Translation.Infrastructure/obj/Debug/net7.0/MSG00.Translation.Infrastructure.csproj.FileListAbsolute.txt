@@ -1,0 +1,15 @@
+D:\MOBILE SUIT GUNDAM 00 Translation Tool\MSG00.Translation.Infrastructure\bin\Debug\net7.0\MSG00.Translation.Infrastructure.deps.json
+D:\MOBILE SUIT GUNDAM 00 Translation Tool\MSG00.Translation.Infrastructure\bin\Debug\net7.0\MSG00.Translation.Infrastructure.dll
+D:\MOBILE SUIT GUNDAM 00 Translation Tool\MSG00.Translation.Infrastructure\bin\Debug\net7.0\MSG00.Translation.Infrastructure.pdb
+D:\MOBILE SUIT GUNDAM 00 Translation Tool\MSG00.Translation.Infrastructure\bin\Debug\net7.0\MSG00.Translation.Domain.dll
+D:\MOBILE SUIT GUNDAM 00 Translation Tool\MSG00.Translation.Infrastructure\bin\Debug\net7.0\MSG00.Translation.Domain.pdb
+D:\MOBILE SUIT GUNDAM 00 Translation Tool\MSG00.Translation.Infrastructure\obj\Debug\net7.0\MSG00.Translation.Infrastructure.csproj.AssemblyReference.cache
+D:\MOBILE SUIT GUNDAM 00 Translation Tool\MSG00.Translation.Infrastructure\obj\Debug\net7.0\MSG00.Translation.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+D:\MOBILE SUIT GUNDAM 00 Translation Tool\MSG00.Translation.Infrastructure\obj\Debug\net7.0\MSG00.Translation.Infrastructure.AssemblyInfoInputs.cache
+D:\MOBILE SUIT GUNDAM 00 Translation Tool\MSG00.Translation.Infrastructure\obj\Debug\net7.0\MSG00.Translation.Infrastructure.AssemblyInfo.cs
+D:\MOBILE SUIT GUNDAM 00 Translation Tool\MSG00.Translation.Infrastructure\obj\Debug\net7.0\MSG00.Translation.Infrastructure.csproj.CoreCompileInputs.cache
+D:\MOBILE SUIT GUNDAM 00 Translation Tool\MSG00.Translation.Infrastructure\obj\Debug\net7.0\MSG00.Translation.Infrastructure.csproj.CopyComplete
+D:\MOBILE SUIT GUNDAM 00 Translation Tool\MSG00.Translation.Infrastructure\obj\Debug\net7.0\MSG00.Translation.Infrastructure.dll
+D:\MOBILE SUIT GUNDAM 00 Translation Tool\MSG00.Translation.Infrastructure\obj\Debug\net7.0\refint\MSG00.Translation.Infrastructure.dll
+D:\MOBILE SUIT GUNDAM 00 Translation Tool\MSG00.Translation.Infrastructure\obj\Debug\net7.0\MSG00.Translation.Infrastructure.pdb
+D:\MOBILE SUIT GUNDAM 00 Translation Tool\MSG00.Translation.Infrastructure\obj\Debug\net7.0\ref\MSG00.Translation.Infrastructure.dll

@@ -1,0 +1,155 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:MSG00.Translation.UI.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="MSG00.Translation.UI.Views.MainView"
+             x:DataType="vm:MainViewModel"
+			 Background="White">
+	<Design.DataContext>
+		<vm:MainViewModel />
+	</Design.DataContext>
+
+	<Grid>
+		<Grid>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="auto"/>
+				<ColumnDefinition/>
+			</Grid.ColumnDefinitions>
+			<Grid Grid.Column="0" Background="Gray">
+				<StackPanel Margin="0,0,0,0">
+					<Button
+						HorizontalAlignment="Stretch"
+						Command="{Binding HomeCommand, Mode=OneTime}">
+						<StackPanel Orientation="Horizontal">
+							<Svg 
+								Path="/Assets/Icons/house-solid.svg"
+								Width="18"
+								Height="18"
+								Margin="0,0,6,0"/>
+							<TextBlock
+							Text="Home"
+							Foreground="White"
+							FontSize="18"/>
+						</StackPanel>
+					</Button>
+					<Button
+						HorizontalAlignment="Stretch"
+						Command="{Binding ConversationCommand, Mode=OneTime}">
+						<StackPanel Orientation="Horizontal">
+							<Svg
+								Path="/Assets/Icons/comments-solid.svg"
+								Width="18"
+								Height="18"
+								Margin="0,0,6,0"/>
+							<TextBlock
+							Text="Conversation"
+							Foreground="White"
+							FontSize="18"/>
+						</StackPanel>
+					</Button>
+					<Button
+						HorizontalAlignment="Stretch"
+						Command="{Binding PrologueCommand, Mode=OneTime}">
+						<StackPanel Orientation="Horizontal">
+							<Svg
+								Path="/Assets/Icons/comments-solid.svg"
+								Width="18"
+								Height="18"
+								Margin="0,0,6,0"/>
+							<TextBlock
+							Text="Prologue"
+							Foreground="White"
+							FontSize="18"/>
+						</StackPanel>
+					</Button>
+					<Button
+						HorizontalAlignment="Stretch"
+						Command="{Binding EpilogueCommand, Mode=OneTime}">
+						<StackPanel Orientation="Horizontal">
+							<Svg
+								Path="/Assets/Icons/comments-solid.svg"
+								Width="18"
+								Height="18"
+								Margin="0,0,6,0"/>
+							<TextBlock
+							Text="Epilogue"
+							Foreground="White"
+							FontSize="18"/>
+						</StackPanel>
+					</Button>
+					<Button
+						HorizontalAlignment="Stretch"
+						Command="{Binding EtcCommand, Mode=OneTime}">
+						<StackPanel Orientation="Horizontal">
+							<Svg
+								Path="/Assets/Icons/comments-solid.svg"
+								Width="18"
+								Height="18"
+								Margin="0,0,6,0"/>
+							<TextBlock
+							Text="Etc"
+							Foreground="White"
+							FontSize="18"/>
+						</StackPanel>
+					</Button>
+					<Button
+						HorizontalAlignment="Stretch"
+						Command="{Binding RequirementCommand, Mode=OneTime}">
+						<StackPanel Orientation="Horizontal">
+							<Svg
+								Path="/Assets/Icons/comments-solid.svg"
+								Width="18"
+								Height="18"
+								Margin="0,0,6,0"/>
+							<TextBlock
+							Text="Requirement"
+							Foreground="White"
+							FontSize="18"/>
+						</StackPanel>
+					</Button>
+					<Button
+						HorizontalAlignment="Stretch"
+						Command="{Binding StaffRollCommand, Mode=OneTime}">
+						<StackPanel Orientation="Horizontal">
+							<Svg
+								Path="/Assets/Icons/comments-solid.svg"
+								Width="18"
+								Height="18"
+								Margin="0,0,6,0"/>
+							<TextBlock
+							Text="StaffRoll"
+							Foreground="White"
+							FontSize="18"/>
+						</StackPanel>
+					</Button>
+					<Button
+						HorizontalAlignment="Stretch"
+						Command="{Binding EvmCommand, Mode=OneTime}">
+						<StackPanel Orientation="Horizontal">
+							<Svg
+								Path="/Assets/Icons/comments-solid.svg"
+								Width="18"
+								Height="18"
+								Margin="0,0,6,0"/>
+							<TextBlock
+							Text="Evm"
+							Foreground="White"
+							FontSize="18"/>
+						</StackPanel>
+					</Button>
+				</StackPanel>
+			</Grid>
+			<TransitioningContentControl Grid.Column="1" Content="{Binding CurrentView, Mode=OneWay}">
+				<TransitioningContentControl.PageTransition>
+					<PageSlide Duration="00:00:00.4">
+						<PageSlide.SlideInEasing>
+							<CircularEaseInOut></CircularEaseInOut>
+						</PageSlide.SlideInEasing>
+					</PageSlide>
+				</TransitioningContentControl.PageTransition>
+			</TransitioningContentControl>
+		</Grid>
+	</Grid>
+</UserControl>

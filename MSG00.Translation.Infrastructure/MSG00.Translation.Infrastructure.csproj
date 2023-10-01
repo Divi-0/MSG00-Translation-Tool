@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.0-preview.4.23259.5" />
+    <PackageReference Include="System.Text.Encoding.CodePages" Version="8.0.0-preview.4.23259.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MSG00.Translation.Domain\MSG00.Translation.Domain.csproj" />
+  </ItemGroup>
+
+</Project>
