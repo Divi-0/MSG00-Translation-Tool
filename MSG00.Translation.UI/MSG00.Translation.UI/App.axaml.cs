@@ -2,10 +2,10 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
-using Avalonia.Media;
 using Avalonia.Platform.Storage;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using MSG00.Translation.Application;
 using MSG00.Translation.Infrastructure;
 using MSG00.Translation.UI.ViewModels;
 using MSG00.Translation.UI.Views;
@@ -13,7 +13,7 @@ using System;
 
 namespace MSG00.Translation.UI
 {
-    public partial class App : Application
+    public partial class App : Avalonia.Application
     {
         public static IServiceProvider Services { get; private set; }
         public IHost Host { get; set; }
@@ -43,7 +43,7 @@ namespace MSG00.Translation.UI
             Host = Microsoft.Extensions.Hosting.Host.CreateDefaultBuilder()
                 .ConfigureServices((_, services) =>
                 {
-                    //infrastructure project injection
+                    services.AddApplicationServices();
                     services.AddInfrastructureServices();
 
                     services.AddSingleton<IStorageProvider>(storageProvider!);

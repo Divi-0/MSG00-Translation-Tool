@@ -35,6 +35,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\MSG00.Translation.Application\MSG00.Translation.Application.csproj" />
     <ProjectReference Include="..\..\MSG00.Translation.Infrastructure\MSG00.Translation.Infrastructure.csproj" />
   </ItemGroup>
 

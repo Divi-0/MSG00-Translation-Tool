@@ -1,6 +1,8 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using MSG00.Translation.Domain.Interfaces;
 using MSG00.Translation.Infrastructure.Domain.Interfaces;
+using MSG00.Translation.Infrastructure.Interfaces;
+using MSG00.Translation.Infrastructure.Reader;
 using MSG00.Translation.Infrastructure.Reader.Epilogue;
 using MSG00.Translation.Infrastructure.Reader.EtcFgHcmHg;
 using MSG00.Translation.Infrastructure.Reader.Evm;
@@ -21,6 +23,8 @@ namespace MSG00.Translation.Infrastructure
     {
         public static IServiceCollection AddInfrastructureServices(this IServiceCollection services)
         {
+            services.AddSingleton<ICsvbReader, CsvbReader>();
+
             services.AddSingleton<IPrologueReader, PrologueReader>();
             services.AddSingleton<IEpilogueReader, EpilogueReader>();
             services.AddSingleton<IEtcFgHcmHgReader, EtcFgHcmHgReader>();
