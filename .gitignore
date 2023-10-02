@@ -395,3 +395,11 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+/MSG00.Translation.Domain/obj/
+/MSG00.Translation.Infrastructure/obj/project.assets.json
+/MSG00.Translation.Infrastructure/obj/MSG00.Translation.Infrastructure.csproj.nuget.dgspec.json
+/MSG00.Translation.Infrastructure/obj/Release/net7.0/MSG00.Translation.Infrastructure.csproj.AssemblyReference.cache
+/MSG00.Translation.Infrastructure/obj/Release/net7.0/MSG00.Translation.Infrastructure.assets.cache
+/MSG00.Translation.Domain/obj/project.assets.json
+/MSG00.Translation.Domain/obj/project.nuget.cache
+/MSG00.Translation.Infrastructure/obj/project.nuget.cache
