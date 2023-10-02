@@ -21,6 +21,21 @@
 				<StackPanel Margin="0,0,0,0">
 					<Button
 						HorizontalAlignment="Stretch"
+						Command="{Binding CsvbCommand, Mode=OneTime}">
+						<StackPanel Orientation="Horizontal">
+							<Svg 
+								Path="/Assets/Icons/house-solid.svg"
+								Width="18"
+								Height="18"
+								Margin="0,0,6,0"/>
+							<TextBlock
+							Text="Csvb"
+							Foreground="White"
+							FontSize="18"/>
+						</StackPanel>
+					</Button>
+					<Button
+						HorizontalAlignment="Stretch"
 						Command="{Binding HomeCommand, Mode=OneTime}">
 						<StackPanel Orientation="Horizontal">
 							<Svg 

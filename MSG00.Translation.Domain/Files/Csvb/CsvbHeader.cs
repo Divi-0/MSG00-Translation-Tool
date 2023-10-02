@@ -2,11 +2,11 @@
 {
     public class CsvbHeader
     {
-        public required byte[] StaticFirstHeaderBytes { get; set; }
-        public required byte[] FileOffsetToAreaBetweenPointerAndTextTable { get; set; }
-        public required byte[] FileOffsetToTextTable { get; set; }
-        public required byte[] FileOffsetToAreaBetweenTextAndOffsetTable { get; set; }
-        public required byte[] FileOffsetToOffsetTable { get; set; }
+        public required byte[] StaticFirstHeaderBytes { get; set; } = Array.Empty<byte>();
+        public required byte[] FileOffsetToAreaBetweenPointerAndTextTable { get; set; } = Array.Empty<byte>();
+        public required byte[] FileOffsetToTextTable { get; set; } = Array.Empty<byte>();
+        public required byte[] FileOffsetToAreaBetweenTextAndOffsetTable { get; set; } = Array.Empty<byte>();
+        public required byte[] FileOffsetToOffsetTable { get; set; } = Array.Empty<byte>();
 
         public byte[] GetFullHeaderBytes()
         {

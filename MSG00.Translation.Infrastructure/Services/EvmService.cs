@@ -18,11 +18,11 @@ namespace MSG00.Translation.Infrastructure.Services
             _evmReader = evmReader;
         }
 
-        public Task<EvmCsvb> GetEvmAsync(Stream stream)
+        public Task<EvmBaseCsvb> GetEvmAsync(Stream stream)
         {
             try
             {
-                return _evmReader.ReadFile(stream);
+                return _evmReader.ReadAsync(stream);
             }
             catch (Exception e)
             {
@@ -31,7 +31,7 @@ namespace MSG00.Translation.Infrastructure.Services
             }
         }
 
-        public Task SaveEvmAsync(Stream stream, EvmCsvb prologueCsvb)
+        public Task SaveEvmAsync(Stream stream, EvmBaseCsvb prologueCsvb)
         {
             throw new NotImplementedException();
         }

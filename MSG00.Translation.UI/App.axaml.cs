@@ -59,6 +59,8 @@ namespace MSG00.Translation.UI
                     services.AddTransient<RequirementCsvbViewModel>();
                     services.AddTransient<StaffRollCsvbViewModel>();
                     services.AddTransient<EvmCsvbViewModel>();
+
+                    services.AddTransient<CsvbViewModel>();
                 })
                 .Build();
 

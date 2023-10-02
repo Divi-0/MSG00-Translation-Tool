@@ -1,13 +1,12 @@
-using Avalonia;
 using Avalonia.Controls;
-using Avalonia.Markup.Xaml;
 
-namespace MSG00.Translation.UI;
-
-public partial class CsvbView : UserControl
+namespace MSG00.Translation.UI.Views
 {
-    public CsvbView()
+    public partial class CsvbView : UserControl
     {
-        InitializeComponent();
+        public CsvbView()
+        {
+            InitializeComponent();
+        }
     }
 }

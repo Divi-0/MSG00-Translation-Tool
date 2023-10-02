@@ -1,12 +1,12 @@
-﻿using MSG00.Translation.Domain.Evm;
+﻿using MSG00.Translation.Domain.EvmBase;
 using MSG00.Translation.Infrastructure.Domain.Shared;
 using System.Collections.ObjectModel;
 
-namespace MSG00.Translation.Infrastructure.Reader.Evm
+namespace MSG00.Translation.Infrastructure.Reader.EvmBase
 {
     internal class EvmReader : CsvbMapiReader, IEvmReader
     {
-        public async Task<EvmCsvb> ReadFile(Stream stream)
+        public async Task<EvmBaseCsvb> ReadAsync(Stream stream)
         {
             //byte[] fileBytes = new byte[stream.Length];
 
@@ -100,7 +100,7 @@ namespace MSG00.Translation.Infrastructure.Reader.Evm
             return null;
         }
 
-        private ObservableCollection<CsvbTextLine> GetTextFromFile(EvmCsvb evmCsvb, byte[] fileBytes, int offset)
+        private ObservableCollection<CsvbTextLine> GetTextFromFile(EvmBaseCsvb evmCsvb, byte[] fileBytes, int offset)
         {
             ObservableCollection<CsvbTextLine> conversationTextLines = new ObservableCollection<CsvbTextLine>();
 

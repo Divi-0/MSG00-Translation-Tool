@@ -2,7 +2,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:vm="using:MSG00.Translation.UI.ViewModels"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="MSG00.Translation.UI.CsvbView">
-  Welcome to Avalonia!
+             x:Class="MSG00.Translation.UI.Views.CsvbView"
+			 x:DataType="vm:CsvbViewModel">
+	<Design.DataContext>
+		<vm:CsvbViewModel></vm:CsvbViewModel>
+	</Design.DataContext>
+	<Grid ColumnDefinitions="*,auto,*" RowDefinitions="*,auto,*">
+		<Button Grid.Column="1" Grid.Row="1" Command="{Binding OpenFileCommand}">Open File</Button>
+	</Grid>
 </UserControl>

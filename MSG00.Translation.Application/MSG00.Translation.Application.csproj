@@ -15,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Features\Csvb\EvmBase\Write\" />
     <Folder Include="Features\Csvb\Write\" />
   </ItemGroup>
 

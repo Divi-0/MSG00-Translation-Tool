@@ -280,8 +280,8 @@ namespace MSG00.Translation.UI.ViewModels
         public ICommand AddTextBoxInfrontCommand => new RelayCommand<ConversationPointerTextWithYesNo>(AddNewTextBoxInfront);
         public ICommand CloseFileCommand => new AsyncRelayCommand(CloseFile);
 
-        private EvmCsvb? _evmFile;
-        public EvmCsvb? EvmFile
+        private EvmBaseCsvb? _evmFile;
+        public EvmBaseCsvb? EvmFile
         {
             get => _evmFile;
             set => SetProperty(ref _evmFile, value);

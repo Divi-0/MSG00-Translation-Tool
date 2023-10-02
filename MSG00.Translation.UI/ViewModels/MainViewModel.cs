@@ -19,6 +19,7 @@ namespace MSG00.Translation.UI.ViewModels
             _viewModels.Add(App.Services.GetRequiredService<RequirementCsvbViewModel>()!);
             _viewModels.Add(App.Services.GetRequiredService<StaffRollCsvbViewModel>()!);
             _viewModels.Add(App.Services.GetRequiredService<EvmCsvbViewModel>()!);
+            _viewModels.Add(App.Services.GetRequiredService<CsvbViewModel>()!);
 
             CurrentView = _viewModels[0];
         }
@@ -61,7 +62,12 @@ namespace MSG00.Translation.UI.ViewModels
         {
             CurrentView = _viewModels[7];
         }
+        private void NavigateToCsvb()
+        {
+            CurrentView = _viewModels[8];
+        }
 
+        public ICommand CsvbCommand => new RelayCommand(NavigateToCsvb);
         public ICommand HomeCommand => new RelayCommand(NavigateToHome);
         public ICommand ConversationCommand => new RelayCommand(NavigateToConversation);
         public ICommand PrologueCommand => new RelayCommand(NavigateToPrologue);
