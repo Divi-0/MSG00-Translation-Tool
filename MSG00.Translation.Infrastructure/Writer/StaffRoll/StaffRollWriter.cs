@@ -43,8 +43,9 @@ namespace MSG00.Translation.Infrastructure.Writer.StaffRoll
 
         private static async Task WriteHeader(Stream stream, StaffRollCsvb staffRollCsvb)
         {
-            await stream.WriteAsync(staffRollCsvb.HeaderBytes).ConfigureAwait(false);
-            await stream.WriteAsync(staffRollCsvb.MapiHeaderBytes).ConfigureAwait(false);
+            throw new NotImplementedException();
+            //await stream.WriteAsync(staffRollCsvb.HeaderBytes).ConfigureAwait(false);
+            //await stream.WriteAsync(staffRollCsvb.MapiHeaderBytes).ConfigureAwait(false);
         }
 
         private static async Task WritePointerTable(Stream stream, StaffRollCsvb staffRollCsvb)

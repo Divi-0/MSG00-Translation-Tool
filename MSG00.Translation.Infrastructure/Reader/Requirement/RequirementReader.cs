@@ -6,32 +6,34 @@ namespace MSG00.Translation.Infrastructure.Reader.Requirement
     {
         public async Task<RequirementCsvb> ReadFile(Stream stream)
         {
-            int fileSizePointerTable = await GetFileSizePointerTable(stream).ConfigureAwait(false);
-            int fileSizeFullHeader = await GetFileSizeFullHeader(stream).ConfigureAwait(false);
+            throw new NotImplementedException();
 
-            List<RequirementPointer> etcPointers = new List<RequirementPointer>();
+            //int fileSizePointerTable = await GetFileSizePointerTable(stream).ConfigureAwait(false);
+            //int fileSizeFullHeader = await GetFileSizeFullHeader(stream).ConfigureAwait(false);
 
-            stream.Seek(0x48, SeekOrigin.Begin);
+            //List<RequirementPointer> etcPointers = new List<RequirementPointer>();
 
-            while (stream.Position < fileSizePointerTable)
-            {
-                byte[] textOffsetBytes = new byte[4];
-                await stream.ReadExactlyAsync(textOffsetBytes, 0, 4).ConfigureAwait(false);
-                long textOffsetInTextTable = BitConverter.ToInt32(textOffsetBytes);
+            //stream.Seek(0x48, SeekOrigin.Begin);
 
-                etcPointers.Add(new RequirementPointer
-                {
-                    Text = await GetTextInFile(stream, Convert.ToInt64(fileSizeFullHeader) + textOffsetInTextTable).ConfigureAwait(false)
-                });
-            }
+            //while (stream.Position < fileSizePointerTable)
+            //{
+            //    byte[] textOffsetBytes = new byte[4];
+            //    await stream.ReadExactlyAsync(textOffsetBytes, 0, 4).ConfigureAwait(false);
+            //    long textOffsetInTextTable = BitConverter.ToInt32(textOffsetBytes);
 
-            return new RequirementCsvb
-            {
-                FullHeaderSize = 0,
-                HeaderBytes = Array.Empty<byte>(),
-                FileOffsetToAreaBetweenPointerAndTextTable = 0,
-                Pointers = etcPointers
-            };
+            //    etcPointers.Add(new RequirementPointer
+            //    {
+            //        Text = await GetTextInFile(stream, Convert.ToInt64(fileSizeFullHeader) + textOffsetInTextTable).ConfigureAwait(false)
+            //    });
+            //}
+
+            //return new RequirementCsvb
+            //{
+            //    FullHeaderSize = 0,
+            //    HeaderBytes = Array.Empty<byte>(),
+            //    FileOffsetToAreaBetweenPointerAndTextTable = 0,
+            //    Pointers = etcPointers
+            //};
         }
 
         private async Task<int> GetFileSizePointerTable(Stream stream)

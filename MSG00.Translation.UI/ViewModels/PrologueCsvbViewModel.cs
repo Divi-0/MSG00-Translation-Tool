@@ -194,18 +194,18 @@ namespace MSG00.Translation.UI.ViewModels
             {
                 return;
             }
-
-            PrologueFile = new PrologueCsvb
-            {
-                AfterTextSectionBytes = Array.Empty<byte>(),
-                CountOfPointersInFile = 0,
-                FileSizeToTextEnd = 0,
-                FileSizeWithUnimportantInfo = 0,
-                FullHeaderSize = 0,
-                HeaderBytes = Array.Empty<byte>(),
-                FileOffsetToAreaBetweenPointerAndTextTable = 0,
-                MapiHeaderBytes = Array.Empty<byte>(),
-            };
+            throw new NotImplementedException();
+            //PrologueFile = new PrologueCsvb
+            //{
+            //    AfterTextSectionBytes = Array.Empty<byte>(),
+            //    CountOfPointersInFile = 0,
+            //    FileSizeToTextEnd = 0,
+            //    FileSizeWithUnimportantInfo = 0,
+            //    FullHeaderSize = 0,
+            //    HeaderBytes = Array.Empty<byte>(),
+            //    FileOffsetToAreaBetweenPointerAndTextTable = 0,
+            //    MapiHeaderBytes = Array.Empty<byte>(),
+            //};
 
             IsFileLoaded = false;
         }

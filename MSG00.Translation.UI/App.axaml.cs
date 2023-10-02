@@ -3,6 +3,7 @@ using Avalonia.Controls;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
 using Avalonia.Platform.Storage;
+using HotAvalonia;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using MSG00.Translation.Application;
@@ -20,6 +21,7 @@ namespace MSG00.Translation.UI
 
         public override void Initialize()
         {
+            this.EnableHotReload();
             AvaloniaXamlLoader.Load(this);
         }
 

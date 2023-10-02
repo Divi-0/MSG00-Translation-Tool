@@ -56,54 +56,57 @@ namespace MSG00.Translation.Infrastructure.Reader
 
         protected ObservableCollection<CsvbTextLine> GetSingleTextFromFile(CsvbFile csvbFile, byte[] fileBytes, int offset)
         {
-            ObservableCollection<CsvbTextLine> conversationTextLines = new ObservableCollection<CsvbTextLine>();
+            throw new NotImplementedException();
+            //ObservableCollection<CsvbTextLine> conversationTextLines = new ObservableCollection<CsvbTextLine>();
 
-            List<byte> textBytes = new List<byte>();
-            for (int i = csvbFile.FullHeaderSize + offset; fileBytes[i] != 0x00; i++)
-            {
-                if (fileBytes[i] == 0x0A)
-                {
-                    conversationTextLines.Add(new CsvbTextLine
-                    {
-                        Text = _shiftJISEncoding.GetString(textBytes.ToArray())
-                    });
+            //List<byte> textBytes = new List<byte>();
+            //for (int i = csvbFile.FullHeaderSize + offset; fileBytes[i] != 0x00; i++)
+            //{
+            //    if (fileBytes[i] == 0x0A)
+            //    {
+            //        conversationTextLines.Add(new CsvbTextLine
+            //        {
+            //            Text = _shiftJISEncoding.GetString(textBytes.ToArray())
+            //        });
 
-                    textBytes.Clear();
-                    continue;
-                }
+            //        textBytes.Clear();
+            //        continue;
+            //    }
 
-                textBytes.Add(fileBytes[i]);
-            }
+            //    textBytes.Add(fileBytes[i]);
+            //}
 
-            //add last line
-            conversationTextLines.Add(new CsvbTextLine
-            {
-                Text = _shiftJISEncoding.GetString(textBytes.ToArray())
-            });
+            ////add last line
+            //conversationTextLines.Add(new CsvbTextLine
+            //{
+            //    Text = _shiftJISEncoding.GetString(textBytes.ToArray())
+            //});
 
-            return conversationTextLines;
+            //return conversationTextLines;
         }
 
         protected static int GetTextByteLengthWithZeros(CsvbFile csvbFile, byte[] fileBytes, int offset)
         {
-            int originalByteLenth = 0;
-            bool hasReachedZeroBytes = false;
-            for (int i = csvbFile.FullHeaderSize + offset; ; i++)
-            {
-                if (hasReachedZeroBytes && fileBytes[i] != 0x00)
-                {
-                    break;
-                }
+            throw new NotImplementedException();
 
-                if (fileBytes[i] == 0x00)
-                {
-                    hasReachedZeroBytes = true;
-                }
+            //int originalByteLenth = 0;
+            //bool hasReachedZeroBytes = false;
+            //for (int i = csvbFile.FullHeaderSize + offset; ; i++)
+            //{
+            //    if (hasReachedZeroBytes && fileBytes[i] != 0x00)
+            //    {
+            //        break;
+            //    }
 
-                originalByteLenth++;
-            }
+            //    if (fileBytes[i] == 0x00)
+            //    {
+            //        hasReachedZeroBytes = true;
+            //    }
 
-            return originalByteLenth;
+            //    originalByteLenth++;
+            //}
+
+            //return originalByteLenth;
         }
     }
 }

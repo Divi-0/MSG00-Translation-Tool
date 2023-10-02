@@ -7,140 +7,142 @@ namespace MSG00.Translation.Infrastructure.Reader.StaffRoll
     {
         public async Task<StaffRollCsvb> ReadFile(Stream stream)
         {
-            try
-            {
-                byte[] fileBytes = new byte[stream.Length];
+            throw new NotImplementedException();
 
-                await stream.ReadAsync(fileBytes).ConfigureAwait(false);
+            //try
+            //{
+            //    byte[] fileBytes = new byte[stream.Length];
 
-                int fileSizeToTextEnd = GetFileSizeUntilEndOfTextTable(fileBytes);
-                int fileSizeWithUnimportantInfo = GetFileSizeWithUnimportantBytes(fileBytes);
+            //    await stream.ReadAsync(fileBytes).ConfigureAwait(false);
 
-                StaffRollCsvb staffRollCsvb = new StaffRollCsvb()
-                {
-                    FileOffsetToAreaBetweenPointerAndTextTable = GetFileOffsetToAreaBetweenPointerAndTextTable(fileBytes),
-                    FullHeaderSize = GetFullHeaderSize(fileBytes),
-                    FileSizeToTextEnd = fileSizeToTextEnd,
-                    FileSizeWithUnimportantInfo = fileSizeWithUnimportantInfo,
-                    CountOfPointersInFile = fileBytes[52],
-                    HeaderBytes = await ReadFileHeader(stream).ConfigureAwait(false),
-                    MapiHeaderBytes = await GetMapiHeader(stream).ConfigureAwait(false),
-                    AfterTextSectionBytes = await GetConstBytesAfterTextSection(stream, fileSizeToTextEnd, fileSizeWithUnimportantInfo).ConfigureAwait(false),
-                };
+            //    int fileSizeToTextEnd = GetFileSizeUntilEndOfTextTable(fileBytes);
+            //    int fileSizeWithUnimportantInfo = GetFileSizeWithUnimportantBytes(fileBytes);
 
-                int lastPointer = -1;
-                bool isSamePointer = false;
-                for (int i = 0x50; i < staffRollCsvb.FileOffsetToAreaBetweenPointerAndTextTable; i += 8)
-                {
-                    byte[] pointerBytes = new byte[4];
-                    Array.Copy(fileBytes, i, pointerBytes, 0, 4);
-                    int pointer = BitConverter.ToInt32(pointerBytes);
+            //    StaffRollCsvb staffRollCsvb = new StaffRollCsvb()
+            //    {
+            //        FileOffsetToAreaBetweenPointerAndTextTable = GetFileOffsetToAreaBetweenPointerAndTextTable(fileBytes),
+            //        FullHeaderSize = GetFullHeaderSize(fileBytes),
+            //        FileSizeToTextEnd = fileSizeToTextEnd,
+            //        FileSizeWithUnimportantInfo = fileSizeWithUnimportantInfo,
+            //        CountOfPointersInFile = fileBytes[52],
+            //        HeaderBytes = await ReadFileHeader(stream).ConfigureAwait(false),
+            //        MapiHeaderBytes = await GetMapiHeader(stream).ConfigureAwait(false),
+            //        AfterTextSectionBytes = await GetConstBytesAfterTextSection(stream, fileSizeToTextEnd, fileSizeWithUnimportantInfo).ConfigureAwait(false),
+            //    };
 
-                    byte[] typeBytes = new byte[4];
-                    Array.Copy(fileBytes, i + 4, typeBytes, 0, 4);
-                    StaffRollPointerType type = (StaffRollPointerType)BitConverter.ToInt32(typeBytes);
+            //    int lastPointer = -1;
+            //    bool isSamePointer = false;
+            //    for (int i = 0x50; i < staffRollCsvb.FileOffsetToAreaBetweenPointerAndTextTable; i += 8)
+            //    {
+            //        byte[] pointerBytes = new byte[4];
+            //        Array.Copy(fileBytes, i, pointerBytes, 0, 4);
+            //        int pointer = BitConverter.ToInt32(pointerBytes);
 
-                    if (pointer == lastPointer)
-                    {
-                        isSamePointer = true;
-                    }
-                    else
-                    {
-                        isSamePointer = false;
-                    }
+            //        byte[] typeBytes = new byte[4];
+            //        Array.Copy(fileBytes, i + 4, typeBytes, 0, 4);
+            //        StaffRollPointerType type = (StaffRollPointerType)BitConverter.ToInt32(typeBytes);
 
-                    switch (type)
-                    {
-                        case StaffRollPointerType.StaticOffsetBeforeTextOffset:
-                        case StaffRollPointerType.StaticOffsetAfterImage:
-                        case StaffRollPointerType.EndReferenceSub2:
-                        case StaffRollPointerType.Unknown2:
-                            AddPointer(new StaffRollPointer
-                            {
-                                Type = type,
-                                OffsetValue = BitConverter.ToInt64(GetOffsetBytes(fileBytes, staffRollCsvb, pointer, 8)),
-                            }, isSamePointer);
-                            break;
-                        case StaffRollPointerType.StartPointer:
-                        case StaffRollPointerType.Image:
-                        case StaffRollPointerType.Unknown3:
-                            AddPointer(new StaffRollPointer
-                            {
-                                Type = type,
-                                OffsetValue = BitConverter.ToInt32(GetOffsetBytes(fileBytes, staffRollCsvb, pointer, 4)),
-                            }, isSamePointer);
-                            break;
-                        case StaffRollPointerType.Text:
-                            byte[] textOffsetBytes = GetOffsetBytes(fileBytes, staffRollCsvb, pointer, 8);
+            //        if (pointer == lastPointer)
+            //        {
+            //            isSamePointer = true;
+            //        }
+            //        else
+            //        {
+            //            isSamePointer = false;
+            //        }
 
-                            StaffRollPointerText prologuePointerText = new StaffRollPointerText
-                            {
-                                Type = type,
-                                OffsetValue = BitConverter.ToInt64(textOffsetBytes)
-                            };
+            //        switch (type)
+            //        {
+            //            case StaffRollPointerType.StaticOffsetBeforeTextOffset:
+            //            case StaffRollPointerType.StaticOffsetAfterImage:
+            //            case StaffRollPointerType.EndReferenceSub2:
+            //            case StaffRollPointerType.Unknown2:
+            //                AddPointer(new StaffRollPointer
+            //                {
+            //                    Type = type,
+            //                    OffsetValue = BitConverter.ToInt64(GetOffsetBytes(fileBytes, staffRollCsvb, pointer, 8)),
+            //                }, isSamePointer);
+            //                break;
+            //            case StaffRollPointerType.StartPointer:
+            //            case StaffRollPointerType.Image:
+            //            case StaffRollPointerType.Unknown3:
+            //                AddPointer(new StaffRollPointer
+            //                {
+            //                    Type = type,
+            //                    OffsetValue = BitConverter.ToInt32(GetOffsetBytes(fileBytes, staffRollCsvb, pointer, 4)),
+            //                }, isSamePointer);
+            //                break;
+            //            case StaffRollPointerType.Text:
+            //                byte[] textOffsetBytes = GetOffsetBytes(fileBytes, staffRollCsvb, pointer, 8);
 
-                            prologuePointerText.TextLines = GetSingleTextFromFile(staffRollCsvb, fileBytes, BitConverter.ToInt32(new byte[] { textOffsetBytes[0], textOffsetBytes[1], textOffsetBytes[2], textOffsetBytes[3] }));
+            //                StaffRollPointerText prologuePointerText = new StaffRollPointerText
+            //                {
+            //                    Type = type,
+            //                    OffsetValue = BitConverter.ToInt64(textOffsetBytes)
+            //                };
 
-                            AddPointer(prologuePointerText, isSamePointer);
-                            break;
-                        case StaffRollPointerType.TextObjectReference:
-                        case StaffRollPointerType.EndReferenceSub1:
-                        case StaffRollPointerType.Unknown1:
-                        case StaffRollPointerType.StartOfEndReference:
-                        case StaffRollPointerType.StartUnknown4:
-                            StaffRollPointerTextObjectReference proEpiloguePointerTextObjectReference = new StaffRollPointerTextObjectReference
-                            {
-                                Type = type,
-                                OffsetValue = BitConverter.ToInt64(GetOffsetBytes(fileBytes, staffRollCsvb, pointer, 8))
-                            };
+            //                prologuePointerText.TextLines = GetSingleTextFromFile(staffRollCsvb, fileBytes, BitConverter.ToInt32(new byte[] { textOffsetBytes[0], textOffsetBytes[1], textOffsetBytes[2], textOffsetBytes[3] }));
 
-                            if (proEpiloguePointerTextObjectReference.OffsetValue == -1)
-                            {
-                                AddPointer(proEpiloguePointerTextObjectReference, isSamePointer);
-                                break;
-                            }
+            //                AddPointer(prologuePointerText, isSamePointer);
+            //                break;
+            //            case StaffRollPointerType.TextObjectReference:
+            //            case StaffRollPointerType.EndReferenceSub1:
+            //            case StaffRollPointerType.Unknown1:
+            //            case StaffRollPointerType.StartOfEndReference:
+            //            case StaffRollPointerType.StartUnknown4:
+            //                StaffRollPointerTextObjectReference proEpiloguePointerTextObjectReference = new StaffRollPointerTextObjectReference
+            //                {
+            //                    Type = type,
+            //                    OffsetValue = BitConverter.ToInt64(GetOffsetBytes(fileBytes, staffRollCsvb, pointer, 8))
+            //                };
 
-                            byte[] objectReferenceOneOffsetValueBytes = new byte[4];
-                            Array.Copy(fileBytes, staffRollCsvb.FileSizeWithUnimportantInfo + pointer, objectReferenceOneOffsetValueBytes, 0, 4);
-                            int objectReferenceOneOffsetValue = BitConverter.ToInt32(objectReferenceOneOffsetValueBytes);
+            //                if (proEpiloguePointerTextObjectReference.OffsetValue == -1)
+            //                {
+            //                    AddPointer(proEpiloguePointerTextObjectReference, isSamePointer);
+            //                    break;
+            //                }
 
-                            byte[] objectReferenceTwoOffsetValueBytes = new byte[4];
-                            Array.Copy(fileBytes, staffRollCsvb.FileSizeWithUnimportantInfo + pointer + 4, objectReferenceTwoOffsetValueBytes, 0, 4);
-                            int objectReferenceTwoOffsetValue = BitConverter.ToInt32(objectReferenceTwoOffsetValueBytes);
+            //                byte[] objectReferenceOneOffsetValueBytes = new byte[4];
+            //                Array.Copy(fileBytes, staffRollCsvb.FileSizeWithUnimportantInfo + pointer, objectReferenceOneOffsetValueBytes, 0, 4);
+            //                int objectReferenceOneOffsetValue = BitConverter.ToInt32(objectReferenceOneOffsetValueBytes);
 
-                            proEpiloguePointerTextObjectReference.TextReferences.Add(GetSingleTextFromFile(staffRollCsvb, fileBytes, objectReferenceOneOffsetValue)[0].Text);
+            //                byte[] objectReferenceTwoOffsetValueBytes = new byte[4];
+            //                Array.Copy(fileBytes, staffRollCsvb.FileSizeWithUnimportantInfo + pointer + 4, objectReferenceTwoOffsetValueBytes, 0, 4);
+            //                int objectReferenceTwoOffsetValue = BitConverter.ToInt32(objectReferenceTwoOffsetValueBytes);
 
-                            if (objectReferenceOneOffsetValue != objectReferenceTwoOffsetValue)
-                            {
-                                proEpiloguePointerTextObjectReference.TextReferences.Add(GetSingleTextFromFile(staffRollCsvb, fileBytes, objectReferenceTwoOffsetValue)[0].Text);
-                            }
+            //                proEpiloguePointerTextObjectReference.TextReferences.Add(GetSingleTextFromFile(staffRollCsvb, fileBytes, objectReferenceOneOffsetValue)[0].Text);
 
-                            AddPointer(proEpiloguePointerTextObjectReference, isSamePointer);
-                            break;
-                        default:
-                            throw new ArgumentOutOfRangeException(nameof(type));
-                    }
+            //                if (objectReferenceOneOffsetValue != objectReferenceTwoOffsetValue)
+            //                {
+            //                    proEpiloguePointerTextObjectReference.TextReferences.Add(GetSingleTextFromFile(staffRollCsvb, fileBytes, objectReferenceTwoOffsetValue)[0].Text);
+            //                }
 
-                    lastPointer = pointer;
-                }
+            //                AddPointer(proEpiloguePointerTextObjectReference, isSamePointer);
+            //                break;
+            //            default:
+            //                throw new ArgumentOutOfRangeException(nameof(type));
+            //        }
 
-                return staffRollCsvb;
+            //        lastPointer = pointer;
+            //    }
 
-                void AddPointer(StaffRollPointer staffRollPointer, bool isSamePointer)
-                {
-                    if (isSamePointer)
-                    {
-                        staffRollCsvb.Pointers.Last().SubPointer.Add(staffRollPointer);
-                        return;
-                    }
+            //    return staffRollCsvb;
 
-                    staffRollCsvb.Pointers.Add(staffRollPointer);
-                }
-            }
-            catch (Exception e)
-            {
-                throw;
-            }
+            //    void AddPointer(StaffRollPointer staffRollPointer, bool isSamePointer)
+            //    {
+            //        if (isSamePointer)
+            //        {
+            //            staffRollCsvb.Pointers.Last().SubPointer.Add(staffRollPointer);
+            //            return;
+            //        }
+
+            //        staffRollCsvb.Pointers.Add(staffRollPointer);
+            //    }
+            //}
+            //catch (Exception e)
+            //{
+            //    throw;
+            //}
         }
 
         private static byte[] GetOffsetBytes(byte[] fileBytes, StaffRollCsvb staffRollCsvb, int pointer, int offsetLength)

@@ -24,221 +24,223 @@ namespace MSG00.Translation.Infrastructure.Services
 
         public async Task<ConversationCsvb> GetFile(Stream fileStream)
         {
-            try
-            {
-                byte[] fileBytes = new byte[fileStream.Length];
+            throw new NotImplementedException();
 
-                await fileStream.ReadAsync(fileBytes).ConfigureAwait(false);
+            //try
+            //{
+            //    byte[] fileBytes = new byte[fileStream.Length];
 
-                int fileSizeToTextEnd = int.Parse($"{fileBytes[23]:X2}{fileBytes[22]:X2}{fileBytes[21]:X2}{fileBytes[20]:X2}", System.Globalization.NumberStyles.HexNumber);
-                int fileSizeWithUnimportantInfo = int.Parse($"{fileBytes[27]:X2}{fileBytes[26]:X2}{fileBytes[25]:X2}{fileBytes[24]:X2}", System.Globalization.NumberStyles.HexNumber);
+            //    await fileStream.ReadAsync(fileBytes).ConfigureAwait(false);
 
-                byte[] csvbHeaderBytes = await GetFileHeader(fileStream).ConfigureAwait(false);
-                byte[] mapiHeaderBytes = await GetMapiHeader(fileStream).ConfigureAwait(false);
-                byte[] afterTextSectionBytes = await GetConstBytesAfterTextSection(fileStream, fileSizeToTextEnd, fileSizeWithUnimportantInfo).ConfigureAwait(false);
+            //    int fileSizeToTextEnd = int.Parse($"{fileBytes[23]:X2}{fileBytes[22]:X2}{fileBytes[21]:X2}{fileBytes[20]:X2}", System.Globalization.NumberStyles.HexNumber);
+            //    int fileSizeWithUnimportantInfo = int.Parse($"{fileBytes[27]:X2}{fileBytes[26]:X2}{fileBytes[25]:X2}{fileBytes[24]:X2}", System.Globalization.NumberStyles.HexNumber);
 
-                ConversationCsvb conversationCsvb = new ConversationCsvb()
-                {
-                    HeaderBytes = csvbHeaderBytes,
-                    MapiHeaderBytes = mapiHeaderBytes,
-                    AfterTextSectionBytes = afterTextSectionBytes,
-                    FileOffsetToAreaBetweenPointerAndTextTable = int.Parse($"{fileBytes[15]:X2}{fileBytes[14]:X2}{fileBytes[13]:X2}{fileBytes[12]:X2}", System.Globalization.NumberStyles.HexNumber),
-                    FullHeaderSize = int.Parse($"{fileBytes[19]:X2}{fileBytes[18]:X2}{fileBytes[17]:X2}{fileBytes[16]:X2}", System.Globalization.NumberStyles.HexNumber),
-                    FileSizeToTextEnd = fileSizeToTextEnd,
-                    FileSizeWithUnimportantInfo = fileSizeWithUnimportantInfo,
-                    CountOfPointersInFile = fileBytes[52]
-                };
+            //    byte[] csvbHeaderBytes = await GetFileHeader(fileStream).ConfigureAwait(false);
+            //    byte[] mapiHeaderBytes = await GetMapiHeader(fileStream).ConfigureAwait(false);
+            //    byte[] afterTextSectionBytes = await GetConstBytesAfterTextSection(fileStream, fileSizeToTextEnd, fileSizeWithUnimportantInfo).ConfigureAwait(false);
 
-                ConversationPointerCharacter? conversationPointer = null;
-                ConversationPointerCharacter? conversationPointerYesNo = null;
-                ConversationPointerType? extraType = null;
-                bool isInsideOfYesNoSection = false;
-                bool isInYesSection = false;
-                //0x50 is always the start of the pointers
-                for (int i = 0x50; i < conversationCsvb.FileOffsetToAreaBetweenPointerAndTextTable; i += 8)
-                {
-                    int pointer = int.Parse($"{fileBytes[i + 3]:X2}{fileBytes[i + 2]:X2}{fileBytes[i + 1]:X2}{fileBytes[i]:X2}", System.Globalization.NumberStyles.HexNumber);
-                    ConversationPointerType type = (ConversationPointerType)int.Parse($"{fileBytes[i + 7]:X2}{fileBytes[i + 6]:X2}{fileBytes[i + 5]:X2}{fileBytes[i + 4]:X2}", System.Globalization.NumberStyles.HexNumber);
+            //    ConversationCsvb conversationCsvb = new ConversationCsvb()
+            //    {
+            //        HeaderBytes = csvbHeaderBytes,
+            //        MapiHeaderBytes = mapiHeaderBytes,
+            //        AfterTextSectionBytes = afterTextSectionBytes,
+            //        FileOffsetToAreaBetweenPointerAndTextTable = int.Parse($"{fileBytes[15]:X2}{fileBytes[14]:X2}{fileBytes[13]:X2}{fileBytes[12]:X2}", System.Globalization.NumberStyles.HexNumber),
+            //        FullHeaderSize = int.Parse($"{fileBytes[19]:X2}{fileBytes[18]:X2}{fileBytes[17]:X2}{fileBytes[16]:X2}", System.Globalization.NumberStyles.HexNumber),
+            //        FileSizeToTextEnd = fileSizeToTextEnd,
+            //        FileSizeWithUnimportantInfo = fileSizeWithUnimportantInfo,
+            //        CountOfPointersInFile = fileBytes[52]
+            //    };
 
-                    switch (type)
-                    {
-                        case ConversationPointerType.CharacterImage:
-                            NewConversation(pointer, type);
-                            break;
-                        case ConversationPointerType.Text:
-                        case ConversationPointerType.TextWithUnknownOffset:
-                            byte[] textOffsetBytes = new byte[4];
-                            Array.Copy(fileBytes, conversationCsvb.FileSizeWithUnimportantInfo + pointer, textOffsetBytes, 0, 4);
+            //    ConversationPointerCharacter? conversationPointer = null;
+            //    ConversationPointerCharacter? conversationPointerYesNo = null;
+            //    ConversationPointerType? extraType = null;
+            //    bool isInsideOfYesNoSection = false;
+            //    bool isInYesSection = false;
+            //    //0x50 is always the start of the pointers
+            //    for (int i = 0x50; i < conversationCsvb.FileOffsetToAreaBetweenPointerAndTextTable; i += 8)
+            //    {
+            //        int pointer = int.Parse($"{fileBytes[i + 3]:X2}{fileBytes[i + 2]:X2}{fileBytes[i + 1]:X2}{fileBytes[i]:X2}", System.Globalization.NumberStyles.HexNumber);
+            //        ConversationPointerType type = (ConversationPointerType)int.Parse($"{fileBytes[i + 7]:X2}{fileBytes[i + 6]:X2}{fileBytes[i + 5]:X2}{fileBytes[i + 4]:X2}", System.Globalization.NumberStyles.HexNumber);
 
-                            string titleYesNoSection = isInsideOfYesNoSection ? (isInYesSection ? "[Yes]" : "[No]") : string.Empty;
+            //        switch (type)
+            //        {
+            //            case ConversationPointerType.CharacterImage:
+            //                NewConversation(pointer, type);
+            //                break;
+            //            case ConversationPointerType.Text:
+            //            case ConversationPointerType.TextWithUnknownOffset:
+            //                byte[] textOffsetBytes = new byte[4];
+            //                Array.Copy(fileBytes, conversationCsvb.FileSizeWithUnimportantInfo + pointer, textOffsetBytes, 0, 4);
 
-                            ConversationPointerText conversationPointerText = new ConversationPointerText
-                            {
-                                Type = type,
-                                OffsetValue = BitConverter.ToInt32(textOffsetBytes),
-                                Title = $"{titleYesNoSection} Conversation {conversationCsvb.PointerTable.Count + 1}",
-                                ItemLifeTime = ConversationItemLifeTime.AlreadyExisted
-                            };
+            //                string titleYesNoSection = isInsideOfYesNoSection ? (isInYesSection ? "[Yes]" : "[No]") : string.Empty;
 
-                            conversationPointerText.Lines = GetSingleTextFromFile(conversationCsvb, fileBytes, conversationPointerText.OffsetValue);
-                            conversationPointerText.OriginalByteLengthWithZeros = GetTextByteLengthWithZeros(conversationCsvb, fileBytes, conversationPointerText.OffsetValue);
+            //                ConversationPointerText conversationPointerText = new ConversationPointerText
+            //                {
+            //                    Type = type,
+            //                    OffsetValue = BitConverter.ToInt32(textOffsetBytes),
+            //                    Title = $"{titleYesNoSection} Conversation {conversationCsvb.PointerTable.Count + 1}",
+            //                    ItemLifeTime = ConversationItemLifeTime.AlreadyExisted
+            //                };
 
-                            if (type == ConversationPointerType.TextWithUnknownOffset)
-                            {
-                                ConversationPointerTextWithChangingCharImage conversationPointerTextWithUnknownOffset = new ConversationPointerTextWithChangingCharImage(conversationPointerText)
-                                {
-                                    Type = ConversationPointerType.TextWithUnknownOffset,
-                                    ItemLifeTime = ConversationItemLifeTime.AlreadyExisted
-                                };
+            //                conversationPointerText.Lines = GetSingleTextFromFile(conversationCsvb, fileBytes, conversationPointerText.OffsetValue);
+            //                conversationPointerText.OriginalByteLengthWithZeros = GetTextByteLengthWithZeros(conversationCsvb, fileBytes, conversationPointerText.OffsetValue);
 
-                                byte[] unknownOffsetBytes = new byte[12];
-                                Array.Copy(fileBytes, conversationCsvb.FileSizeWithUnimportantInfo + pointer + 4, unknownOffsetBytes, 0, 12);
+            //                if (type == ConversationPointerType.TextWithUnknownOffset)
+            //                {
+            //                    ConversationPointerTextWithChangingCharImage conversationPointerTextWithUnknownOffset = new ConversationPointerTextWithChangingCharImage(conversationPointerText)
+            //                    {
+            //                        Type = ConversationPointerType.TextWithUnknownOffset,
+            //                        ItemLifeTime = ConversationItemLifeTime.AlreadyExisted
+            //                    };
 
-                                conversationPointerTextWithUnknownOffset.ChangingCharImageOffsetBytes.AddRange(unknownOffsetBytes);
+            //                    byte[] unknownOffsetBytes = new byte[12];
+            //                    Array.Copy(fileBytes, conversationCsvb.FileSizeWithUnimportantInfo + pointer + 4, unknownOffsetBytes, 0, 12);
 
-                                conversationPointerText = conversationPointerTextWithUnknownOffset;
-                            }
+            //                    conversationPointerTextWithUnknownOffset.ChangingCharImageOffsetBytes.AddRange(unknownOffsetBytes);
 
-                            if (isInsideOfYesNoSection)
-                            {
-                                //if same char image is used from the beginning of the conversation and entering now a yes/no section
-                                if (conversationPointerYesNo == null)
-                                {
-                                    conversationPointerYesNo = new ConversationPointerCharacter
-                                    {
-                                        Type = ConversationPointerType.CharacterImage,
-                                        OffsetValue = -1
-                                    };
-                                }
+            //                    conversationPointerText = conversationPointerTextWithUnknownOffset;
+            //                }
 
-                                conversationPointerYesNo.TextBoxes.Add(conversationPointerText);
-                                break;
-                            }
+            //                if (isInsideOfYesNoSection)
+            //                {
+            //                    //if same char image is used from the beginning of the conversation and entering now a yes/no section
+            //                    if (conversationPointerYesNo == null)
+            //                    {
+            //                        conversationPointerYesNo = new ConversationPointerCharacter
+            //                        {
+            //                            Type = ConversationPointerType.CharacterImage,
+            //                            OffsetValue = -1
+            //                        };
+            //                    }
 
-                            conversationPointer!.TextBoxes.Add(conversationPointerText);
-                            break;
-                        case ConversationPointerType.YesNoSelect:
-                            isInsideOfYesNoSection = true;
+            //                    conversationPointerYesNo.TextBoxes.Add(conversationPointerText);
+            //                    break;
+            //                }
 
-                            byte[] textYesNoOffsetBytes = new byte[4];
-                            Array.Copy(fileBytes, conversationCsvb.FileSizeWithUnimportantInfo + pointer, textYesNoOffsetBytes, 0, 4);
+            //                conversationPointer!.TextBoxes.Add(conversationPointerText);
+            //                break;
+            //            case ConversationPointerType.YesNoSelect:
+            //                isInsideOfYesNoSection = true;
 
-                            ConversationPointerTextWithYesNo conversationPointerTextWithYesNo = new ConversationPointerTextWithYesNo
-                            {
-                                Type = type,
-                                OffsetValue = BitConverter.ToInt32(textYesNoOffsetBytes),
-                                Title = $"[YES/NO] Conversation {conversationCsvb.PointerTable.Count + 1}",
-                                ItemLifeTime = ConversationItemLifeTime.AlreadyExisted
-                            };
+            //                byte[] textYesNoOffsetBytes = new byte[4];
+            //                Array.Copy(fileBytes, conversationCsvb.FileSizeWithUnimportantInfo + pointer, textYesNoOffsetBytes, 0, 4);
 
-                            conversationPointerTextWithYesNo.Lines = GetSingleTextFromFile(conversationCsvb, fileBytes, conversationPointerTextWithYesNo.OffsetValue);
-                            conversationPointerTextWithYesNo.OriginalByteLengthWithZeros = GetTextByteLengthWithZeros(conversationCsvb, fileBytes, conversationPointerTextWithYesNo.OffsetValue);
+            //                ConversationPointerTextWithYesNo conversationPointerTextWithYesNo = new ConversationPointerTextWithYesNo
+            //                {
+            //                    Type = type,
+            //                    OffsetValue = BitConverter.ToInt32(textYesNoOffsetBytes),
+            //                    Title = $"[YES/NO] Conversation {conversationCsvb.PointerTable.Count + 1}",
+            //                    ItemLifeTime = ConversationItemLifeTime.AlreadyExisted
+            //                };
 
-                            conversationPointer!.TextBoxes.Add(conversationPointerTextWithYesNo);
-                            break;
-                        case ConversationPointerType.YesNoSelectYesStart:
-                            isInYesSection = true;
-                            break;
-                        case ConversationPointerType.YesNoSelectNoStart:
-                            isInYesSection = false;
-                            break;
-                        case ConversationPointerType.YesNoSelectYesOrNoEnd:
-                            if (isInsideOfYesNoSection && !isInYesSection)
-                            {
-                                isInsideOfYesNoSection = false;
-                            }
+            //                conversationPointerTextWithYesNo.Lines = GetSingleTextFromFile(conversationCsvb, fileBytes, conversationPointerTextWithYesNo.OffsetValue);
+            //                conversationPointerTextWithYesNo.OriginalByteLengthWithZeros = GetTextByteLengthWithZeros(conversationCsvb, fileBytes, conversationPointerTextWithYesNo.OffsetValue);
 
-                            ConversationPointerTextWithYesNo yesNoSectionEnd = (ConversationPointerTextWithYesNo)conversationPointer!.TextBoxes.Last();
+            //                conversationPointer!.TextBoxes.Add(conversationPointerTextWithYesNo);
+            //                break;
+            //            case ConversationPointerType.YesNoSelectYesStart:
+            //                isInYesSection = true;
+            //                break;
+            //            case ConversationPointerType.YesNoSelectNoStart:
+            //                isInYesSection = false;
+            //                break;
+            //            case ConversationPointerType.YesNoSelectYesOrNoEnd:
+            //                if (isInsideOfYesNoSection && !isInYesSection)
+            //                {
+            //                    isInsideOfYesNoSection = false;
+            //                }
 
-                            if (isInYesSection)
-                            {
-                                yesNoSectionEnd.YesPointer.Add(conversationPointerYesNo!);
-                            }
-                            else
-                            {
-                                yesNoSectionEnd.NoPointer.Add(conversationPointerYesNo!);
-                            }
+            //                ConversationPointerTextWithYesNo yesNoSectionEnd = (ConversationPointerTextWithYesNo)conversationPointer!.TextBoxes.Last();
 
-                            conversationPointerYesNo = null;
-                            break;
-                        case ConversationPointerType.Alert:
-                            extraType = type;
-                            break;
-                        case ConversationPointerType.EmptyTextBox:
-                            NewConversation(pointer, type, 4);
-                            break;
-                        default:
-                            throw new ArgumentOutOfRangeException(nameof(type));
-                    }
-                }
+            //                if (isInYesSection)
+            //                {
+            //                    yesNoSectionEnd.YesPointer.Add(conversationPointerYesNo!);
+            //                }
+            //                else
+            //                {
+            //                    yesNoSectionEnd.NoPointer.Add(conversationPointerYesNo!);
+            //                }
 
-                //some files e.g. C1_012.csvb do not have type 0x0D at the end
-                if (isInsideOfYesNoSection)
-                {
-                    ConversationPointerTextWithYesNo yesNoSectionEnd = (ConversationPointerTextWithYesNo)conversationPointer!.TextBoxes.Last();
+            //                conversationPointerYesNo = null;
+            //                break;
+            //            case ConversationPointerType.Alert:
+            //                extraType = type;
+            //                break;
+            //            case ConversationPointerType.EmptyTextBox:
+            //                NewConversation(pointer, type, 4);
+            //                break;
+            //            default:
+            //                throw new ArgumentOutOfRangeException(nameof(type));
+            //        }
+            //    }
 
-                    yesNoSectionEnd.NoPointer.Add(conversationPointerYesNo!);
-                }
+            //    //some files e.g. C1_012.csvb do not have type 0x0D at the end
+            //    if (isInsideOfYesNoSection)
+            //    {
+            //        ConversationPointerTextWithYesNo yesNoSectionEnd = (ConversationPointerTextWithYesNo)conversationPointer!.TextBoxes.Last();
 
-                conversationCsvb.PointerTable.Add(conversationPointer!);
+            //        yesNoSectionEnd.NoPointer.Add(conversationPointerYesNo!);
+            //    }
 
-                return conversationCsvb;
+            //    conversationCsvb.PointerTable.Add(conversationPointer!);
 
-                void NewConversation(int pointer, ConversationPointerType type, int offsetValueLength = 8)
-                {
-                    if (isInsideOfYesNoSection)
-                    {
-                        if (conversationPointerYesNo != null)
-                        {
-                            ConversationPointerTextWithYesNo yesNoSection = (ConversationPointerTextWithYesNo)conversationPointer!.TextBoxes.Last();
+            //    return conversationCsvb;
 
-                            if (isInYesSection)
-                            {
-                                yesNoSection.YesPointer.Add(conversationPointerYesNo);
-                            }
-                            else
-                            {
-                                yesNoSection.NoPointer.Add(conversationPointerYesNo);
-                            }
-                        }
-                    }
-                    else
-                    {
-                        if (conversationPointer != null)
-                        {
-                            conversationCsvb.PointerTable.Add(conversationPointer);
-                        }
-                    }
+            //    void NewConversation(int pointer, ConversationPointerType type, int offsetValueLength = 8)
+            //    {
+            //        if (isInsideOfYesNoSection)
+            //        {
+            //            if (conversationPointerYesNo != null)
+            //            {
+            //                ConversationPointerTextWithYesNo yesNoSection = (ConversationPointerTextWithYesNo)conversationPointer!.TextBoxes.Last();
 
-                    if (isInsideOfYesNoSection)
-                    {
-                        byte[] characterOffsetBytesInYesNo = new byte[8];
-                        Array.Copy(fileBytes, conversationCsvb.FileSizeWithUnimportantInfo + pointer, characterOffsetBytesInYesNo, 0, offsetValueLength);
-                        conversationPointerYesNo = new ConversationPointerCharacter
-                        {
-                            Type = type,
-                            OffsetValue = BitConverter.ToInt64(characterOffsetBytesInYesNo)
-                        };
+            //                if (isInYesSection)
+            //                {
+            //                    yesNoSection.YesPointer.Add(conversationPointerYesNo);
+            //                }
+            //                else
+            //                {
+            //                    yesNoSection.NoPointer.Add(conversationPointerYesNo);
+            //                }
+            //            }
+            //        }
+            //        else
+            //        {
+            //            if (conversationPointer != null)
+            //            {
+            //                conversationCsvb.PointerTable.Add(conversationPointer);
+            //            }
+            //        }
 
-                        return;
-                    }
+            //        if (isInsideOfYesNoSection)
+            //        {
+            //            byte[] characterOffsetBytesInYesNo = new byte[8];
+            //            Array.Copy(fileBytes, conversationCsvb.FileSizeWithUnimportantInfo + pointer, characterOffsetBytesInYesNo, 0, offsetValueLength);
+            //            conversationPointerYesNo = new ConversationPointerCharacter
+            //            {
+            //                Type = type,
+            //                OffsetValue = BitConverter.ToInt64(characterOffsetBytesInYesNo)
+            //            };
 
-                    byte[] characterOffsetBytes = new byte[8];
-                    Array.Copy(fileBytes, conversationCsvb.FileSizeWithUnimportantInfo + pointer, characterOffsetBytes, 0, offsetValueLength);
-                    conversationPointer = new ConversationPointerCharacter
-                    {
-                        Type = type,
-                        OffsetValue = BitConverter.ToInt64(characterOffsetBytes),
-                        ExtraType = extraType,
-                    };
+            //            return;
+            //        }
 
-                    extraType = null;
-                }
-            }
-            catch (Exception ex)
-            {
-                throw;
-            }
+            //        byte[] characterOffsetBytes = new byte[8];
+            //        Array.Copy(fileBytes, conversationCsvb.FileSizeWithUnimportantInfo + pointer, characterOffsetBytes, 0, offsetValueLength);
+            //        conversationPointer = new ConversationPointerCharacter
+            //        {
+            //            Type = type,
+            //            OffsetValue = BitConverter.ToInt64(characterOffsetBytes),
+            //            ExtraType = extraType,
+            //        };
+
+            //        extraType = null;
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    throw;
+            //}
         }
 
         private static async Task<byte[]> GetFileHeader(Stream fileStream)
@@ -278,97 +280,103 @@ namespace MSG00.Translation.Infrastructure.Services
 
         private ObservableCollection<CsvbTextLine> GetSingleTextFromFile(CsvbFile csvbFile, byte[] fileBytes, int offset)
         {
-            ObservableCollection<CsvbTextLine> conversationTextLines = new ObservableCollection<CsvbTextLine>();
+            throw new NotImplementedException();
 
-            List<byte> textBytes = new List<byte>();
-            for (int i = csvbFile.FullHeaderSize + offset; fileBytes[i] != 0x00; i++)
-            {
-                if (fileBytes[i] == 0x0A)
-                {
-                    conversationTextLines.Add(new CsvbTextLine
-                    {
-                        Text = _shiftJISEncoding.GetString(textBytes.ToArray())
-                    });
+            //ObservableCollection<CsvbTextLine> conversationTextLines = new ObservableCollection<CsvbTextLine>();
 
-                    textBytes.Clear();
-                    continue;
-                }
+            //List<byte> textBytes = new List<byte>();
+            //for (int i = csvbFile.FullHeaderSize + offset; fileBytes[i] != 0x00; i++)
+            //{
+            //    if (fileBytes[i] == 0x0A)
+            //    {
+            //        conversationTextLines.Add(new CsvbTextLine
+            //        {
+            //            Text = _shiftJISEncoding.GetString(textBytes.ToArray())
+            //        });
 
-                textBytes.Add(fileBytes[i]);
-            }
+            //        textBytes.Clear();
+            //        continue;
+            //    }
 
-            //add last line
-            conversationTextLines.Add(new CsvbTextLine
-            {
-                Text = _shiftJISEncoding.GetString(textBytes.ToArray())
-            });
+            //    textBytes.Add(fileBytes[i]);
+            //}
 
-            return conversationTextLines;
+            ////add last line
+            //conversationTextLines.Add(new CsvbTextLine
+            //{
+            //    Text = _shiftJISEncoding.GetString(textBytes.ToArray())
+            //});
+
+            //return conversationTextLines;
         }
 
         private static int GetTextByteLengthWithZeros(CsvbFile csvbFile, byte[] fileBytes, int offset)
         {
-            int originalByteLenth = 0;
-            bool hasReachedZeroBytes = false;
-            for (int i = csvbFile.FullHeaderSize + offset; ; i++)
-            {
-                if (hasReachedZeroBytes && fileBytes[i] != 0x00)
-                {
-                    break;
-                }
+            throw new NotImplementedException();
 
-                if (fileBytes[i] == 0x00)
-                {
-                    hasReachedZeroBytes = true;
-                }
+            //int originalByteLenth = 0;
+            //bool hasReachedZeroBytes = false;
+            //for (int i = csvbFile.FullHeaderSize + offset; ; i++)
+            //{
+            //    if (hasReachedZeroBytes && fileBytes[i] != 0x00)
+            //    {
+            //        break;
+            //    }
 
-                originalByteLenth++;
-            }
+            //    if (fileBytes[i] == 0x00)
+            //    {
+            //        hasReachedZeroBytes = true;
+            //    }
 
-            return originalByteLenth;
+            //    originalByteLenth++;
+            //}
+
+            //return originalByteLenth;
         }
 
         public async Task SaveFile(Stream fileStream, ConversationCsvb conversationCsvb)
         {
-            try
-            {
-                CalculateNewValues(conversationCsvb);
+            throw new NotImplementedException();
 
-                int newHeaderSizeToEndOfPointerTable = 0;
-                int newFullHeaderSize = 0;
-                int newFileSizeToEndOfText = 0;
-                int newFileSizeToStartOfOffsetTable = 0;
+            //try
+            //{
+            //    CalculateNewValues(conversationCsvb);
 
-                await ClearFile(fileStream).ConfigureAwait(false);
+            //    int newHeaderSizeToEndOfPointerTable = 0;
+            //    int newFullHeaderSize = 0;
+            //    int newFileSizeToEndOfText = 0;
+            //    int newFileSizeToStartOfOffsetTable = 0;
 
-                fileStream.Seek(0, SeekOrigin.Begin);
+            //    await ClearFile(fileStream).ConfigureAwait(false);
 
-                await fileStream.WriteAsync(conversationCsvb.HeaderBytes).ConfigureAwait(false);
-                await fileStream.WriteAsync(conversationCsvb.MapiHeaderBytes).ConfigureAwait(false);
+            //    fileStream.Seek(0, SeekOrigin.Begin);
 
-                await WritePointerTable(fileStream, conversationCsvb).ConfigureAwait(false);
+            //    await fileStream.WriteAsync(conversationCsvb.HeaderBytes).ConfigureAwait(false);
+            //    await fileStream.WriteAsync(conversationCsvb.MapiHeaderBytes).ConfigureAwait(false);
 
-                newHeaderSizeToEndOfPointerTable = Convert.ToInt32(fileStream.Length - 8);//minus 8 bytes for the end declartion bytes of the header
-                newFullHeaderSize = Convert.ToInt32(fileStream.Length);
+            //    await WritePointerTable(fileStream, conversationCsvb).ConfigureAwait(false);
 
-                await WriteTextTable(fileStream, conversationCsvb).ConfigureAwait(false);
+            //    newHeaderSizeToEndOfPointerTable = Convert.ToInt32(fileStream.Length - 8);//minus 8 bytes for the end declartion bytes of the header
+            //    newFullHeaderSize = Convert.ToInt32(fileStream.Length);
 
-                newFileSizeToEndOfText = Convert.ToInt32(fileStream.Length);
+            //    await WriteTextTable(fileStream, conversationCsvb).ConfigureAwait(false);
 
-                await fileStream.WriteAsync(conversationCsvb.AfterTextSectionBytes).ConfigureAwait(false);
+            //    newFileSizeToEndOfText = Convert.ToInt32(fileStream.Length);
 
-                newFileSizeToStartOfOffsetTable = Convert.ToInt32(fileStream.Length);
+            //    await fileStream.WriteAsync(conversationCsvb.AfterTextSectionBytes).ConfigureAwait(false);
 
-                await WriteOffsetTable(fileStream, conversationCsvb).ConfigureAwait(false);
+            //    newFileSizeToStartOfOffsetTable = Convert.ToInt32(fileStream.Length);
 
-                await OverrideHeaderInformation(fileStream, newHeaderSizeToEndOfPointerTable, newFullHeaderSize, newFileSizeToEndOfText, newFileSizeToStartOfOffsetTable).ConfigureAwait(false);
+            //    await WriteOffsetTable(fileStream, conversationCsvb).ConfigureAwait(false);
 
-                await OverridePointerCount(fileStream, conversationCsvb.CountOfPointersInFile);
-            }
-            catch (Exception e)
-            {
-                throw;
-            }
+            //    await OverrideHeaderInformation(fileStream, newHeaderSizeToEndOfPointerTable, newFullHeaderSize, newFileSizeToEndOfText, newFileSizeToStartOfOffsetTable).ConfigureAwait(false);
+
+            //    await OverridePointerCount(fileStream, conversationCsvb.CountOfPointersInFile);
+            //}
+            //catch (Exception e)
+            //{
+            //    throw;
+            //}
         }
 
         private static async Task ClearFile(Stream fileStream)

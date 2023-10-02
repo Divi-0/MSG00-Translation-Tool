@@ -180,32 +180,33 @@ namespace MSG00.Translation.UI.ViewModels
 
         private async Task CloseFile()
         {
-            var dialog = MessageBoxManager.GetMessageBoxStandard(new MessageBoxStandardParams
-            {
-                ContentTitle = "Close Conversation",
-                ContentMessage = "Are you sure, you want to close the conversation file?",
-                ButtonDefinitions = ButtonEnum.YesNo,
-                WindowStartupLocation = WindowStartupLocation.CenterOwner
-            });
+            throw new NotImplementedException();
+            //var dialog = MessageBoxManager.GetMessageBoxStandard(new MessageBoxStandardParams
+            //{
+            //    ContentTitle = "Close Conversation",
+            //    ContentMessage = "Are you sure, you want to close the conversation file?",
+            //    ButtonDefinitions = ButtonEnum.YesNo,
+            //    WindowStartupLocation = WindowStartupLocation.CenterOwner
+            //});
 
-            ButtonResult buttonResult = await dialog.ShowAsync().ConfigureAwait(false);
+            //ButtonResult buttonResult = await dialog.ShowAsync().ConfigureAwait(false);
 
-            if (buttonResult == ButtonResult.No)
-            {
-                return;
-            }
+            //if (buttonResult == ButtonResult.No)
+            //{
+            //    return;
+            //}
 
-            EpilogueFile = new EpilogueCsvb
-            {
-                AfterTextSectionBytes = Array.Empty<byte>(),
-                CountOfPointersInFile = 0,
-                FileSizeToTextEnd = 0,
-                FileSizeWithUnimportantInfo = 0,
-                FullHeaderSize = 0,
-                HeaderBytes = Array.Empty<byte>(),
-                FileOffsetToAreaBetweenPointerAndTextTable = 0,
-                MapiHeaderBytes = Array.Empty<byte>(),
-            };
+            //EpilogueFile = new EpilogueCsvb
+            //{
+            //    AfterTextSectionBytes = Array.Empty<byte>(),
+            //    CountOfPointersInFile = 0,
+            //    FileSizeToTextEnd = 0,
+            //    FileSizeWithUnimportantInfo = 0,
+            //    FullHeaderSize = 0,
+            //    HeaderBytes = Array.Empty<byte>(),
+            //    FileOffsetToAreaBetweenPointerAndTextTable = 0,
+            //    MapiHeaderBytes = Array.Empty<byte>(),
+            //};
 
             IsFileLoaded = false;
         }

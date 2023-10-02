@@ -6,41 +6,43 @@ namespace MSG00.Translation.Infrastructure.Reader.EtcFgHcmHg
     {
         public async Task<EtcFgHcmHgCsvb> ReadFile(Stream stream)
         {
-            int fileSizePointerTable = await GetFileSizePointerTable(stream).ConfigureAwait(false);
-            int fileSizeFullHeader = await GetFileSizeFullHeader(stream).ConfigureAwait(false);
+            throw new NotImplementedException();
 
-            List<EtcFgHcmHgPointer> etcPointers = new List<EtcFgHcmHgPointer>();
+            //int fileSizePointerTable = await GetFileSizePointerTable(stream).ConfigureAwait(false);
+            //int fileSizeFullHeader = await GetFileSizeFullHeader(stream).ConfigureAwait(false);
 
-            stream.Seek(0x4C, SeekOrigin.Begin);
+            //List<EtcFgHcmHgPointer> etcPointers = new List<EtcFgHcmHgPointer>();
 
-            while (stream.Position < fileSizePointerTable)
-            {
-                long currentPositionInPointerTable = stream.Position;
+            //stream.Seek(0x4C, SeekOrigin.Begin);
 
-                byte[] textOffsetBytes = new byte[4];
-                await stream.ReadExactlyAsync(textOffsetBytes, 0, 4).ConfigureAwait(false);
-                long textOffsetInTextTable = BitConverter.ToInt32(textOffsetBytes);
+            //while (stream.Position < fileSizePointerTable)
+            //{
+            //    long currentPositionInPointerTable = stream.Position;
 
-                byte[] gameObjectOffsetBytes = new byte[4];
-                await stream.ReadExactlyAsync(gameObjectOffsetBytes, 0, 4).ConfigureAwait(false);
-                long gameObjectOffsetInTextTable = BitConverter.ToInt32(gameObjectOffsetBytes);
+            //    byte[] textOffsetBytes = new byte[4];
+            //    await stream.ReadExactlyAsync(textOffsetBytes, 0, 4).ConfigureAwait(false);
+            //    long textOffsetInTextTable = BitConverter.ToInt32(textOffsetBytes);
 
-                etcPointers.Add(new EtcFgHcmHgPointer
-                {
-                    Text = await GetTextInFile(stream, Convert.ToInt64(fileSizeFullHeader) + textOffsetInTextTable).ConfigureAwait(false),
-                    GameObjectReference = await GetTextInFile(stream, Convert.ToInt64(fileSizeFullHeader) + gameObjectOffsetInTextTable).ConfigureAwait(false)
-                });
+            //    byte[] gameObjectOffsetBytes = new byte[4];
+            //    await stream.ReadExactlyAsync(gameObjectOffsetBytes, 0, 4).ConfigureAwait(false);
+            //    long gameObjectOffsetInTextTable = BitConverter.ToInt32(gameObjectOffsetBytes);
 
-                stream.Seek(currentPositionInPointerTable + 0x14, SeekOrigin.Begin);
-            }
+            //    etcPointers.Add(new EtcFgHcmHgPointer
+            //    {
+            //        Text = await GetTextInFile(stream, Convert.ToInt64(fileSizeFullHeader) + textOffsetInTextTable).ConfigureAwait(false),
+            //        GameObjectReference = await GetTextInFile(stream, Convert.ToInt64(fileSizeFullHeader) + gameObjectOffsetInTextTable).ConfigureAwait(false)
+            //    });
 
-            return new EtcFgHcmHgCsvb
-            {
-                FullHeaderSize = 0,
-                HeaderBytes = Array.Empty<byte>(),
-                FileOffsetToAreaBetweenPointerAndTextTable = 0,
-                EtcPointers = etcPointers
-            };
+            //    stream.Seek(currentPositionInPointerTable + 0x14, SeekOrigin.Begin);
+            //}
+
+            //return new EtcFgHcmHgCsvb
+            //{
+            //    FullHeaderSize = 0,
+            //    HeaderBytes = Array.Empty<byte>(),
+            //    FileOffsetToAreaBetweenPointerAndTextTable = 0,
+            //    EtcPointers = etcPointers
+            //};
         }
 
         private async Task<int> GetFileSizePointerTable(Stream stream)

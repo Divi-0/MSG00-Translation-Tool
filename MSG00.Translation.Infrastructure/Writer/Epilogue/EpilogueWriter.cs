@@ -43,8 +43,9 @@ namespace MSG00.Translation.Infrastructure.Writer.Epilogue
 
         private static async Task WriteHeader(Stream stream, EpilogueCsvb epilogueCsvb)
         {
-            await stream.WriteAsync(epilogueCsvb.HeaderBytes).ConfigureAwait(false);
-            await stream.WriteAsync(epilogueCsvb.MapiHeaderBytes).ConfigureAwait(false);
+            throw new NotImplementedException();
+            //await stream.WriteAsync(epilogueCsvb.HeaderBytes).ConfigureAwait(false);
+            //await stream.WriteAsync(epilogueCsvb.MapiHeaderBytes).ConfigureAwait(false);
         }
 
         private static async Task WritePointerTable(Stream stream, EpilogueCsvb epilogueCsvb)

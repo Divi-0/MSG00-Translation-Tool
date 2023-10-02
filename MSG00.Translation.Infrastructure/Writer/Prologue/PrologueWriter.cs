@@ -43,8 +43,9 @@ namespace MSG00.Translation.Infrastructure.Writer.ProEpilogue
 
         private static async Task WriteHeader(Stream stream, PrologueCsvb proEpilogueCsvb)
         {
-            await stream.WriteAsync(proEpilogueCsvb.HeaderBytes).ConfigureAwait(false);
-            await stream.WriteAsync(proEpilogueCsvb.MapiHeaderBytes).ConfigureAwait(false);
+            throw new NotImplementedException();
+            //await stream.WriteAsync(proEpilogueCsvb.HeaderBytes).ConfigureAwait(false);
+            //await stream.WriteAsync(proEpilogueCsvb.MapiHeaderBytes).ConfigureAwait(false);
         }
 
         private static async Task WritePointerTable(Stream stream, PrologueCsvb proEpilogueCsvb)

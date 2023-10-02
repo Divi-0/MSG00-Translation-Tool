@@ -7,139 +7,141 @@ namespace MSG00.Translation.Infrastructure.Reader.Epilogue
     {
         public async Task<EpilogueCsvb> ReadFile(Stream stream)
         {
-            try
-            {
-                byte[] fileBytes = new byte[stream.Length];
+            throw new NotImplementedException();
 
-                await stream.ReadAsync(fileBytes).ConfigureAwait(false);
+            //try
+            //{
+            //    byte[] fileBytes = new byte[stream.Length];
 
-                int fileSizeToTextEnd = GetFileSizeUntilEndOfTextTable(fileBytes);
-                int fileSizeWithUnimportantInfo = GetFileSizeWithUnimportantBytes(fileBytes);
+            //    await stream.ReadAsync(fileBytes).ConfigureAwait(false);
 
-                EpilogueCsvb epilogueCsvb = new EpilogueCsvb()
-                {
-                    FileOffsetToAreaBetweenPointerAndTextTable = GetFileOffsetToAreaBetweenPointerAndTextTable(fileBytes),
-                    FullHeaderSize = GetFullHeaderSize(fileBytes),
-                    FileSizeToTextEnd = fileSizeToTextEnd,
-                    FileSizeWithUnimportantInfo = fileSizeWithUnimportantInfo,
-                    CountOfPointersInFile = fileBytes[52],
-                    HeaderBytes = await ReadFileHeader(stream).ConfigureAwait(false),
-                    MapiHeaderBytes = await GetMapiHeader(stream).ConfigureAwait(false),
-                    AfterTextSectionBytes = await GetConstBytesAfterTextSection(stream, fileSizeToTextEnd, fileSizeWithUnimportantInfo).ConfigureAwait(false),
-                };
+            //    int fileSizeToTextEnd = GetFileSizeUntilEndOfTextTable(fileBytes);
+            //    int fileSizeWithUnimportantInfo = GetFileSizeWithUnimportantBytes(fileBytes);
 
-                int lastPointer = -1;
-                bool isSamePointer = false;
-                for (int i = 0x50; i < epilogueCsvb.FileOffsetToAreaBetweenPointerAndTextTable; i += 8)
-                {
-                    byte[] pointerBytes = new byte[4];
-                    Array.Copy(fileBytes, i, pointerBytes, 0, 4);
-                    int pointer = BitConverter.ToInt32(pointerBytes);
+            //    EpilogueCsvb epilogueCsvb = new EpilogueCsvb()
+            //    {
+            //        FileOffsetToAreaBetweenPointerAndTextTable = GetFileOffsetToAreaBetweenPointerAndTextTable(fileBytes),
+            //        FullHeaderSize = GetFullHeaderSize(fileBytes),
+            //        FileSizeToTextEnd = fileSizeToTextEnd,
+            //        FileSizeWithUnimportantInfo = fileSizeWithUnimportantInfo,
+            //        CountOfPointersInFile = fileBytes[52],
+            //        HeaderBytes = await ReadFileHeader(stream).ConfigureAwait(false),
+            //        MapiHeaderBytes = await GetMapiHeader(stream).ConfigureAwait(false),
+            //        AfterTextSectionBytes = await GetConstBytesAfterTextSection(stream, fileSizeToTextEnd, fileSizeWithUnimportantInfo).ConfigureAwait(false),
+            //    };
 
-                    byte[] typeBytes = new byte[4];
-                    Array.Copy(fileBytes, i + 4, typeBytes, 0, 4);
-                    EpiloguePointerType type = (EpiloguePointerType)BitConverter.ToInt32(typeBytes);
+            //    int lastPointer = -1;
+            //    bool isSamePointer = false;
+            //    for (int i = 0x50; i < epilogueCsvb.FileOffsetToAreaBetweenPointerAndTextTable; i += 8)
+            //    {
+            //        byte[] pointerBytes = new byte[4];
+            //        Array.Copy(fileBytes, i, pointerBytes, 0, 4);
+            //        int pointer = BitConverter.ToInt32(pointerBytes);
 
-                    if (pointer == lastPointer)
-                    {
-                        isSamePointer = true;
-                    }
-                    else
-                    {
-                        isSamePointer = false;
-                    }
+            //        byte[] typeBytes = new byte[4];
+            //        Array.Copy(fileBytes, i + 4, typeBytes, 0, 4);
+            //        EpiloguePointerType type = (EpiloguePointerType)BitConverter.ToInt32(typeBytes);
 
-                    switch (type)
-                    {
-                        case EpiloguePointerType.StaticOffsetBeforeTextOffset:
-                        case EpiloguePointerType.StaticOffsetAfterImage:
-                        case EpiloguePointerType.EndReferenceSub2:
-                        case EpiloguePointerType.Unknown2:
-                            AddPointer(new EpiloguePointer
-                            {
-                                Type = type,
-                                OffsetValue = BitConverter.ToInt64(GetOffsetBytes(fileBytes, epilogueCsvb, pointer, 8)),
-                            }, isSamePointer);
-                            break;
-                        case EpiloguePointerType.StartPointer:
-                        case EpiloguePointerType.Image:
-                        case EpiloguePointerType.Unknown3:
-                            AddPointer(new EpiloguePointer
-                            {
-                                Type = type,
-                                OffsetValue = BitConverter.ToInt32(GetOffsetBytes(fileBytes, epilogueCsvb, pointer, 4)),
-                            }, isSamePointer);
-                            break;
-                        case EpiloguePointerType.Text:
-                            byte[] textOffsetBytes = GetOffsetBytes(fileBytes, epilogueCsvb, pointer, 8);
+            //        if (pointer == lastPointer)
+            //        {
+            //            isSamePointer = true;
+            //        }
+            //        else
+            //        {
+            //            isSamePointer = false;
+            //        }
 
-                            EpiloguePointerText prologuePointerText = new EpiloguePointerText
-                            {
-                                Type = type,
-                                OffsetValue = BitConverter.ToInt64(textOffsetBytes)
-                            };
+            //        switch (type)
+            //        {
+            //            case EpiloguePointerType.StaticOffsetBeforeTextOffset:
+            //            case EpiloguePointerType.StaticOffsetAfterImage:
+            //            case EpiloguePointerType.EndReferenceSub2:
+            //            case EpiloguePointerType.Unknown2:
+            //                AddPointer(new EpiloguePointer
+            //                {
+            //                    Type = type,
+            //                    OffsetValue = BitConverter.ToInt64(GetOffsetBytes(fileBytes, epilogueCsvb, pointer, 8)),
+            //                }, isSamePointer);
+            //                break;
+            //            case EpiloguePointerType.StartPointer:
+            //            case EpiloguePointerType.Image:
+            //            case EpiloguePointerType.Unknown3:
+            //                AddPointer(new EpiloguePointer
+            //                {
+            //                    Type = type,
+            //                    OffsetValue = BitConverter.ToInt32(GetOffsetBytes(fileBytes, epilogueCsvb, pointer, 4)),
+            //                }, isSamePointer);
+            //                break;
+            //            case EpiloguePointerType.Text:
+            //                byte[] textOffsetBytes = GetOffsetBytes(fileBytes, epilogueCsvb, pointer, 8);
 
-                            prologuePointerText.TextLines = GetSingleTextFromFile(epilogueCsvb, fileBytes, BitConverter.ToInt32(new byte[] { textOffsetBytes[0], textOffsetBytes[1], textOffsetBytes[2], textOffsetBytes[3] }));
+            //                EpiloguePointerText prologuePointerText = new EpiloguePointerText
+            //                {
+            //                    Type = type,
+            //                    OffsetValue = BitConverter.ToInt64(textOffsetBytes)
+            //                };
 
-                            AddPointer(prologuePointerText, isSamePointer);
-                            break;
-                        case EpiloguePointerType.TextObjectReference:
-                        case EpiloguePointerType.EndReferenceSub1:
-                        case EpiloguePointerType.Unknown1:
-                        case EpiloguePointerType.StartOfEndReference:
-                            EpiloguePointerTextObjectReference proEpiloguePointerTextObjectReference = new EpiloguePointerTextObjectReference
-                            {
-                                Type = type,
-                                OffsetValue = BitConverter.ToInt64(GetOffsetBytes(fileBytes, epilogueCsvb, pointer, 8))
-                            };
+            //                prologuePointerText.TextLines = GetSingleTextFromFile(epilogueCsvb, fileBytes, BitConverter.ToInt32(new byte[] { textOffsetBytes[0], textOffsetBytes[1], textOffsetBytes[2], textOffsetBytes[3] }));
 
-                            if (proEpiloguePointerTextObjectReference.OffsetValue == -1)
-                            {
-                                AddPointer(proEpiloguePointerTextObjectReference, isSamePointer);
-                                break;
-                            }
+            //                AddPointer(prologuePointerText, isSamePointer);
+            //                break;
+            //            case EpiloguePointerType.TextObjectReference:
+            //            case EpiloguePointerType.EndReferenceSub1:
+            //            case EpiloguePointerType.Unknown1:
+            //            case EpiloguePointerType.StartOfEndReference:
+            //                EpiloguePointerTextObjectReference proEpiloguePointerTextObjectReference = new EpiloguePointerTextObjectReference
+            //                {
+            //                    Type = type,
+            //                    OffsetValue = BitConverter.ToInt64(GetOffsetBytes(fileBytes, epilogueCsvb, pointer, 8))
+            //                };
 
-                            byte[] objectReferenceOneOffsetValueBytes = new byte[4];
-                            Array.Copy(fileBytes, epilogueCsvb.FileSizeWithUnimportantInfo + pointer, objectReferenceOneOffsetValueBytes, 0, 4);
-                            int objectReferenceOneOffsetValue = BitConverter.ToInt32(objectReferenceOneOffsetValueBytes);
+            //                if (proEpiloguePointerTextObjectReference.OffsetValue == -1)
+            //                {
+            //                    AddPointer(proEpiloguePointerTextObjectReference, isSamePointer);
+            //                    break;
+            //                }
 
-                            byte[] objectReferenceTwoOffsetValueBytes = new byte[4];
-                            Array.Copy(fileBytes, epilogueCsvb.FileSizeWithUnimportantInfo + pointer + 4, objectReferenceTwoOffsetValueBytes, 0, 4);
-                            int objectReferenceTwoOffsetValue = BitConverter.ToInt32(objectReferenceTwoOffsetValueBytes);
+            //                byte[] objectReferenceOneOffsetValueBytes = new byte[4];
+            //                Array.Copy(fileBytes, epilogueCsvb.FileSizeWithUnimportantInfo + pointer, objectReferenceOneOffsetValueBytes, 0, 4);
+            //                int objectReferenceOneOffsetValue = BitConverter.ToInt32(objectReferenceOneOffsetValueBytes);
 
-                            proEpiloguePointerTextObjectReference.TextReferences.Add(GetSingleTextFromFile(epilogueCsvb, fileBytes, objectReferenceOneOffsetValue)[0].Text);
+            //                byte[] objectReferenceTwoOffsetValueBytes = new byte[4];
+            //                Array.Copy(fileBytes, epilogueCsvb.FileSizeWithUnimportantInfo + pointer + 4, objectReferenceTwoOffsetValueBytes, 0, 4);
+            //                int objectReferenceTwoOffsetValue = BitConverter.ToInt32(objectReferenceTwoOffsetValueBytes);
 
-                            if (objectReferenceOneOffsetValue != objectReferenceTwoOffsetValue)
-                            {
-                                proEpiloguePointerTextObjectReference.TextReferences.Add(GetSingleTextFromFile(epilogueCsvb, fileBytes, objectReferenceTwoOffsetValue)[0].Text);
-                            }
+            //                proEpiloguePointerTextObjectReference.TextReferences.Add(GetSingleTextFromFile(epilogueCsvb, fileBytes, objectReferenceOneOffsetValue)[0].Text);
 
-                            AddPointer(proEpiloguePointerTextObjectReference, isSamePointer);
-                            break;
-                        default:
-                            throw new ArgumentOutOfRangeException(nameof(type));
-                    }
+            //                if (objectReferenceOneOffsetValue != objectReferenceTwoOffsetValue)
+            //                {
+            //                    proEpiloguePointerTextObjectReference.TextReferences.Add(GetSingleTextFromFile(epilogueCsvb, fileBytes, objectReferenceTwoOffsetValue)[0].Text);
+            //                }
 
-                    lastPointer = pointer;
-                }
+            //                AddPointer(proEpiloguePointerTextObjectReference, isSamePointer);
+            //                break;
+            //            default:
+            //                throw new ArgumentOutOfRangeException(nameof(type));
+            //        }
 
-                return epilogueCsvb;
+            //        lastPointer = pointer;
+            //    }
 
-                void AddPointer(EpiloguePointer epiloguePointer, bool isSamePointer)
-                {
-                    if (isSamePointer)
-                    {
-                        epilogueCsvb.EpiloguePointers.Last().SubPointer.Add(epiloguePointer);
-                        return;
-                    }
+            //    return epilogueCsvb;
 
-                    epilogueCsvb.EpiloguePointers.Add(epiloguePointer);
-                }
-            }
-            catch (Exception e)
-            {
-                throw;
-            }
+            //    void AddPointer(EpiloguePointer epiloguePointer, bool isSamePointer)
+            //    {
+            //        if (isSamePointer)
+            //        {
+            //            epilogueCsvb.EpiloguePointers.Last().SubPointer.Add(epiloguePointer);
+            //            return;
+            //        }
+
+            //        epilogueCsvb.EpiloguePointers.Add(epiloguePointer);
+            //    }
+            //}
+            //catch (Exception e)
+            //{
+            //    throw;
+            //}
         }
 
         private static byte[] GetOffsetBytes(byte[] fileBytes, EpilogueCsvb proEpilogueCsvb, int pointer, int offsetLength)

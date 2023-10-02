@@ -192,12 +192,13 @@ namespace MSG00.Translation.UI.ViewModels
                 return;
             }
 
-            RequirementFile = new RequirementCsvb
-            {
-                FullHeaderSize = 0,
-                HeaderBytes = Array.Empty<byte>(),
-                FileOffsetToAreaBetweenPointerAndTextTable = 0,
-            };
+            throw new NotImplementedException();
+            //RequirementFile = new RequirementCsvb
+            //{
+            //    FullHeaderSize = 0,
+            //    HeaderBytes = Array.Empty<byte>(),
+            //    FileOffsetToAreaBetweenPointerAndTextTable = 0,
+            //};
 
             IsFileLoaded = false;
         }

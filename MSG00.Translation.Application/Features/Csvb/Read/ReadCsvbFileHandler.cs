@@ -1,11 +1,6 @@
 ﻿using Mediator;
 using MSG00.Translation.Domain.Files.Csvb;
 using MSG00.Translation.Infrastructure.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MSG00.Translation.Application.Features.Csvb.Read
 {
