@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33424.131
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MSG00.Translation.UI", "MSG00.Translation.UI\MSG00.Translation.UI\MSG00.Translation.UI.csproj", "{1C90A59A-0E9C-4430-B10B-433222EE7235}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MSG00.Translation.UI", "MSG00.Translation.UI\MSG00.Translation.UI.csproj", "{1C90A59A-0E9C-4430-B10B-433222EE7235}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MSG00.Translation.UI.Desktop", "MSG00.Translation.UI\MSG00.Translation.UI.Desktop\MSG00.Translation.UI.Desktop.csproj", "{EFA76BA6-E4DC-4184-A9BB-17FB6B6E7843}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MSG00.Translation.UI.Desktop", "MSG00.Translation.UI.Desktop\MSG00.Translation.UI.Desktop.csproj", "{EFA76BA6-E4DC-4184-A9BB-17FB6B6E7843}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MSG00.Translation.UI.Browser", "MSG00.Translation.UI\MSG00.Translation.UI.Browser\MSG00.Translation.UI.Browser.csproj", "{050243B1-8359-428D-AB93-882136782258}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MSG00.Translation.UI.Browser", "MSG00.Translation.UI.Browser\MSG00.Translation.UI.Browser.csproj", "{050243B1-8359-428D-AB93-882136782258}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MSG00.Translation.Infrastructure", "MSG00.Translation.Infrastructure\MSG00.Translation.Infrastructure.csproj", "{FB6D50CA-17F5-4257-B534-9C378C189898}"
 EndProject

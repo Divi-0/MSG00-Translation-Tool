@@ -15,7 +15,7 @@ namespace MSG00.Translation.Application.Features.Csvb.Read
 
         public ReadCsvbFileHandler(ICsvbReader csvbReader)
         {
-            this._csvbReader = csvbReader;
+            _csvbReader = csvbReader;
         }
 
         public async ValueTask<CsvbFile> Handle(ReadCsvbFile request, CancellationToken cancellationToken = default)
