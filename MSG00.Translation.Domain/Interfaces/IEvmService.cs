@@ -1,4 +1,6 @@
-﻿using MSG00.Translation.Domain.Evm;
+﻿
+
+using MSG00.Translation.Domain.EvmBase;
 
 namespace MSG00.Translation.Domain.Interfaces
 {

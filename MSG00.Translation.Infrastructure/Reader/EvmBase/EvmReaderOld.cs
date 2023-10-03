@@ -4,7 +4,7 @@ using System.Collections.ObjectModel;
 
 namespace MSG00.Translation.Infrastructure.Reader.EvmBase
 {
-    internal class EvmReader : CsvbMapiReader, IEvmReader
+    internal class EvmReaderOld : CsvbMapiReader
     {
         public async Task<EvmBaseCsvb> ReadAsync(Stream stream)
         {
@@ -100,34 +100,34 @@ namespace MSG00.Translation.Infrastructure.Reader.EvmBase
             return null;
         }
 
-        private ObservableCollection<CsvbTextLine> GetTextFromFile(EvmBaseCsvb evmCsvb, byte[] fileBytes, int offset)
-        {
-            ObservableCollection<CsvbTextLine> conversationTextLines = new ObservableCollection<CsvbTextLine>();
+        //private ObservableCollection<CsvbTextLine> GetTextFromFile(EvmBaseCsvb evmCsvb, byte[] fileBytes, int offset)
+        //{
+        //    ObservableCollection<CsvbTextLine> conversationTextLines = new ObservableCollection<CsvbTextLine>();
 
-            List<byte> textBytes = new List<byte>();
-            for (int i = evmCsvb.FileOffsetToTextTable + offset; fileBytes[i] != 0x00; i++)
-            {
-                if (fileBytes[i] == 0x0A)
-                {
-                    conversationTextLines.Add(new CsvbTextLine
-                    {
-                        Text = _shiftJISEncoding.GetString(textBytes.ToArray())
-                    });
+        //    List<byte> textBytes = new List<byte>();
+        //    for (int i = evmCsvb.FileOffsetToTextTable + offset; fileBytes[i] != 0x00; i++)
+        //    {
+        //        if (fileBytes[i] == 0x0A)
+        //        {
+        //            conversationTextLines.Add(new CsvbTextLine
+        //            {
+        //                Text = _shiftJISEncoding.GetString(textBytes.ToArray())
+        //            });
 
-                    textBytes.Clear();
-                    continue;
-                }
+        //            textBytes.Clear();
+        //            continue;
+        //        }
 
-                textBytes.Add(fileBytes[i]);
-            }
+        //        textBytes.Add(fileBytes[i]);
+        //    }
 
-            //add last line
-            conversationTextLines.Add(new CsvbTextLine
-            {
-                Text = _shiftJISEncoding.GetString(textBytes.ToArray())
-            });
+        //    //add last line
+        //    conversationTextLines.Add(new CsvbTextLine
+        //    {
+        //        Text = _shiftJISEncoding.GetString(textBytes.ToArray())
+        //    });
 
-            return conversationTextLines;
-        }
+        //    return conversationTextLines;
+        //}
     }
 }

@@ -1,19 +1,14 @@
-﻿using MSG00.Translation.Domain.Evm;
+﻿using MSG00.Translation.Domain.EvmBase;
 using MSG00.Translation.Domain.Interfaces;
-using MSG00.Translation.Infrastructure.Reader.Evm;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using MSG00.Translation.Infrastructure.Reader.EvmBase;
 
 namespace MSG00.Translation.Infrastructure.Services
 {
     public class EvmService : IEvmService
     {
-        private readonly IEvmReader _evmReader;
+        private readonly IEvmBaseReader _evmReader;
 
-        public EvmService(IEvmReader evmReader)
+        public EvmService(IEvmBaseReader evmReader)
         {
             _evmReader = evmReader;
         }
@@ -22,7 +17,7 @@ namespace MSG00.Translation.Infrastructure.Services
         {
             try
             {
-                return _evmReader.ReadAsync(stream);
+                return null;
             }
             catch (Exception e)
             {

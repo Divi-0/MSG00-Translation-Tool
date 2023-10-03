@@ -66,10 +66,10 @@ namespace MSG00.Translation.Infrastructure.Reader
             return new CsvbHeader()
             {
                 StaticFirstHeaderBytes = staticFirstHeaderBytes,
-                FileOffsetToAreaBetweenPointerAndTextTable = fileOffsetToAreaBetweenPointerAndTextTableBytes,
-                FileOffsetToTextTable = fileOffsetToTextTableBytes,
+                FileOffsetToAreaBetweenPointerAndTextTable = BitConverter.ToInt32(fileOffsetToAreaBetweenPointerAndTextTableBytes),
+                FileOffsetToTextTable = BitConverter.ToInt32(fileOffsetToTextTableBytes),
                 FileOffsetToAreaBetweenTextAndOffsetTable = fileOffsetToAreaBetweenTextAndOffsetTableBytes,
-                FileOffsetToOffsetTable = fileOffsetToOffsetTableBytes
+                FileOffsetToOffsetTable = BitConverter.ToInt32(fileOffsetToOffsetTableBytes)
             };
         }
 

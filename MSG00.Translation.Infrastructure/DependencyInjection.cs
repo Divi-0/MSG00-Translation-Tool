@@ -5,7 +5,7 @@ using MSG00.Translation.Infrastructure.Interfaces;
 using MSG00.Translation.Infrastructure.Reader;
 using MSG00.Translation.Infrastructure.Reader.Epilogue;
 using MSG00.Translation.Infrastructure.Reader.EtcFgHcmHg;
-using MSG00.Translation.Infrastructure.Reader.Evm;
+using MSG00.Translation.Infrastructure.Reader.EvmBase;
 using MSG00.Translation.Infrastructure.Reader.Prologue;
 using MSG00.Translation.Infrastructure.Reader.Requirement;
 using MSG00.Translation.Infrastructure.Reader.StaffRoll;
@@ -30,7 +30,7 @@ namespace MSG00.Translation.Infrastructure
             services.AddSingleton<IEtcFgHcmHgReader, EtcFgHcmHgReader>();
             services.AddSingleton<IRequirementReader, RequirementReader>();
             services.AddSingleton<IStaffRollReader, StaffRollReader>();
-            services.AddSingleton<IEvmReader, EvmReader>();
+            services.AddSingleton<IEvmBaseReader, EvmBaseReader>();
 
             services.AddSingleton<IPrologueWriter, PrologueWriter>();
             services.AddSingleton<IEpilogueWriter, EpilogueWriter>();
