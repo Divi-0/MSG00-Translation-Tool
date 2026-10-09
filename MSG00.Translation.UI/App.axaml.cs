@@ -3,13 +3,13 @@ using Avalonia.Controls;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
 using Avalonia.Platform.Storage;
-using HotAvalonia;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using MSG00.Translation.Application;
-using MSG00.Translation.Infrastructure;
 using MSG00.Translation.UI.ViewModels;
 using MSG00.Translation.UI.Views;
+using Serilog;
+using Serilog.Events;
 using System;
 
 namespace MSG00.Translation.UI
@@ -21,12 +21,20 @@ namespace MSG00.Translation.UI
 
         public override void Initialize()
         {
-            this.EnableHotReload();
             AvaloniaXamlLoader.Load(this);
         }
 
         public override void OnFrameworkInitializationCompleted()
         {
+            // If we're running inside the XAML designer / previewer, skip runtime-only
+            // initialization (Host, DI, services, etc.). The Avalonia previewer sets
+            // Design.IsDesignMode to true so we can detect that and return early.
+            if (Avalonia.Controls.Design.IsDesignMode)
+            {
+                base.OnFrameworkInitializationCompleted();
+                return;
+            }
+
             IStorageProvider storageProvider = null;
 
             if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
@@ -43,24 +51,19 @@ namespace MSG00.Translation.UI
             }
 
             Host = Microsoft.Extensions.Hosting.Host.CreateDefaultBuilder()
+                .UseSerilog((_, configuration) => configuration
+                    .MinimumLevel.Debug()
+                    .MinimumLevel.Override("Microsoft", LogEventLevel.Warning)
+                    .Enrich.FromLogContext()
+                    .WriteTo.Console(outputTemplate: "[{Timestamp:HH:mm:ss} {Level:u3}] {SourceContext}: {Message:lj}{NewLine}{Exception}"))
                 .ConfigureServices((_, services) =>
                 {
                     services.AddApplicationServices();
-                    services.AddInfrastructureServices();
 
                     services.AddSingleton<IStorageProvider>(storageProvider!);
 
-                    //viewModels
-                    services.AddTransient<WelcomeViewModel>();
-                    services.AddTransient<ConversationCsvbViewModel>();
-                    services.AddTransient<PrologueCsvbViewModel>();
-                    services.AddTransient<EpilogueCsvbViewModel>();
-                    services.AddTransient<EtcCsvbViewModel>();
-                    services.AddTransient<RequirementCsvbViewModel>();
-                    services.AddTransient<StaffRollCsvbViewModel>();
-                    services.AddTransient<EvmCsvbViewModel>();
-
-                    services.AddTransient<CsvbViewModel>();
+                    // the ROM browser; it creates the editors itself for the selected file
+                    services.AddTransient<CsvbSelectViewModel>();
                 })
                 .Build();
 

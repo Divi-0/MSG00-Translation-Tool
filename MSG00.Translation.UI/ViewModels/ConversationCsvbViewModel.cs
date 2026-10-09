@@ -1,311 +1,156 @@
-﻿using Avalonia.Controls;
+using Avalonia.Controls;
 using Avalonia.Platform.Storage;
-using Avalonia.Threading;
 using CommunityToolkit.Mvvm.Input;
 using MsBox.Avalonia;
 using MsBox.Avalonia.Dto;
 using MsBox.Avalonia.Enums;
-using MSG00.Translation.Infrastructure.Domain;
-using MSG00.Translation.Infrastructure.Domain.Conversation;
-using MSG00.Translation.Infrastructure.Domain.Conversation.Enums;
-using MSG00.Translation.Infrastructure.Domain.Interfaces;
-using MSG00.Translation.Infrastructure.Domain.Shared;
-using System;
+using MSG00.Translation.Application.Features.Csvb.Mapi.Conversation;
+using MSG00.Translation.Application.Features.Rom;
+using MSG00.Translation.UI.Models;
+using MSG00.Translation.UI.Services;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace MSG00.Translation.UI.ViewModels
 {
-    public class ConversationCsvbViewModel : ViewModelBase
+    public class ConversationCsvbViewModel : CsvbViewModelBase
     {
-        private readonly IConversationService _conversationService;
-        private readonly IStorageProvider _storageProvider;
+        private readonly ConversationCsvb _conversationCsvb;
+        private readonly IWriter _writer;
+        private readonly IRomService _romService;
+        private readonly string _romPath;
 
-        public ConversationCsvbViewModel(IConversationService conversationService, IStorageProvider storageProvider)
+        public ConversationCsvbViewModel(ConversationCsvb conversationCsvb, IStorageProvider storageProvider, IWriter writer, IRomService romService, string romPath) : base(storageProvider)
         {
-            _conversationService = conversationService;
-            _storageProvider = storageProvider;
+            _conversationCsvb = conversationCsvb;
+            _writer = writer;
+            _romService = romService;
+            _romPath = romPath;
+            RefreshRows();
         }
 
-        public async Task OpenFile()
+        public string RomPath => _romPath;
+
+        private ObservableCollection<ConversationRow> _rows = new();
+        public ObservableCollection<ConversationRow> Rows
         {
-            try
+            get => _rows;
+            private set => SetProperty(ref _rows, value);
+        }
+
+        private void RefreshRows()
+        {
+            Rows = new ObservableCollection<ConversationRow>(ConversationRow.Create(_conversationCsvb));
+            foreach (var entry in TextEntries)
             {
-                IReadOnlyList<IStorageFile> selectFileList = await _storageProvider.OpenFilePickerAsync(new FilePickerOpenOptions
-                {
-                    AllowMultiple = false,
-                    Title = "Select a conversation file",
-                    FileTypeFilter = new List<FilePickerFileType>()
-                    {
-                        new FilePickerFileType("csvb")
-                        {
-                            Patterns = new List<string>()
-                            {
-                                "*.csvb"
-                            }
-                        }
-                    }
-                });
-
-                if (!selectFileList.Any())
-                {
-                    return;
-                }
-
-                ConversationFile = null;
-
-                IsReadingFile = true;
-                IsFileLoaded = true;
-
-                using (Stream stream = await selectFileList[0].OpenReadAsync().ConfigureAwait(false))
-                {
-                    ConversationFile = await _conversationService.GetFile(await selectFileList[0].OpenReadAsync()).ConfigureAwait(false);
-                }
-            }
-            catch (Exception ex)
-            {
-                //MainThread.BeginInvokeOnMainThread(() =>
-                //{
-                //    Application.Current.MainPage.DisplayAlert("Open File Failed", "The file you tried to open occured an error.", "Ok");
-                //});
-
-                IsFileLoaded = false;
-            }
-            finally
-            {
-                IsReadingFile = false;
+                entry.CanRemove = _conversationCsvb.CanRemove(entry.Pointer);
+                entry.AddBoxCommand = new RelayCommand(() => AddBox(entry));
+                entry.SplitCommand = new RelayCommand(() => Split(entry));
+                entry.RemoveCommand = new RelayCommand(() => Remove(entry));
             }
         }
 
-        public async Task Save()
+        private void AddBox(ConversationTextEntry entry)
         {
-            try
-            {
-                IsSaving = true;
-
-                //if (!ValidateEntries())
-                //{
-                //    return;
-                //}
-
-                IStorageFile? storageFile = await _storageProvider.SaveFilePickerAsync(new FilePickerSaveOptions
-                {
-                    DefaultExtension = "csvb",
-                    ShowOverwritePrompt = true,
-                    FileTypeChoices = new List<FilePickerFileType>()
-                    {
-                        new FilePickerFileType("csvb")
-                        {
-                            Patterns = new List<string>
-                            {
-                                "*.csvb"
-                            }
-                        }
-                    }
-                }).ConfigureAwait(false);
-
-                if (storageFile == null)
-                {
-                    return;
-                }
-
-                using (Stream stream = await storageFile.OpenWriteAsync().ConfigureAwait(false))
-                {
-                    await _conversationService.SaveFile(stream, ConversationFile!).ConfigureAwait(false);
-                }
-
-                Dispatcher.UIThread.Post(async () =>
-                {
-                    var dialog = MessageBoxManager.GetMessageBoxStandard(new MessageBoxStandardParams
-                    {
-                        ContentTitle = "Save",
-                        ContentMessage = "File saved.",
-                        ButtonDefinitions = ButtonEnum.Ok,
-                        WindowStartupLocation = WindowStartupLocation.CenterOwner
-                    });
-
-                    await dialog.ShowAsync().ConfigureAwait(false);
-                });
-            }
-            catch (Exception e)
-            {
-                //MainThread.BeginInvokeOnMainThread(() =>
-                //{
-                //    Application.Current.MainPage.DisplayAlert("Error", e.ToString(), "Ok");
-                //});
-            }
-            finally
-            {
-                IsSaving = false;
-            }
+            _conversationCsvb.InsertTextAfter(entry.Pointer, string.Empty);
+            RefreshRows();
         }
 
-        private bool ValidateEntries()
+        /// <summary>
+        /// Keeps the first lines that fit into the box and moves the rest into a new box after it.
+        /// </summary>
+        private void Split(ConversationTextEntry entry)
         {
-            StringBuilder stringBuilder = new StringBuilder();
-
-            //foreach (ConversationTextConversation textConversation in ConversationFile.Conversations)
-            //{
-            //    foreach (ConversationTextBox textBox in textConversation.TextBoxes)
-            //    {
-            //        foreach (ConversationTextLine line in textBox.Lines)
-            //        {
-            //            ValidationResult result = _validator.Validate(line);
-
-            //            if (!result.IsValid)
-            //            {
-            //                foreach (ValidationFailure failure in result.Errors)
-            //                {
-            //                    stringBuilder.AppendLine($"{failure.AttemptedValue}: {failure.ErrorMessage}");
-            //                }
-            //            }
-            //        }
-            //    }
-            //}
-
-            if (stringBuilder.Length == 0)
+            var lines = entry.Text.Split('\n');
+            if (lines.Length <= ConversationTextEntry.MaxLines)
             {
-                return true;
-            }
-
-            //MainThread.BeginInvokeOnMainThread(() =>
-            //{
-            //    Application.Current.MainPage.DisplayAlert("Validation Failed", stringBuilder.ToString(), "Ok");
-            //});
-
-            return false;
-        }
-
-        private async Task AddNewLineToTextBox(ConversationPointerText? conversationPointerText)
-        {
-            ArgumentNullException.ThrowIfNull(conversationPointerText, nameof(conversationPointerText));
-
-            if (conversationPointerText.Lines.Count == 3)
-            {
-                Dispatcher.UIThread.Post(async () =>
-                {
-                    var dialog = MessageBoxManager.GetMessageBoxStandard(new MessageBoxStandardParams
-                    {
-                        ContentTitle = "Maximum lines",
-                        ContentMessage = "A Textbox can not have more than 3 lines",
-                        ButtonDefinitions = ButtonEnum.Ok,
-                        WindowStartupLocation = WindowStartupLocation.CenterOwner
-                    });
-
-                    await dialog.ShowAsync();
-                });
-
                 return;
             }
 
-            conversationPointerText.Lines.Add(new CsvbTextLine
-            {
-                Text = string.Empty
-            });
+            entry.Text = string.Join("\n", lines.Take(ConversationTextEntry.MaxLines));
+            _conversationCsvb.InsertTextAfter(entry.Pointer, string.Join("\n", lines.Skip(ConversationTextEntry.MaxLines)));
+            RefreshRows();
         }
 
-        private void AddNewTextBox(ConversationPointerCharacter? conversationPointer)
+        private void Remove(ConversationTextEntry entry)
         {
-            ArgumentNullException.ThrowIfNull(conversationPointer, nameof(conversationPointer));
+            _conversationCsvb.Remove(entry.Pointer);
+            RefreshRows();
+        }
 
-            conversationPointer.TextBoxes.Add(new ConversationPointerText
+        private IEnumerable<ConversationTextEntry> TextEntries => Rows.OfType<ConversationTextEntry>();
+
+        /// <summary>
+        /// Writes the csvb into the ROM kept in memory; "Save ROM as" writes the new .nds.
+        /// </summary>
+        protected override async Task SaveAsync()
+        {
+            using var stream = new MemoryStream();
+            await _writer.WriteFileAsync(stream, _conversationCsvb);
+            _romService.ReplaceFile(_romPath, stream.ToArray());
+
+            await ShowMessageAsync("Applied", $"{_romPath} was updated in the opened ROM.\nUse \"Save ROM as\" to write a new .nds file.");
+        }
+
+        private async Task ExportAsync()
+        {
+            // speaker is exported for context only, import uses the order of the texts
+            string? speaker = null;
+            var texts = new List<ConversationTextJson>();
+            foreach (var row in Rows)
             {
-                Type = ConversationPointerType.Text,
-                OffsetValue = 0,
-                Title = conversationPointer.TextBoxes[0].Title,
-                ItemLifeTime = ConversationItemLifeTime.New,
-                Lines = new ObservableCollection<CsvbTextLine>
+                switch (row)
                 {
-                    new CsvbTextLine
-                    {
-                        Text = string.Empty,
-                    }
+                    case ConversationSpeakerRow speakerRow:
+                        speaker = speakerRow.Name;
+                        break;
+                    case ConversationTextEntry text:
+                        texts.Add(new ConversationTextJson(speaker, text.Kind, text.Text));
+                        break;
                 }
-            });
+            }
+
+            await JsonTextFile.ExportAsync(StorageProvider, $"{Path.GetFileNameWithoutExtension(_romPath)}.json", texts);
         }
 
-        private void AddNewTextBoxInfront(ConversationPointerTextWithYesNo? conversationPointerTextWithYesNo)
+        private async Task ImportAsync()
         {
-            ArgumentNullException.ThrowIfNull(conversationPointerTextWithYesNo, nameof(conversationPointerTextWithYesNo));
-
-            int index = (ConversationFile!.PointerTable[0]).TextBoxes.ToList().FindIndex(x => x.Equals(conversationPointerTextWithYesNo));
-
-            (ConversationFile.PointerTable[0]).TextBoxes.Insert(index, new ConversationPointerText
+            if (await JsonTextFile.ImportAsync<ConversationTextJson>(StorageProvider) is not { } imported)
             {
-                Type = ConversationPointerType.Text,
-                OffsetValue = 0,
-                Title = (ConversationFile.PointerTable[0]).TextBoxes[index - 1].Title,
-                ItemLifeTime = ConversationItemLifeTime.New,
-                Lines = new ObservableCollection<CsvbTextLine>
-                {
-                    new CsvbTextLine
-                    {
-                        Text = string.Empty,
-                    }
-                }
-            });
+                return;
+            }
+
+            var entries = TextEntries.ToList();
+
+            if (imported.Length != entries.Count)
+            {
+                await ShowMessageAsync("Import", $"The file has {imported.Length} texts, this conversation has {entries.Count}. Texts are applied in order as far as possible.");
+            }
+
+            foreach (var (entry, text) in entries.Zip(imported))
+            {
+                entry.Text = text.Text;
+            }
         }
 
-        private async Task CloseFile()
+        public new ICommand ExportCommand => new AsyncRelayCommand(ExportAsync);
+        public new ICommand ImportCommand => new AsyncRelayCommand(ImportAsync);
+
+        private static async Task ShowMessageAsync(string title, string message)
         {
-            var dialog = MessageBoxManager.GetMessageBoxStandard(new MessageBoxStandardParams
+            await MessageBoxManager.GetMessageBoxStandard(new MessageBoxStandardParams
             {
-                ContentTitle = "Close Conversation",
-                ContentMessage = "Are you sure, you want to close the conversation file?",
-                ButtonDefinitions = ButtonEnum.YesNo,
+                ContentTitle = title,
+                ContentMessage = message,
+                ButtonDefinitions = ButtonEnum.Ok,
                 WindowStartupLocation = WindowStartupLocation.CenterOwner
-            });
-
-            ButtonResult buttonResult = await dialog.ShowAsync().ConfigureAwait(false);
-
-            if (buttonResult == ButtonResult.No)
-            {
-                return;
-            }
-
-            ConversationFile = null;
-
-            IsFileLoaded = false;
+            }).ShowAsync();
         }
 
-        public ICommand OpenFileCommand => new AsyncRelayCommand(OpenFile);
-        public ICommand SaveCommand => new AsyncRelayCommand(Save);
-        public ICommand AddLineCommand => new AsyncRelayCommand<ConversationPointerText>(AddNewLineToTextBox);
-        public ICommand AddTextBoxCommand => new RelayCommand<ConversationPointerCharacter>(AddNewTextBox);
-        public ICommand AddTextBoxInfrontCommand => new RelayCommand<ConversationPointerTextWithYesNo>(AddNewTextBoxInfront);
-        public ICommand CloseFileCommand => new AsyncRelayCommand(CloseFile);
-
-        private ConversationCsvb? _conversationFile;
-        public ConversationCsvb? ConversationFile
-        {
-            get => _conversationFile;
-            set => SetProperty(ref _conversationFile, value);
-        }
-
-        private bool _isReadingFile;
-        public bool IsReadingFile
-        {
-            get => _isReadingFile;
-            set => SetProperty(ref _isReadingFile, value);
-        }
-
-        private bool _isFileLoaded;
-        public bool IsFileLoaded
-        {
-            get => _isFileLoaded;
-            set => SetProperty(ref _isFileLoaded, value);
-        }
-
-        private bool _isSaving;
-        public bool IsSaving
-        {
-            get => _isSaving;
-            set => SetProperty(ref _isSaving, value);
-        }
+        private sealed record ConversationTextJson(string? Speaker, string Kind, string Text);
     }
 }

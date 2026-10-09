@@ -1,0 +1,11 @@
+using Avalonia.Controls;
+
+namespace MSG00.Translation.UI.Views;
+
+public partial class TableCsvbView : UserControl
+{
+    public TableCsvbView()
+    {
+        InitializeComponent();
+    }
+}

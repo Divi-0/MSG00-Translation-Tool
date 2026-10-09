@@ -1,310 +1,109 @@
-﻿using Avalonia.Controls;
+using Avalonia.Controls;
 using Avalonia.Platform.Storage;
-using Avalonia.Threading;
 using CommunityToolkit.Mvvm.Input;
+using Mediator;
 using MsBox.Avalonia;
+using MsBox.Avalonia.Dto;
 using MsBox.Avalonia.Enums;
-using MSG00.Translation.Domain.EvmBase;
-using MSG00.Translation.Domain.Interfaces;
-using MSG00.Translation.Infrastructure.Domain.Conversation;
-using MSG00.Translation.Infrastructure.Domain.Conversation.Enums;
-using MSG00.Translation.Infrastructure.Domain.Shared;
-using System;
-using System.Collections.Generic;
+using MSG00.Translation.Application.Features.Csvb.EvmBase;
+using MSG00.Translation.Application.Features.Csvb.EvmBase.Write;
+using MSG00.Translation.Application.Features.Rom;
+using MSG00.Translation.UI.Models;
+using MSG00.Translation.UI.Services;
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Input;
+using ICommand = System.Windows.Input.ICommand;
 
 namespace MSG00.Translation.UI.ViewModels
 {
+    /// <summary>
+    /// Edits the messages (EV_SEQ command 0x67) of a mission script (Ev/**/EVM_*.csvb).
+    /// </summary>
     public class EvmCsvbViewModel : ViewModelBase
     {
-        private readonly IEvmService _evmService;
+        private readonly EvmBaseCsvb _evmBaseCsvb;
         private readonly IStorageProvider _storageProvider;
+        private readonly IMediator _mediator;
+        private readonly IRomService _romService;
+        private readonly string _romPath;
 
-        public EvmCsvbViewModel(IEvmService evmService, IStorageProvider storageProvider)
+        public EvmCsvbViewModel(EvmBaseCsvb evmBaseCsvb, IStorageProvider storageProvider, IMediator mediator, IRomService romService, string romPath)
         {
-            _evmService = evmService;
+            _evmBaseCsvb = evmBaseCsvb;
             _storageProvider = storageProvider;
+            _mediator = mediator;
+            _romService = romService;
+            _romPath = romPath;
+
+            Rows = new ObservableCollection<EvmMessageRow>(EvmMessages.Find(evmBaseCsvb)
+                .Select(x => new EvmMessageRow(x, EvmMessages.OriginalText(evmBaseCsvb, x.TextOffset))));
         }
 
-        public async Task OpenFile()
+        public ObservableCollection<EvmMessageRow> Rows { get; }
+
+        /// <summary>e.g. EVM_UNI013/014: the mission shows only cut-ins (Cut/CUTIN.fcmd), the script has no text</summary>
+        public bool HasNoMessages => Rows.Count == 0;
+
+        public ICommand SaveCommand => new AsyncRelayCommand(ApplyAsync);
+
+        public ICommand ExportCommand => new AsyncRelayCommand(ExportAsync);
+
+        public ICommand ImportCommand => new AsyncRelayCommand(ImportAsync);
+
+        /// <summary>
+        /// Writes the csvb into the ROM kept in memory; "Save ROM as" writes the new .nds.
+        /// </summary>
+        private async Task ApplyAsync()
         {
-            try
-            {
-                IReadOnlyList<IStorageFile> selectFileList = await _storageProvider.OpenFilePickerAsync(new FilePickerOpenOptions
-                {
-                    AllowMultiple = false,
-                    Title = "Select a evm file",
-                    FileTypeFilter = new List<FilePickerFileType>()
-                    {
-                        new FilePickerFileType("csvb")
-                        {
-                            Patterns = new List<string>()
-                            {
-                                "*.csvb"
-                            }
-                        }
-                    }
-                });
+            var bytes = await _mediator.Send(new WriteEvmBase(_evmBaseCsvb));
+            _romService.ReplaceFile(_romPath, bytes);
 
-                if (!selectFileList.Any())
-                {
-                    return;
-                }
-
-                EvmFile = null;
-
-                IsReadingFile = true;
-                IsFileLoaded = true;
-
-                using (Stream stream = await selectFileList[0].OpenReadAsync().ConfigureAwait(false))
-                {
-                    EvmFile = await _evmService.GetEvmAsync(await selectFileList[0].OpenReadAsync()).ConfigureAwait(false);
-                }
-            }
-            catch (Exception ex)
-            {
-                //MainThread.BeginInvokeOnMainThread(() =>
-                //{
-                //    Application.Current.MainPage.DisplayAlert("Open File Failed", "The file you tried to open occured an error.", "Ok");
-                //});
-
-                IsFileLoaded = false;
-            }
-            finally
-            {
-                IsReadingFile = false;
-            }
+            await ShowMessageAsync("Applied", $"{_romPath} was updated in the opened ROM.\nUse \"Save ROM as\" to write a new .nds file.");
         }
 
-        public async Task Save()
+        private async Task ExportAsync()
         {
-            try
-            {
-                IsSaving = true;
-
-                //if (!ValidateEntries())
-                //{
-                //    return;
-                //}
-
-                IStorageFile? storageFile = await _storageProvider.SaveFilePickerAsync(new FilePickerSaveOptions
-                {
-                    DefaultExtension = "csvb",
-                    ShowOverwritePrompt = true,
-                    FileTypeChoices = new List<FilePickerFileType>()
-                    {
-                        new FilePickerFileType("csvb")
-                        {
-                            Patterns = new List<string>
-                            {
-                                "*.csvb"
-                            }
-                        }
-                    }
-                }).ConfigureAwait(false);
-
-                if (storageFile == null)
-                {
-                    return;
-                }
-
-                using (Stream stream = await storageFile.OpenWriteAsync().ConfigureAwait(false))
-                {
-                   // await _conversationService.SaveFile(stream, EvmFile!).ConfigureAwait(false);
-                }
-
-                Dispatcher.UIThread.Post(async () =>
-                {
-                    var dialog = MessageBoxManager.GetMessageBoxStandard(new MsBox.Avalonia.Dto.MessageBoxStandardParams
-                    {
-                        ContentTitle = "Save",
-                        ContentMessage = "File saved.",
-                        ButtonDefinitions = MsBox.Avalonia.Enums.ButtonEnum.Ok,
-                        WindowStartupLocation = WindowStartupLocation.CenterOwner
-                    });
-
-                    await dialog.ShowAsync().ConfigureAwait(false);
-                });
-            }
-            catch (Exception e)
-            {
-                //MainThread.BeginInvokeOnMainThread(() =>
-                //{
-                //    Application.Current.MainPage.DisplayAlert("Error", e.ToString(), "Ok");
-                //});
-            }
-            finally
-            {
-                IsSaving = false;
-            }
+            var texts = Rows.Select(x => new EvmTextJson(x.Message.Index, x.Message.Kind.ToString(), x.Original, x.Text)).ToList();
+            await JsonTextFile.ExportAsync(_storageProvider, $"{Path.GetFileNameWithoutExtension(_romPath)}.json", texts);
         }
 
-        private bool ValidateEntries()
+        /// <summary>
+        /// Applies texts by their EV_SEQ row, so the order in the file does not matter.
+        /// </summary>
+        private async Task ImportAsync()
         {
-            StringBuilder stringBuilder = new StringBuilder();
-
-            //foreach (ConversationTextConversation textConversation in ConversationFile.Conversations)
-            //{
-            //    foreach (ConversationTextBox textBox in textConversation.TextBoxes)
-            //    {
-            //        foreach (ConversationTextLine line in textBox.Lines)
-            //        {
-            //            ValidationResult result = _validator.Validate(line);
-
-            //            if (!result.IsValid)
-            //            {
-            //                foreach (ValidationFailure failure in result.Errors)
-            //                {
-            //                    stringBuilder.AppendLine($"{failure.AttemptedValue}: {failure.ErrorMessage}");
-            //                }
-            //            }
-            //        }
-            //    }
-            //}
-
-            if (stringBuilder.Length == 0)
+            if (await JsonTextFile.ImportAsync<EvmTextJson>(_storageProvider) is not { } imported)
             {
-                return true;
-            }
-
-            //MainThread.BeginInvokeOnMainThread(() =>
-            //{
-            //    Application.Current.MainPage.DisplayAlert("Validation Failed", stringBuilder.ToString(), "Ok");
-            //});
-
-            return false;
-        }
-
-        private async Task AddNewLineToTextBox(ConversationPointerText? conversationPointerText)
-        {
-            ArgumentNullException.ThrowIfNull(conversationPointerText, nameof(conversationPointerText));
-
-            if (conversationPointerText.Lines.Count == 3)
-            {
-                Dispatcher.UIThread.Post(async () =>
-                {
-                    var dialog = MessageBoxManager.GetMessageBoxStandard(new MsBox.Avalonia.Dto.MessageBoxStandardParams
-                    {
-                        ContentTitle = "Maximum lines",
-                        ContentMessage = "A Textbox can not have more than 3 lines",
-                        ButtonDefinitions = MsBox.Avalonia.Enums.ButtonEnum.Ok,
-                        WindowStartupLocation = WindowStartupLocation.CenterOwner
-                    });
-
-                    await dialog.ShowAsync();
-                });
-
                 return;
             }
 
-            conversationPointerText.Lines.Add(new CsvbTextLine
+            var rows = Rows.ToDictionary(x => x.Message.Index);
+            var unknown = imported.Where(x => !rows.ContainsKey(x.Index)).ToList();
+            foreach (var text in imported.Where(x => rows.ContainsKey(x.Index)))
             {
-                Text = string.Empty
-            });
+                rows[text.Index].Text = text.Text;
+            }
+
+            if (unknown.Count > 0)
+            {
+                await ShowMessageAsync("Import", $"{unknown.Count} texts are not messages of this file and were skipped: " + string.Join(", ", unknown.Select(x => $"#{x.Index}")));
+            }
         }
 
-        private void AddNewTextBox(ConversationPointerCharacter? conversationPointer)
+        private static async Task ShowMessageAsync(string title, string message)
         {
-            ArgumentNullException.ThrowIfNull(conversationPointer, nameof(conversationPointer));
-
-            conversationPointer.TextBoxes.Add(new ConversationPointerText
+            await MessageBoxManager.GetMessageBoxStandard(new MessageBoxStandardParams
             {
-                Type = ConversationPointerType.Text,
-                OffsetValue = 0,
-                Title = conversationPointer.TextBoxes[0].Title,
-                ItemLifeTime = ConversationItemLifeTime.New,
-                Lines = new ObservableCollection<CsvbTextLine>
-                {
-                    new CsvbTextLine
-                    {
-                        Text = string.Empty,
-                    }
-                }
-            });
-        }
-
-        private void AddNewTextBoxInfront(ConversationPointerTextWithYesNo? conversationPointerTextWithYesNo)
-        {
-            ArgumentNullException.ThrowIfNull(conversationPointerTextWithYesNo, nameof(conversationPointerTextWithYesNo));
-
-            //int index = (EvmFile!.PointerTable[0]).TextBoxes.ToList().FindIndex(x => x.Equals(conversationPointerTextWithYesNo));
-
-            //(EvmFile.PointerTable[0]).TextBoxes.Insert(index, new ConversationPointerText
-            //{
-            //    Type = ConversationPointerType.Text,
-            //    OffsetValue = 0,
-            //    Title = (EvmFile.PointerTable[0]).TextBoxes[index - 1].Title,
-            //    ItemLifeTime = ConversationItemLifeTime.New,
-            //    Lines = new ObservableCollection<CsvbTextLine>
-            //    {
-            //        new CsvbTextLine
-            //        {
-            //            Text = string.Empty,
-            //        }
-            //    }
-            //});
-        }
-
-        private async Task CloseFile()
-        {
-            var dialog = MessageBoxManager.GetMessageBoxStandard(new MsBox.Avalonia.Dto.MessageBoxStandardParams
-            {
-                ContentTitle = "Close Conversation",
-                ContentMessage = "Are you sure, you want to close the conversation file?",
-                ButtonDefinitions = MsBox.Avalonia.Enums.ButtonEnum.YesNo,
+                ContentTitle = title,
+                ContentMessage = message,
+                ButtonDefinitions = ButtonEnum.Ok,
                 WindowStartupLocation = WindowStartupLocation.CenterOwner
-            });
-
-            ButtonResult buttonResult = await dialog.ShowAsync().ConfigureAwait(false);
-
-            if (buttonResult == ButtonResult.No)
-            {
-                return;
-            }
-
-            EvmFile = null;
-
-            IsFileLoaded = false;
+            }).ShowAsync();
         }
 
-        public ICommand OpenFileCommand => new AsyncRelayCommand(OpenFile);
-        public ICommand SaveCommand => new AsyncRelayCommand(Save);
-        public ICommand AddLineCommand => new AsyncRelayCommand<ConversationPointerText>(AddNewLineToTextBox);
-        public ICommand AddTextBoxCommand => new RelayCommand<ConversationPointerCharacter>(AddNewTextBox);
-        public ICommand AddTextBoxInfrontCommand => new RelayCommand<ConversationPointerTextWithYesNo>(AddNewTextBoxInfront);
-        public ICommand CloseFileCommand => new AsyncRelayCommand(CloseFile);
-
-        private EvmBaseCsvb? _evmFile;
-        public EvmBaseCsvb? EvmFile
-        {
-            get => _evmFile;
-            set => SetProperty(ref _evmFile, value);
-        }
-
-        private bool _isReadingFile;
-        public bool IsReadingFile
-        {
-            get => _isReadingFile;
-            set => SetProperty(ref _isReadingFile, value);
-        }
-
-        private bool _isFileLoaded;
-        public bool IsFileLoaded
-        {
-            get => _isFileLoaded;
-            set => SetProperty(ref _isFileLoaded, value);
-        }
-
-        private bool _isSaving;
-        public bool IsSaving
-        {
-            get => _isSaving;
-            set => SetProperty(ref _isSaving, value);
-        }
+        /// <param name="Index">EV_SEQ row, identifies the message on import</param>
+        private sealed record EvmTextJson(int Index, string Kind, string Original, string Text);
     }
 }

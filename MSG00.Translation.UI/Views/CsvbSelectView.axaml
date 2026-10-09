@@ -1,0 +1,50 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:vm="using:MSG00.Translation.UI.ViewModels"
+			 xmlns:models="using:MSG00.Translation.UI.Models"
+			 xmlns:rom="using:MSG00.Translation.Application.Features.Rom"
+			 mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="MSG00.Translation.UI.Views.CsvbSelectView"
+			 x:DataType="vm:CsvbSelectViewModel">
+	<Grid RowDefinitions="auto, *" ColumnDefinitions="260, *">
+		<StackPanel Grid.Row="0" Grid.ColumnSpan="2" Orientation="Horizontal" Spacing="8" Margin="8">
+			<Button Command="{Binding OpenRomCommand}">Open ROM</Button>
+			<Button Command="{Binding SaveRomAsCommand}" IsEnabled="{Binding IsRomOpen, Mode=OneWay}">Save ROM as…</Button>
+			<TextBlock Text="{Binding RomTitle, Mode=OneWay}" VerticalAlignment="Center"/>
+		</StackPanel>
+
+		<TreeView Grid.Row="1" Grid.Column="0"
+				  ItemsSource="{Binding Categories, Mode=OneWay}"
+				  SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
+				  IsVisible="{Binding IsRomOpen, Mode=OneWay}">
+			<TreeView.DataTemplates>
+				<TreeDataTemplate DataType="models:RomCategory" ItemsSource="{Binding Files}">
+					<TextBlock Text="{Binding Header}" FontWeight="SemiBold"/>
+				</TreeDataTemplate>
+				<DataTemplate DataType="rom:RomFile">
+					<TextBlock Text="{Binding Name}" ToolTip.Tip="{Binding Path}"/>
+				</DataTemplate>
+			</TreeView.DataTemplates>
+		</TreeView>
+
+		<TransitioningContentControl Grid.Row="1" Grid.Column="1" Content="{Binding CurrentView, Mode=OneWay}">
+			<TransitioningContentControl.PageTransition>
+				<PageSlide Duration="00:00:00.4">
+					<PageSlide.SlideInEasing>
+						<CircularEaseInOut></CircularEaseInOut>
+					</PageSlide.SlideInEasing>
+				</PageSlide>
+			</TransitioningContentControl.PageTransition>
+		</TransitioningContentControl>
+
+		<!-- shown when opening a file takes longer than 0.5 s -->
+		<Border Grid.Row="1" Grid.Column="1" Background="#80000000" IsVisible="{Binding IsLoading, Mode=OneWay}">
+			<StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="8">
+				<ProgressBar IsIndeterminate="True" Width="200"/>
+				<TextBlock Text="Loading…" Foreground="White" HorizontalAlignment="Center"/>
+			</StackPanel>
+		</Border>
+	</Grid>
+</UserControl>

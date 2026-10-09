@@ -1,0 +1,42 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:vm="using:MSG00.Translation.UI.ViewModels"
+			 xmlns:models="using:MSG00.Translation.UI.Models"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+			 x:DataType="vm:ProgramTextsViewModel"
+             x:Class="MSG00.Translation.UI.Views.ProgramTextsView">
+	<Grid RowDefinitions="auto, *, auto">
+		<TextBlock Grid.Row="0" Margin="12,12,12,0" TextWrapping="Wrap"
+				   Text="These texts are part of the game program and are replaced in place: each text must fit into the bytes of the original."/>
+		<ScrollViewer Grid.Row="1">
+			<ItemsControl ItemsSource="{Binding Rows, Mode=OneWay}" Margin="12">
+				<ItemsControl.ItemsPanel>
+					<ItemsPanelTemplate>
+						<StackPanel Orientation="Vertical" Spacing="8"/>
+					</ItemsPanelTemplate>
+				</ItemsControl.ItemsPanel>
+				<ItemsControl.ItemTemplate>
+					<DataTemplate DataType="models:ProgramTextRow">
+						<Grid ColumnDefinitions="240, 200, 260, auto, auto" ColumnSpacing="8">
+							<TextBlock Grid.Column="0" Text="{Binding Label}" VerticalAlignment="Center"/>
+							<TextBlock Grid.Column="1" Text="{Binding Japanese}" VerticalAlignment="Center" Foreground="Gray"/>
+							<TextBox Grid.Column="2" Text="{Binding Text, Mode=TwoWay}" AcceptsReturn="True" FontFamily="Consolas, Courier New, monospace" Foreground="Black"/>
+							<TextBlock Grid.Column="3" Text="{Binding Usage, Mode=OneWay}" VerticalAlignment="Center"/>
+							<StackPanel Grid.Column="4" Orientation="Vertical" VerticalAlignment="Center">
+								<TextBlock Text="too long" Foreground="Red" IsVisible="{Binding IsTooLong, Mode=OneWay}"/>
+								<TextBlock Text="{Binding PlaceholderWarning, Mode=OneWay}" Foreground="Red" IsVisible="{Binding HasPlaceholderWarning, Mode=OneWay}"/>
+							</StackPanel>
+						</Grid>
+					</DataTemplate>
+				</ItemsControl.ItemTemplate>
+			</ItemsControl>
+		</ScrollViewer>
+		<StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Spacing="4">
+			<Button Command="{Binding ExportCommand}">Export</Button>
+			<Button Command="{Binding ImportCommand}">Import</Button>
+			<Button Command="{Binding SaveCommand}">Apply to ROM</Button>
+		</StackPanel>
+	</Grid>
+</UserControl>

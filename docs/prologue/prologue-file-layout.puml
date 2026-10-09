@@ -1,0 +1,46 @@
+@startuml
+title Prologue.csvb layout (MAPI type 0x0A)
+
+map "CSVB header 0x00" as csvb {
+  0x00 => "CSVBv4.3" 01 00 00 00
+  0x0C => OffsetToEndOfPointerTable
+  0x10 => OffsetToEndOfFullHeader
+  0x14 => OffsetToEndOfTextTable
+  0x18 => OffsetToEndOfExtraTable
+}
+
+map "MAPI header 0x20 (48 bytes)" as mapi {
+  0x20 => "MAPI" 00 00 00 00
+  0x4C => MapiType (0x0A = Prologue/Epilogue)
+}
+
+map "Pointer table 0x50" as pointers {
+  entry => int32 slot offset, int32 type
+  same slot offset => one group (SubPointer)
+  end => 02 00 00 00 02 00 00 00 (once)
+}
+
+map "Text table (OffsetToEndOfFullHeader)" as texts {
+  start => 00 00 00 00
+  strings => Shift-JIS, NUL-terminated, 4-byte padded
+}
+
+map "Extra section" as extra {
+  content => copied verbatim
+}
+
+map "Offset table (OffsetToEndOfExtraTable)" as slots {
+  Image / StartPointer / 0x0C => 4 bytes
+  all other types => 8 bytes (lo, hi)
+  Text => lo = text offset, hi = 90 - 6 * lines
+  references => two text offsets (e.g. pro_02, pro_02_obj)
+}
+
+csvb -down-> mapi
+mapi -down-> pointers
+pointers -down-> texts
+texts -down-> extra
+extra -down-> slots
+pointers::entry ..> slots : slot offset
+slots::Text ..> texts : relative to OffsetToEndOfFullHeader
+@enduml

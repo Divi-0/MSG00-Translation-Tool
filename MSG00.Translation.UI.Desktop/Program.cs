@@ -1,6 +1,6 @@
 ﻿using Avalonia;
-using Avalonia.ReactiveUI;
 using System;
+using ReactiveUI.Avalonia;
 
 namespace MSG00.Translation.UI.Desktop
 {
@@ -18,6 +18,7 @@ namespace MSG00.Translation.UI.Desktop
             => AppBuilder.Configure<App>()
                 .UsePlatformDetect()
                 .LogToTrace()
-                .UseReactiveUI();
+                .UseReactiveUI(_ => {})
+                .RegisterReactiveUIViewsFromEntryAssembly();
     }
 }

@@ -1,0 +1,33 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:vm="using:MSG00.Translation.UI.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+			 x:DataType="vm:GraphicsViewModel"
+             x:Class="MSG00.Translation.UI.Views.GraphicsView">
+	<Grid RowDefinitions="*, auto" ColumnDefinitions="240, *">
+		<TextBlock Grid.Row="0" Grid.ColumnSpan="2" Margin="12" TextWrapping="Wrap" IsVisible="{Binding HasNoItems, Mode=OneTime}"
+				   Text="This archive has no backgrounds (NSCR) or sprites (NCER) that can be edited."/>
+		<ListBox Grid.Row="0" Grid.Column="0" Margin="12" ItemsSource="{Binding Items, Mode=OneWay}" SelectedItem="{Binding SelectedItem, Mode=TwoWay}">
+			<ListBox.ItemTemplate>
+				<DataTemplate DataType="vm:GraphicsItem">
+					<TextBlock Text="{Binding Label}"/>
+				</DataTemplate>
+			</ListBox.ItemTemplate>
+		</ListBox>
+		<StackPanel Grid.Row="0" Grid.Column="1" Margin="12" Spacing="8">
+			<Border Background="#202020" HorizontalAlignment="Left">
+				<Image Source="{Binding Preview, Mode=OneWay}" MaxWidth="768" MaxHeight="512" Stretch="Uniform" StretchDirection="Both" RenderOptions.BitmapInterpolationMode="None"/>
+			</Border>
+			<TextBlock Text="{Binding Info, Mode=OneWay}" Foreground="Gray" TextWrapping="Wrap"/>
+			<TextBlock Foreground="Gray" TextWrapping="Wrap"
+					   Text="Edit the exported PNG in an image editor and keep its size. Imported colors are matched to the original palette; transparent pixels stay transparent. Sprites drawn on top in the game (icons, bars) are not part of a background."/>
+		</StackPanel>
+		<StackPanel Grid.Row="1" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Center" Spacing="4">
+			<Button Command="{Binding ExportCommand}">Export PNG</Button>
+			<Button Command="{Binding ImportCommand}">Import PNG</Button>
+			<Button Command="{Binding SaveCommand}">Apply to ROM</Button>
+		</StackPanel>
+	</Grid>
+</UserControl>

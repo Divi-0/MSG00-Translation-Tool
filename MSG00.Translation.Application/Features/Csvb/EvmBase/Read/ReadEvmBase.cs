@@ -1,6 +1,6 @@
-﻿using Mediator;
-using MSG00.Translation.Domain.EvmBase;
-using MSG00.Translation.Domain.Files.Csvb;
+using Mediator;
+using MSG00.Translation.Application.Features.Csvb.EvmBase;
+using MSG00.Translation.Application.Features.Csvb;
 
 namespace MSG00.Translation.Application.Features.Csvb.EvmBase.Read
 {

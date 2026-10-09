@@ -1,0 +1,30 @@
+@startuml
+title How the game runs one prologue text (observed in DeSmuME)
+
+start
+:0x04 LoadImage [pro_NN, pro_NN_obj]
+load Pro_NN.narc;
+:0x00 TransitionBefore (hi = frames);
+:0x08 Text
+typewriter starts, ~4.1 frames per character;
+repeat
+  :0x02 ShowImage (value = frames)
+  image / animation shown, typing continues;
+  note right
+    animation longer than value: cut off
+    loop mode (2) and value longer: animation restarts
+    once mode (1) and value longer: holds last frame
+  end note
+  :0x01 TransitionAfter / 0x00 TransitionBefore (hi = frames);
+repeat while (next group contains 0x09?) is (no: montage, text stays)
+->yes;
+:group with 0x09 ClearText
+text is cleared, next image is loaded;
+stop
+
+legend right
+  text on screen = sum(Image values) + transitions between them
+  readable time  = on screen - 4.1 * characters
+  editor suggests 4 * characters + 240 frames
+endlegend
+@enduml

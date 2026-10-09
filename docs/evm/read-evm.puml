@@ -1,5 +1,0 @@
-@startuml
-Pointer -> OffsetPointer
-OffsetPointer -> Text
-
-@enduml
