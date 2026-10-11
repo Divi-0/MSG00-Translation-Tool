@@ -81,10 +81,6 @@ File-format findings, each marked as confirmed or hypothesis:
 - [Graphics (NARC)](docs/graphics/README.md)
 - [csvb and MAPI header diagrams](docs/mapi/)
 
-## Libraries
-
-[Avalonia](https://avaloniaui.net/), [CommunityToolkit.Mvvm](https://github.com/CommunityToolkit/dotnet), [ReactiveUI](https://www.reactiveui.net/), [Mediator](https://github.com/martinothamar/Mediator), [SceneGate Ekona](https://github.com/SceneGate/Ekona) and [Yarhl](https://github.com/SceneGate/yarhl) (NDS file system), [ImageSharp](https://github.com/SixLabors/ImageSharp) (PNG export/import).
-
 ## License
 
 [GPL-3.0](LICENSE). *Mobile Suit Gundam 00* and its content belong to their respective rights holders; this project is an unofficial fan tool.
