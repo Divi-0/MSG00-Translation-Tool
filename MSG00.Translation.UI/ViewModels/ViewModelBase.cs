@@ -7,15 +7,16 @@ namespace MSG00.Translation.UI.ViewModels
 {
     public class ViewModelBase : ReactiveObject, INotifyPropertyChanged
     {
-        public event PropertyChangedEventHandler PropertyChanged;
+        // own event (hides ReactiveObject's) so that SetProperty notifies bindings the same way as NotifyBase
+        public new event PropertyChangedEventHandler? PropertyChanged;
 
-        protected void RaisePropertyChanged(string propertyName)
+        protected void RaisePropertyChanged(string? propertyName)
             => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 
         /// <summary>
         /// Set a property and raise a property changed event if it has changed
         /// </summary>
-        protected bool SetProperty<T>(ref T property, T value, [CallerMemberName] string propertyName = null)
+        protected bool SetProperty<T>(ref T property, T value, [CallerMemberName] string? propertyName = null)
         {
             if (EqualityComparer<T>.Default.Equals(property, value))
             {

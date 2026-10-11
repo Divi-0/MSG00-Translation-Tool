@@ -156,7 +156,7 @@ internal sealed class Reader : CsvbMapiReader, IReader
                 prologueEpilogueCsvb.ProEpiloguePointers.Add(proEpiloguePointer);
             }
         }
-        catch (Exception e)
+        catch (Exception)
         {
             throw;
         }

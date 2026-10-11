@@ -6,15 +6,15 @@ namespace MSG00.Translation.UI.Models
 {
     public abstract class NotifyBase : INotifyPropertyChanged
     {
-        public event PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler? PropertyChanged;
 
-        protected void RaisePropertyChanged(string propertyName)
+        protected void RaisePropertyChanged(string? propertyName)
             => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 
         /// <summary>
         /// Set a property and raise a property changed event if it has changed
         /// </summary>
-        protected bool SetProperty<T>(ref T property, T value, [CallerMemberName] string propertyName = null)
+        protected bool SetProperty<T>(ref T property, T value, [CallerMemberName] string? propertyName = null)
         {
             if (EqualityComparer<T>.Default.Equals(property, value))
             {

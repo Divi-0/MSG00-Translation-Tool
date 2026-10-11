@@ -35,7 +35,7 @@ public class Writer : CsvbWriter, IWriter
             
             await CsvbWriter.OverrideCsvbHeaderAsync(stream, newOffsetToEndOfPointerTable, newOffsetToEndOfFullHeader, newOffsetToEndOfTextTable, newOffsetToEndOfExtraTable).ConfigureAwait(false);
         }
-        catch (Exception ex)
+        catch (Exception)
         {
             throw;
         }

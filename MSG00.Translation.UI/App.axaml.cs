@@ -16,8 +16,9 @@ namespace MSG00.Translation.UI
 {
     public partial class App : Avalonia.Application
     {
-        public static IServiceProvider Services { get; private set; }
-        public IHost Host { get; set; }
+        // set in OnFrameworkInitializationCompleted, before any view model is created
+        public static IServiceProvider Services { get; private set; } = null!;
+        public IHost Host { get; set; } = null!;
 
         public override void Initialize()
         {
@@ -35,7 +36,7 @@ namespace MSG00.Translation.UI
                 return;
             }
 
-            IStorageProvider storageProvider = null;
+            IStorageProvider? storageProvider = null;
 
             if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
             {

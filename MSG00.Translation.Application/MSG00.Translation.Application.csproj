@@ -14,8 +14,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="10.0.12" />
-    <PackageReference Include="SceneGate.Ekona" Version="1.2.1" />
-  </ItemGroup>
+    <PackageReference Include="SceneGate.Ekona" Version="1.2.1" />  </ItemGroup>
 
   <ItemGroup>
     <InternalsVisibleTo Include="MSG00.Translation.Application.Tests" />

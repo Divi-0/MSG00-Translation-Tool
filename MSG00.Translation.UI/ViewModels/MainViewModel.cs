@@ -6,7 +6,7 @@ namespace MSG00.Translation.UI.ViewModels
     {
         public MainViewModel()
         {
-            CurrentView = App.Services.GetRequiredService<CsvbSelectViewModel>();
+            _currentView = App.Services.GetRequiredService<CsvbSelectViewModel>();
         }
 
         private ViewModelBase _currentView;

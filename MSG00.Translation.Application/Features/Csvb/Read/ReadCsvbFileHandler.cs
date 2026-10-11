@@ -49,7 +49,7 @@ namespace MSG00.Translation.Application.Features.Csvb.Read
 
                 return csvbFile;
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 throw;
             }

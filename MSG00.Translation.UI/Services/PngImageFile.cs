@@ -49,7 +49,7 @@ public static class PngImageFile
 
         await using var stream = await file.OpenWriteAsync();
         stream.SetLength(0);
-        ToBitmap(image).Save(stream);
+        ToBitmap(image).Save(stream, PngBitmapEncoderOptions.Default);
         return true;
     }
 
