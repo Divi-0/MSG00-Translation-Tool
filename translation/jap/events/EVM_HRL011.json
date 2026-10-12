@@ -1,0 +1,20 @@
+[
+  {
+    "Index": 40,
+    "Kind": "Battle",
+    "Original": "敵の増援を確認",
+    "Text": "敵の増援を確認"
+  },
+  {
+    "Index": 81,
+    "Kind": "Battle",
+    "Original": "攻撃目標全滅を確認",
+    "Text": "攻撃目標全滅を確認"
+  },
+  {
+    "Index": 83,
+    "Kind": "Battle",
+    "Original": "残りの敵機を掃討してください",
+    "Text": "残りの敵機を掃討してください"
+  }
+]

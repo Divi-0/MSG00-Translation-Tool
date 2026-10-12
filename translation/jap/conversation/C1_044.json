@@ -1,0 +1,47 @@
+[
+  {
+    "Speaker": "Sumeragi",
+    "Kind": "Text",
+    "Text": "４機のガンダムも、そのマイスターたちも\n期待通りに活躍してくれている…。\nけど、思うように世界が動かない…。"
+  },
+  {
+    "Speaker": "Lockon",
+    "Kind": "Text",
+    "Text": "バランスをとりながらの複数勢力への\n干渉…。正直、想像以上に骨が折れる\n仕事だぜ？"
+  },
+  {
+    "Speaker": "Wang Liu Mei",
+    "Kind": "Text",
+    "Text": "まだ、希望はあると思います。…ですが、\n混乱した世界は、ヴェーダの計画通りに\n推移しない…。"
+  },
+  {
+    "Speaker": "Sumeragi",
+    "Kind": "Text",
+    "Text": "あきらめないわ。\nガンダムが…、太陽炉が、４つとも私たち\nの手の中に希望としてある限りは…。"
+  },
+  {
+    "Speaker": "Christina",
+    "Kind": "Text",
+    "Text": "ここで質問！我らが希望、ガンダムの\n形式番号は、ＧＮ－００１がエクシア。\n００２がデュナメス。"
+  },
+  {
+    "Speaker": "Christina",
+    "Kind": "Text",
+    "Text": "００３がキュリオス。\nさて、ヴァーチェの形式番号は、次のもの\nで合ってますか？"
+  },
+  {
+    "Speaker": "Christina",
+    "Kind": "Question (yes/no)",
+    "Text": "「ＧＮ－００４」\n（ＹＥＳ／ＮＯ）"
+  },
+  {
+    "Speaker": "Christina",
+    "Kind": "Text",
+    "Text": "ブブーーー！！\u3000外れです！\nヴァーチェは「ＧＮ－００５」！\n００４は、その中身の「ナドレ」です。"
+  },
+  {
+    "Speaker": "Christina",
+    "Kind": "Text",
+    "Text": "すごい！\u3000正解です！\u3000ヴァーチェは\n「ＧＮ－００５」で、００４は、その\n中身の「ナドレ」なんですよね。"
+  }
+]

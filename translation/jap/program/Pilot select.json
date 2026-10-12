@@ -1,0 +1,50 @@
+[
+  {
+    "Offset": "0xB7120",
+    "Label": "Type: melee",
+    "Japanese": "格闘",
+    "Text": "格闘"
+  },
+  {
+    "Offset": "0xB7130",
+    "Label": "Type: shooting",
+    "Japanese": "射撃",
+    "Text": "射撃"
+  },
+  {
+    "Offset": "0xB7140",
+    "Label": "Type: all-round",
+    "Japanese": "万能",
+    "Text": "万能"
+  },
+  {
+    "Offset": "0xB7150",
+    "Label": "Type: power",
+    "Japanese": "パワー",
+    "Text": "パワー"
+  },
+  {
+    "Offset": "0xB7160",
+    "Label": "Strong vs.: AEU",
+    "Japanese": "ＡＥＵ",
+    "Text": "ＡＥＵ"
+  },
+  {
+    "Offset": "0xB7170",
+    "Label": "Strong vs.: Union",
+    "Japanese": "ユニオン",
+    "Text": "ユニオン"
+  },
+  {
+    "Offset": "0xB7180",
+    "Label": "Strong vs.: HRL",
+    "Japanese": "人革連",
+    "Text": "人革連"
+  },
+  {
+    "Offset": "0xB7190",
+    "Label": "Strong vs.: all",
+    "Japanese": "全て",
+    "Text": "全て"
+  }
+]

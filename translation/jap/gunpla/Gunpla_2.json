@@ -1,0 +1,34 @@
+[
+  {
+    "Table": "BLOCK1",
+    "Row": 0,
+    "Column": 1,
+    "Label": "Text · Trial_TITLE_00",
+    "Original": "まずは箱を開けよう！",
+    "Text": "まずは箱を開けよう！"
+  },
+  {
+    "Table": "BLOCK1",
+    "Row": 1,
+    "Column": 1,
+    "Label": "Text · BANNAM_ROGO",
+    "Original": "そうしたら、おもむろに説明書を\n窓から投げ捨てろ！\n漢は説明書など見ずに作れ！！",
+    "Text": "そうしたら、おもむろに説明書を\n窓から投げ捨てろ！\n漢は説明書など見ずに作れ！！"
+  },
+  {
+    "Table": "BLOCK1",
+    "Row": 2,
+    "Column": 1,
+    "Label": "Text · Trial_TITLE_01",
+    "Original": "ランナー（枠）からすべてのパーツを\nちぎり取れ！\nニッパーなんて軟弱なモノは使うな！\n気合で捻じ切るんだ！！",
+    "Text": "ランナー（枠）からすべてのパーツを\nちぎり取れ！\nニッパーなんて軟弱なモノは使うな！\n気合で捻じ切るんだ！！"
+  },
+  {
+    "Table": "BLOCK1",
+    "Row": 3,
+    "Column": 1,
+    "Label": "Text · Trial_TITLE_01",
+    "Original": "組み上げろ！！以上！",
+    "Text": "組み上げろ！！以上！"
+  }
+]

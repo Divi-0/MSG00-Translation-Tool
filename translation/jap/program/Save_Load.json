@@ -1,0 +1,92 @@
+[
+  {
+    "Offset": "0xBACC8",
+    "Label": "Help: select the data to load",
+    "Japanese": "ロードする箇所を選択して下さい。",
+    "Text": "ロードする箇所を選択して下さい。"
+  },
+  {
+    "Offset": "0xBACA4",
+    "Label": "Help: select the data to save",
+    "Japanese": "セーブする箇所を選択して下さい。",
+    "Text": "セーブする箇所を選択して下さい。"
+  },
+  {
+    "Offset": "0xBAC4C",
+    "Label": "Slot info: days / tactical support (keep %02d and %03d)",
+    "Japanese": "%02ddays       取得した戦術支援 %03d%",
+    "Text": "%02ddays       取得した戦術支援 %03d%"
+  },
+  {
+    "Offset": "0xBAD4C",
+    "Label": "Slot info (2nd table, keep %02d and %03d)",
+    "Japanese": "%02ddays       取得した戦術支援 %03d%",
+    "Text": "%02ddays       取得した戦術支援 %03d%"
+  },
+  {
+    "Offset": "0xBAD00",
+    "Label": "Message: loaded",
+    "Japanese": "ロードしました。",
+    "Text": "ロードしました。"
+  },
+  {
+    "Offset": "0xBACEC",
+    "Label": "Message: saved",
+    "Japanese": "セーブしました。",
+    "Text": "セーブしました。"
+  },
+  {
+    "Offset": "0xBA7BC",
+    "Label": "Question: save?",
+    "Japanese": "セーブしますか？",
+    "Text": "セーブしますか？"
+  },
+  {
+    "Offset": "0xBA83C",
+    "Label": "Question: overwrite the save file?",
+    "Japanese": "セーブファイルを上書きしますか？",
+    "Text": "セーブファイルを上書きしますか？"
+  },
+  {
+    "Offset": "0xBA8BC",
+    "Label": "Question: quit saving?",
+    "Japanese": "セーブを終了しますか？",
+    "Text": "セーブを終了しますか？"
+  },
+  {
+    "Offset": "0xBA93C",
+    "Label": "Question: load DATA-01?",
+    "Japanese": "ＤＡＴＡ−０１をロードしますか？",
+    "Text": "ＤＡＴＡ－０１をロードしますか？"
+  },
+  {
+    "Offset": "0xBA9BC",
+    "Label": "Question: load DATA-02?",
+    "Japanese": "ＤＡＴＡ−０２をロードしますか？",
+    "Text": "ＤＡＴＡ－０２をロードしますか？"
+  },
+  {
+    "Offset": "0xBAA3C",
+    "Label": "Question: load DATA-03?",
+    "Japanese": "ＤＡＴＡ−０３をロードしますか？",
+    "Text": "ＤＡＴＡ－０３をロードしますか？"
+  },
+  {
+    "Offset": "0xBAABC",
+    "Label": "Question: quit loading?",
+    "Japanese": "ロードを終了しますか？",
+    "Text": "ロードを終了しますか？"
+  },
+  {
+    "Offset": "0xBADAC",
+    "Label": "Error: data could not be written (3 lines, end with a line break)",
+    "Japanese": "データを書けませんでした。\n電源を切って、カードを\n差し込み直して下さい。\n",
+    "Text": "データを書けませんでした。\n電源を切って、カードを\n差し込み直して下さい。\n"
+  },
+  {
+    "Offset": "0xBADF8",
+    "Label": "Error: data could not be read (3 lines, end with a line break)",
+    "Japanese": "データを読めませんでした。\n電源を切って、カードを\n差し込み直して下さい。\n",
+    "Text": "データを読めませんでした。\n電源を切って、カードを\n差し込み直して下さい。\n"
+  }
+]

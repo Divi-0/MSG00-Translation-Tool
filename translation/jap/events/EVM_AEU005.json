@@ -1,0 +1,26 @@
+[
+  {
+    "Index": 7,
+    "Kind": "Battle",
+    "Original": "敵を殲滅してください",
+    "Text": "敵を殲滅してください"
+  },
+  {
+    "Index": 38,
+    "Kind": "Battle",
+    "Original": "敵の増援を確認",
+    "Text": "敵の増援を確認"
+  },
+  {
+    "Index": 52,
+    "Kind": "Battle",
+    "Original": "高速で接近してくる機体を確認",
+    "Text": "高速で接近してくる機体を確認"
+  },
+  {
+    "Index": 54,
+    "Kind": "Battle",
+    "Original": "注意して下さい！",
+    "Text": "注意して下さい！"
+  }
+]

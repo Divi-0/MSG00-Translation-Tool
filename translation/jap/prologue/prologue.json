@@ -1,0 +1,79 @@
+[
+  {
+    "TextLines": "西暦２３０７年。\n地球の化石燃料が枯渇し、人類は新たなる\nエネルギー資源を太陽光発電に委ねた。\n半世紀近い計画の後、全長約５万キロにも及ぶ\n３本の軌道エレベーターを中心とした、\n太陽光発電システムが完成する。",
+    "Type": 8,
+    "OffsetValue": 231928233996,
+    "SubPointer": [],
+    "HasSlot": true
+  },
+  {
+    "TextLines": "半永久的なエネルギーを生み出す、\nその巨大構造物建造のため、\n世界は大きく３つの国家群に集約された。",
+    "Type": 8,
+    "OffsetValue": 309237645548,
+    "SubPointer": [],
+    "HasSlot": true
+  },
+  {
+    "TextLines": "米国を中心とした世界経済連合\n……通称「ユニオン」",
+    "Type": 8,
+    "OffsetValue": 335007449444,
+    "SubPointer": [],
+    "HasSlot": true
+  },
+  {
+    "TextLines": "中国・ロシア・インドを中心とした\n「人類革新連盟」",
+    "Type": 8,
+    "OffsetValue": 335007449516,
+    "SubPointer": [],
+    "HasSlot": true
+  },
+  {
+    "TextLines": "新ヨーロッパ共同体\n「ＡＥＵ」",
+    "Type": 8,
+    "OffsetValue": 335007449588,
+    "SubPointer": [],
+    "HasSlot": true
+  },
+  {
+    "TextLines": "軌道エレベーターは、その巨大さから\n防衛が困難であり、構造上の観点から見ても\nひどく脆い構造物である。",
+    "Type": 8,
+    "OffsetValue": 309237645852,
+    "SubPointer": [],
+    "HasSlot": true
+  },
+  {
+    "TextLines": "そんな危うい状況の中でも、\n各国家群は己の威信と繁栄のため、\n大いなるゼロサム・ゲームを続けていた。",
+    "Type": 8,
+    "OffsetValue": 309237645972,
+    "SubPointer": [],
+    "HasSlot": true
+  },
+  {
+    "TextLines": "……そう、２４世紀になっても、\n人類は未だ一つになりきれずにいたのだ……",
+    "Type": 8,
+    "OffsetValue": 335007449872,
+    "SubPointer": [],
+    "HasSlot": true
+  },
+  {
+    "TextLines": "そんな世界に対して、\n楔（くさび）を打ち込む者たちが現れる。",
+    "Type": 8,
+    "OffsetValue": 335007449952,
+    "SubPointer": [],
+    "HasSlot": true
+  },
+  {
+    "TextLines": "モビルスーツ・ガンダムを有する\n私設武装組織…「ソレスタルビーイング」\n彼らは世界から紛争をなくすため、\n民族、国家、宗教を超越した作戦行動を\n展開していく…。",
+    "Type": 8,
+    "OffsetValue": 257698038692,
+    "SubPointer": [],
+    "HasSlot": true
+  },
+  {
+    "TextLines": "ソレスタルビーイングが、\n世界に変革を誘発する…。",
+    "Type": 8,
+    "OffsetValue": 335007450236,
+    "SubPointer": [],
+    "HasSlot": true
+  }
+]

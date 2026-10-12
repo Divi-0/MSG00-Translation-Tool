@@ -1,0 +1,254 @@
+[
+  {
+    "Offset": "0xB7218",
+    "Label": "Name: Setsuna \u0026 Exia",
+    "Japanese": "刹那＆エクシア",
+    "Text": "刹那＆エクシア"
+  },
+  {
+    "Offset": "0xB7238",
+    "Label": "Name: Lockon \u0026 Dynames",
+    "Japanese": "ロックオン＆デュナメス",
+    "Text": "ロックオン＆デュナメス"
+  },
+  {
+    "Offset": "0xB7258",
+    "Label": "Name: Allelujah \u0026 Kyrios",
+    "Japanese": "アレルヤ＆キュリオス",
+    "Text": "アレルヤ＆キュリオス"
+  },
+  {
+    "Offset": "0xB7278",
+    "Label": "Name: Tieria \u0026 Virtue",
+    "Japanese": "ティエリア＆ヴァーチェ",
+    "Text": "ティエリア＆ヴァーチェ"
+  },
+  {
+    "Offset": "0xB7298",
+    "Label": "Name: Sumeragi",
+    "Japanese": "スメラギ",
+    "Text": "スメラギ"
+  },
+  {
+    "Offset": "0xB72B8",
+    "Label": "Name: Karel",
+    "Japanese": "カレル",
+    "Text": "カレル"
+  },
+  {
+    "Offset": "0xB72D8",
+    "Label": "Name: Christina \u0026 Feldt",
+    "Japanese": "クリスティナ＆フェルト",
+    "Text": "クリスティナ＆フェルト"
+  },
+  {
+    "Offset": "0xB72F8",
+    "Label": "Name: Haro",
+    "Japanese": "ハロ",
+    "Text": "ハロ"
+  },
+  {
+    "Offset": "0xB7318",
+    "Label": "Name: Wang Liu Mei",
+    "Japanese": "王留美",
+    "Text": "王留美"
+  },
+  {
+    "Offset": "0xB7338",
+    "Label": "Name: Marina",
+    "Japanese": "マリナ",
+    "Text": "マリナ"
+  },
+  {
+    "Offset": "0xB7358",
+    "Label": "Name: Aeolia",
+    "Japanese": "イオリア",
+    "Text": "イオリア"
+  },
+  {
+    "Offset": "0xB7378",
+    "Label": "Name: Saji \u0026 Louise",
+    "Japanese": "沙慈＆ルイス",
+    "Text": "沙慈＆ルイス"
+  },
+  {
+    "Offset": "0xB973C",
+    "Label": "Message: not in list view",
+    "Japanese": "リスト表示では設定できません",
+    "Text": "リスト表示では設定できません"
+  },
+  {
+    "Offset": "0xB975C",
+    "Label": "Message: same pilot as sortie",
+    "Japanese": "出撃パイロットと同一の\n戦術支援は選べません\n",
+    "Text": "出撃パイロットと同一の\n戦術支援は選べません\n"
+  },
+  {
+    "Offset": "0xB978C",
+    "Label": "Message: not available",
+    "Japanese": "使用可能な状態ではありません\n",
+    "Text": "使用可能な状態ではありません\n"
+  },
+  {
+    "Offset": "0xB97AC",
+    "Label": "Message: no uses left",
+    "Japanese": "これ以上使用できません",
+    "Text": "これ以上使用できません"
+  },
+  {
+    "Offset": "0xB7398",
+    "Label": "Hidden units: unlocked",
+    "Japanese": "【隠し機体が選択可能です】\n「エクシア・ロールアウトカラー」と\n「ナドレ」の２機が新たに使用可能。",
+    "Text": "【隠し機体が選択可能です】\n「エクシア・ロールアウトカラー」と\n「ナドレ」の２機が新たに使用可能。"
+  },
+  {
+    "Offset": "0xB7458",
+    "Label": "Hidden units: how to select",
+    "Japanese": "刹那とティエリアの選択画面にて、十字\nボタン下を押しながらＡボタンで決定。\nこれによりミッション内で操作する機体\nが隠し機体に変更されます。",
+    "Text": "刹那とティエリアの選択画面にて、十字\nボタン下を押しながらＡボタンで決定。\nこれによりミッション内で操作する機体\nが隠し機体に変更されます。"
+  },
+  {
+    "Offset": "0xB7518",
+    "Label": "Description: Setsuna \u0026 Exia",
+    "Japanese": "エクシアが同時に別ポイントでの\nＡＥＵミッションに出撃します。",
+    "Text": "エクシアが同時に別ポイントでの\nＡＥＵミッションに出撃します。"
+  },
+  {
+    "Offset": "0xB7618",
+    "Label": "Description: Lockon \u0026 Dynames",
+    "Japanese": "デュナメスが同時に別ポイントでの\nユニオンミッションに出撃します。",
+    "Text": "デュナメスが同時に別ポイントでの\nユニオンミッションに出撃します。"
+  },
+  {
+    "Offset": "0xB7718",
+    "Label": "Description: Allelujah \u0026 Kyrios",
+    "Japanese": "キュリオスが同時に別ポイントでの\n人革連ミッションに出撃します。",
+    "Text": "キュリオスが同時に別ポイントでの\n人革連ミッションに出撃します。"
+  },
+  {
+    "Offset": "0xB7818",
+    "Label": "Description: Tieria \u0026 Virtue",
+    "Japanese": "ヴァーチェが同時に別ポイントでの\n対テロミッションに出撃します。",
+    "Text": "ヴァーチェが同時に別ポイントでの\n対テロミッションに出撃します。"
+  },
+  {
+    "Offset": "0xB7918",
+    "Label": "Description: Sumeragi",
+    "Japanese": "整備を最優先とし、出撃までに\n全ガンダムのＨＰを全回復します。",
+    "Text": "整備を最優先とし、出撃までに\n全ガンダムのＨＰを全回復します。"
+  },
+  {
+    "Offset": "0xB7A18",
+    "Label": "Description: Karel",
+    "Japanese": "現在ＨＰの一番低いガンダムを\n出撃までに全回復させます。",
+    "Text": "現在ＨＰの一番低いガンダムを\n出撃までに全回復させます。"
+  },
+  {
+    "Offset": "0xB7B18",
+    "Label": "Description: Christina \u0026 Feldt",
+    "Japanese": "出撃するガンダムのダッシュ中に消費する\nスラスター量を２０％減少させます。",
+    "Text": "出撃するガンダムのダッシュ中に消費する\nスラスター量を２０％減少させます。"
+  },
+  {
+    "Offset": "0xB7C18",
+    "Label": "Description: Haro",
+    "Japanese": "出撃するガンダムの戦闘中に受ける\nダメージ量を２０％減少させます。",
+    "Text": "出撃するガンダムの戦闘中に受ける\nダメージ量を２０％減少させます。"
+  },
+  {
+    "Offset": "0xB7D18",
+    "Label": "Description: Wang Liu Mei",
+    "Japanese": "本作戦の成功時に、エージェントの工作\nにより、現在１番高い勢力を２番目の勢力\nと同じ状態に減少させます。",
+    "Text": "本作戦の成功時に、エージェントの工作\nにより、現在１番高い勢力を２番目の勢力\nと同じ状態に減少させます。"
+  },
+  {
+    "Offset": "0xB7E18",
+    "Label": "Description: Marina",
+    "Japanese": "本作戦が成功した場合に限って、\n作戦成功時に減少する勢力影響値を\n２０％上昇させます。",
+    "Text": "本作戦が成功した場合に限って、\n作戦成功時に減少する勢力影響値を\n２０％上昇させます。"
+  },
+  {
+    "Offset": "0xB7F18",
+    "Label": "Description: Aeolia",
+    "Japanese": "出撃するガンダムの攻撃力を一律で\n２０％上昇させます。",
+    "Text": "出撃するガンダムの攻撃力を一律で\n２０％上昇させます。"
+  },
+  {
+    "Offset": "0xB8018",
+    "Label": "Description: Saji \u0026 Louise",
+    "Japanese": "出撃するガンダムのテンションゲージの\n上昇率を２０％増加させます。",
+    "Text": "出撃するガンダムのテンションゲージの\n上昇率を２０％増加させます。"
+  },
+  {
+    "Offset": "0xB8118",
+    "Label": "Used: Setsuna \u0026 Exia",
+    "Japanese": "【戦術支援・発動】\nエクシアが別ポイントでの\nＡＥＵミッションに同時出撃します。",
+    "Text": "【戦術支援・発動】\nエクシアが別ポイントでの\nＡＥＵミッションに同時出撃します。"
+  },
+  {
+    "Offset": "0xB8218",
+    "Label": "Used: Lockon \u0026 Dynames",
+    "Japanese": "【戦術支援・発動】\nデュナメスが別ポイントでの\nユニオンミッションに同時出撃します。",
+    "Text": "【戦術支援・発動】\nデュナメスが別ポイントでの\nユニオンミッションに同時出撃します。"
+  },
+  {
+    "Offset": "0xB8318",
+    "Label": "Used: Allelujah \u0026 Kyrios",
+    "Japanese": "【戦術支援・発動】\nキュリオスが別ポイントでの\n人革連ミッションに同時出撃します。",
+    "Text": "【戦術支援・発動】\nキュリオスが別ポイントでの\n人革連ミッションに同時出撃します。"
+  },
+  {
+    "Offset": "0xB8418",
+    "Label": "Used: Tieria \u0026 Virtue",
+    "Japanese": "【戦術支援・発動】\nヴァーチェが別ポイントでの\n対テロミッションに同時出撃します。",
+    "Text": "【戦術支援・発動】\nヴァーチェが別ポイントでの\n対テロミッションに同時出撃します。"
+  },
+  {
+    "Offset": "0xB8518",
+    "Label": "Used: Sumeragi",
+    "Japanese": "【戦術支援・発動】\nスメラギ・李・ノリエガの指示により、\n全ガンダムの整備が完了。ＨＰ全回復。",
+    "Text": "【戦術支援・発動】\nスメラギ・李・ノリエガの指示により、\n全ガンダムの整備が完了。ＨＰ全回復。"
+  },
+  {
+    "Offset": "0xB8618",
+    "Label": "Used: Karel",
+    "Japanese": "【戦術支援・発動】\n整備ロボット「カレル」の整備作業で、\nＨＰの一番低かったガンダムが全回復。",
+    "Text": "【戦術支援・発動】\n整備ロボット「カレル」の整備作業で、\nＨＰの一番低かったガンダムが全回復。"
+  },
+  {
+    "Offset": "0xB8718",
+    "Label": "Used: Christina \u0026 Feldt",
+    "Japanese": "【戦術支援・発動】\n出撃するガンダムのダッシュ中に\n消費するスラスター量を２０％\n減少させます。",
+    "Text": "【戦術支援・発動】\n出撃するガンダムのダッシュ中に\n消費するスラスター量を２０％\n減少させます。"
+  },
+  {
+    "Offset": "0xB8818",
+    "Label": "Used: Haro",
+    "Japanese": "【戦術支援・発動】\n出撃するガンダムの戦闘中に受ける\nダメージ量を２０％減少させます。",
+    "Text": "【戦術支援・発動】\n出撃するガンダムの戦闘中に受ける\nダメージ量を２０％減少させます。"
+  },
+  {
+    "Offset": "0xB8918",
+    "Label": "Used: Wang Liu Mei",
+    "Japanese": "【戦術支援・発動】\n本作戦の成功時に、エージェントの工作\nにより、現在１番高い勢力を２番目の\n勢力と同じ状態に減少させます。",
+    "Text": "【戦術支援・発動】\n本作戦の成功時に、エージェントの工作\nにより、現在１番高い勢力を２番目の\n勢力と同じ状態に減少させます。"
+  },
+  {
+    "Offset": "0xB8A18",
+    "Label": "Used: Marina",
+    "Japanese": "【戦術支援・発動】\n本作戦が成功した場合に限って、\n作戦成功時に減少する勢力影響値を\n２０％上昇させます。",
+    "Text": "【戦術支援・発動】\n本作戦が成功した場合に限って、\n作戦成功時に減少する勢力影響値を\n２０％上昇させます。"
+  },
+  {
+    "Offset": "0xB8B18",
+    "Label": "Used: Aeolia",
+    "Japanese": "【戦術支援・発動】\n出撃するガンダムの攻撃力を一律で\n２０％上昇させます。",
+    "Text": "【戦術支援・発動】\n出撃するガンダムの攻撃力を一律で\n２０％上昇させます。"
+  },
+  {
+    "Offset": "0xB8C18",
+    "Label": "Used: Saji \u0026 Louise",
+    "Japanese": "【戦術支援・発動】\n出撃するガンダムのテンションゲージの\n上昇率を２０％増加させます。",
+    "Text": "【戦術支援・発動】\n出撃するガンダムのテンションゲージの\n上昇率を２０％増加させます。"
+  }
+]

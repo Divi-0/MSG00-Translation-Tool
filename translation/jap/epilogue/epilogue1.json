@@ -1,0 +1,23 @@
+[
+  {
+    "TextLines": "ソレスタルビーイングの活動により、\n世界は１つになるきっかけを得た。\n\n刹那たちは、\n監視者からの刺客を排除したことで、\n結果としてソレスタルビーイングの\n真の理念を守り抜いた。",
+    "Type": 8,
+    "OffsetValue": 206158430232,
+    "SubPointer": [],
+    "HasSlot": true
+  },
+  {
+    "TextLines": "この事件が残した傷跡は大きい…。\nしかし、それは\n「ものごとが変わる時に伴う痛み」。",
+    "Type": 8,
+    "OffsetValue": 326417514716,
+    "SubPointer": [],
+    "HasSlot": true
+  },
+  {
+    "TextLines": "世界…いや、人類は、この痛みを糧に\n本当の平和を手に入れることができる…\n今はそう信じたい。",
+    "Type": 8,
+    "OffsetValue": 326417514820,
+    "SubPointer": [],
+    "HasSlot": true
+  }
+]

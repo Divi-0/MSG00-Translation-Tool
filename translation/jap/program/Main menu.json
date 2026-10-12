@@ -1,0 +1,56 @@
+[
+  {
+    "Offset": "0xB3804",
+    "Label": "Help: new game",
+    "Japanese": "新しくゲームを始めます。",
+    "Text": "新しくゲームを始めます。"
+  },
+  {
+    "Offset": "0xB3880",
+    "Label": "Help: new game (2nd table)",
+    "Japanese": "新しくゲームを始めます。",
+    "Text": "新しくゲームを始めます。"
+  },
+  {
+    "Offset": "0xB3910",
+    "Label": "Help: new game (3rd table)",
+    "Japanese": "新しくゲームを始めます。",
+    "Text": "新しくゲームを始めます。"
+  },
+  {
+    "Offset": "0xB3B9C",
+    "Label": "Help: new game (4th table)",
+    "Japanese": "新しくゲームを始めます。",
+    "Text": "新しくゲームを始めます。"
+  },
+  {
+    "Offset": "0xB38AC",
+    "Label": "Help: load game",
+    "Japanese": "つづきからゲームを始めます。",
+    "Text": "つづきからゲームを始めます。"
+  },
+  {
+    "Offset": "0xB393C",
+    "Label": "Help: load game (2nd table)",
+    "Japanese": "つづきからゲームを始めます。",
+    "Text": "つづきからゲームを始めます。"
+  },
+  {
+    "Offset": "0xB38DC",
+    "Label": "Help: Gunpla Navi",
+    "Japanese": "ガンプラの作り方を教えてくれます。",
+    "Text": "ガンプラの作り方を教えてくれます。"
+  },
+  {
+    "Offset": "0xB396C",
+    "Label": "Help: Gunpla Navi (2nd table)",
+    "Japanese": "ガンプラの作り方を教えてくれます。",
+    "Text": "ガンプラの作り方を教えてくれます。"
+  },
+  {
+    "Offset": "0xB3BC4",
+    "Label": "Error: save data could not be read (3 lines, end with a line break)",
+    "Japanese": "データを読めませんでした。\n電源を切って、カードを\n差し込み直して下さい。\n",
+    "Text": "データを読めませんでした。\n電源を切って、カードを\n差し込み直して下さい。\n"
+  }
+]

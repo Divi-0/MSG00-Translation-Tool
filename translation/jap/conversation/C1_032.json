@@ -1,0 +1,37 @@
+[
+  {
+    "Speaker": "Sumeragi",
+    "Kind": "Text",
+    "Text": "さぁ、ミッションの仕上げは、モラリア軍\n基地への奇襲よ。"
+  },
+  {
+    "Speaker": "Allelujah",
+    "Kind": "Text",
+    "Text": "一気に敵の頭を叩くんですね。\nスメラギさんのミッションプランは、常に\n綿密にして大胆だ。"
+  },
+  {
+    "Speaker": "Wang Liu Mei",
+    "Kind": "Text",
+    "Text": "見せてもらいます。ガンダムと\nマイスターたちによる、ソレスタル\nビーイングの理念の体現を…。"
+  },
+  {
+    "Speaker": "Christina",
+    "Kind": "Text",
+    "Text": "ここで質問！ガンダムを運用するための、\n私たちの乗っている母艦の名前は、\n次のもので合ってますか？"
+  },
+  {
+    "Speaker": "Christina",
+    "Kind": "Question (yes/no)",
+    "Text": "「プトレーベース」\n（ＹＥＳ／ＮＯ）"
+  },
+  {
+    "Speaker": "Christina",
+    "Kind": "Text",
+    "Text": "真面目に答えてくださいよぉ…。\n正解はプトレマイオス！\nちゃんと覚えておいてね。"
+  },
+  {
+    "Speaker": "Christina",
+    "Kind": "Text",
+    "Text": "正解！プトレマイオスが正しい答えです。\n私を含めた構成員の一部では「トレミー」\nという愛称でも呼ばれてるの。"
+  }
+]

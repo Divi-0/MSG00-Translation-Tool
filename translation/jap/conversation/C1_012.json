@@ -1,0 +1,32 @@
+[
+  {
+    "Speaker": "Sumeragi",
+    "Kind": "Text",
+    "Text": "いまだに世界は私たちの存在を信じきれて\nいないようね。"
+  },
+  {
+    "Speaker": "Wang Liu Mei",
+    "Kind": "Text",
+    "Text": "なら、信じさせましょう。\nソレスタルビーイングの理念は、行動に\nよってのみ示されるのだから。"
+  },
+  {
+    "Speaker": "Christina",
+    "Kind": "Text",
+    "Text": "ここで質問！\u3000戦争根絶の理念を掲げた、\nソレスタルビーイング創設者の名前は、\n次のもので合ってますか？"
+  },
+  {
+    "Speaker": "Christina",
+    "Kind": "Question (yes/no)",
+    "Text": "「イモリナ・シュレンブルグ」\n（ＹＥＳ／ＮＯ）"
+  },
+  {
+    "Speaker": "Christina",
+    "Kind": "Text",
+    "Text": "軽い冗談のつもりだったのに…。\n正解はイオリア・シュヘンベルグ！\nちゃんと覚えておいてくださいね。"
+  },
+  {
+    "Speaker": "Christina",
+    "Kind": "Text",
+    "Text": "正解！答えはイオリア・シュヘンベルグ。\n戦闘要員のガンダムマイスターでも、さす\nがに、これくらいは知ってるわよね。"
+  }
+]

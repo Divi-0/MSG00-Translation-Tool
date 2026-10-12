@@ -1,0 +1,56 @@
+[
+  {
+    "Index": 41,
+    "Kind": "Battle",
+    "Original": "90秒防衛してください",
+    "Text": "90秒防衛してください"
+  },
+  {
+    "Index": 47,
+    "Kind": "Battle",
+    "Original": "防衛目標に攻撃が集中！守って！",
+    "Text": "防衛目標に攻撃が集中！守って！"
+  },
+  {
+    "Index": 50,
+    "Kind": "Battle",
+    "Original": "防衛目標に更に攻撃が集中！",
+    "Text": "防衛目標に更に攻撃が集中！"
+  },
+  {
+    "Index": 113,
+    "Kind": "Battle",
+    "Original": "ミサイルが危険域です！迎撃してください！",
+    "Text": "ミサイルが危険域です！迎撃してください！"
+  },
+  {
+    "Index": 170,
+    "Kind": "Battle",
+    "Original": "ミサイルが危険域です！迎撃してください！",
+    "Text": "ミサイルが危険域です！迎撃してください！"
+  },
+  {
+    "Index": 190,
+    "Kind": "Battle",
+    "Original": "ミサイル攻撃は止んだ模様",
+    "Text": "ミサイル攻撃は止んだ模様"
+  },
+  {
+    "Index": 192,
+    "Kind": "Battle",
+    "Original": "敵の増援を確認",
+    "Text": "敵の増援を確認"
+  },
+  {
+    "Index": 213,
+    "Kind": "Battle",
+    "Original": "防衛目標に攻撃が集中！守って！",
+    "Text": "防衛目標に攻撃が集中！守って！"
+  },
+  {
+    "Index": 216,
+    "Kind": "Battle",
+    "Original": "防衛目標に更に攻撃が集中！",
+    "Text": "防衛目標に更に攻撃が集中！"
+  }
+]

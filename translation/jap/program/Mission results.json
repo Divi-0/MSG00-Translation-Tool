@@ -1,0 +1,152 @@
+[
+  {
+    "Offset": "0xB5D20",
+    "Label": "Message: Tactical support result: Exia",
+    "Japanese": "【戦術支援・結果】\nエクシアの活躍によって、\nＡＥＵの勢力が減少しました。",
+    "Text": "【戦術支援・結果】\nエクシアの活躍によって、\nＡＥＵの勢力が減少しました。"
+  },
+  {
+    "Offset": "0xB5DA0",
+    "Label": "Message: Tactical support result: Dynames",
+    "Japanese": "【戦術支援・結果】\nデュナメスの活躍によって、\nユニオンの勢力が減少しました。",
+    "Text": "【戦術支援・結果】\nデュナメスの活躍によって、\nユニオンの勢力が減少しました。"
+  },
+  {
+    "Offset": "0xB5E20",
+    "Label": "Message: Tactical support result: Kyrios",
+    "Japanese": "【戦術支援・結果】\nキュリオスの活躍によって、\n人革連の勢力が減少しました。",
+    "Text": "【戦術支援・結果】\nキュリオスの活躍によって、\n人革連の勢力が減少しました。"
+  },
+  {
+    "Offset": "0xB5EA0",
+    "Label": "Message: Tactical support result: Virtue",
+    "Japanese": "【戦術支援・結果】\nヴァーチェの活躍によって、\n全勢力が少しずつ減少しました。",
+    "Text": "【戦術支援・結果】\nヴァーチェの活躍によって、\n全勢力が少しずつ減少しました。"
+  },
+  {
+    "Offset": "0xB5F20",
+    "Label": "Message: Tactical support result: agent",
+    "Japanese": "【戦術支援・結果】\nエージェントの工作が成功しました。\nこれにより、１番高い勢力が２番目の\n勢力と同じ状態まで減少しました。",
+    "Text": "【戦術支援・結果】\nエージェントの工作が成功しました。\nこれにより、１番高い勢力が２番目の\n勢力と同じ状態まで減少しました。"
+  },
+  {
+    "Offset": "0xB5FA0",
+    "Label": "Message: Tactical support result: Marina",
+    "Japanese": "【戦術支援・結果】\nマリナ王女の政治交渉によって、\n本作戦における勢力の減少率が\n２０％上昇しました。",
+    "Text": "【戦術支援・結果】\nマリナ王女の政治交渉によって、\n本作戦における勢力の減少率が\n２０％上昇しました。"
+  },
+  {
+    "Offset": "0xB6020",
+    "Label": "Message: Tactical support failed: agent",
+    "Japanese": "【戦術支援・失敗】\n本作戦の失敗とともに、エージェントの\n工作活動も失敗に終わりました。",
+    "Text": "【戦術支援・失敗】\n本作戦の失敗とともに、エージェントの\n工作活動も失敗に終わりました。"
+  },
+  {
+    "Offset": "0xB60A0",
+    "Label": "Message: Tactical support failed: Marina",
+    "Japanese": "【戦術支援・失敗】\n本作戦の失敗とともに、マリナ王女の\n政治交渉も失敗に終わりました。",
+    "Text": "【戦術支援・失敗】\n本作戦の失敗とともに、マリナ王女の\n政治交渉も失敗に終わりました。"
+  },
+  {
+    "Offset": "0xB6120",
+    "Label": "Message: Unlocked: Setsuna \u0026 Exia",
+    "Japanese": "戦術支援「刹那＆エクシア」\nが使用可能となりました。",
+    "Text": "戦術支援「刹那＆エクシア」\nが使用可能となりました。"
+  },
+  {
+    "Offset": "0xB61A0",
+    "Label": "Message: Unlocked: Lockon \u0026 Dynames",
+    "Japanese": "戦術支援「ロックオン＆デュナメス」\nが使用可能となりました。",
+    "Text": "戦術支援「ロックオン＆デュナメス」\nが使用可能となりました。"
+  },
+  {
+    "Offset": "0xB6220",
+    "Label": "Message: Unlocked: Allelujah \u0026 Kyrios",
+    "Japanese": "戦術支援「アレルヤ＆キュリオス」\nが使用可能となりました。",
+    "Text": "戦術支援「アレルヤ＆キュリオス」\nが使用可能となりました。"
+  },
+  {
+    "Offset": "0xB62A0",
+    "Label": "Message: Unlocked: Tieria \u0026 Virtue",
+    "Japanese": "戦術支援「ティエリア＆ヴァーチェ」\nが使用可能となりました。",
+    "Text": "戦術支援「ティエリア＆ヴァーチェ」\nが使用可能となりました。"
+  },
+  {
+    "Offset": "0xB6320",
+    "Label": "Message: Unlocked: Sumeragi",
+    "Japanese": "戦術支援「スメラギ」\nが使用可能となりました。",
+    "Text": "戦術支援「スメラギ」\nが使用可能となりました。"
+  },
+  {
+    "Offset": "0xB63A0",
+    "Label": "Message: Unlocked: Karel",
+    "Japanese": "戦術支援「カレル」\nが使用可能となりました。",
+    "Text": "戦術支援「カレル」\nが使用可能となりました。"
+  },
+  {
+    "Offset": "0xB6420",
+    "Label": "Message: Unlocked: Christina \u0026 Feldt",
+    "Japanese": "戦術支援「クリスティナ＆フェルト」\nが使用可能となりました。",
+    "Text": "戦術支援「クリスティナ＆フェルト」\nが使用可能となりました。"
+  },
+  {
+    "Offset": "0xB64A0",
+    "Label": "Message: Unlocked: Haro",
+    "Japanese": "戦術支援「ハロ」\nが使用可能となりました。",
+    "Text": "戦術支援「ハロ」\nが使用可能となりました。"
+  },
+  {
+    "Offset": "0xB6520",
+    "Label": "Message: Unlocked: Wang Liu Mei",
+    "Japanese": "戦術支援「王留美」\nが使用可能となりました。",
+    "Text": "戦術支援「王留美」\nが使用可能となりました。"
+  },
+  {
+    "Offset": "0xB65A0",
+    "Label": "Message: Unlocked: Marina",
+    "Japanese": "戦術支援「マリナ」\nが使用可能となりました。",
+    "Text": "戦術支援「マリナ」\nが使用可能となりました。"
+  },
+  {
+    "Offset": "0xB6620",
+    "Label": "Message: Unlocked: Aeolia",
+    "Japanese": "戦術支援「イオリア」\nが使用可能となりました。",
+    "Text": "戦術支援「イオリア」\nが使用可能となりました。"
+  },
+  {
+    "Offset": "0xB66A0",
+    "Label": "Message: Unlocked: Saji \u0026 Louise",
+    "Japanese": "戦術支援「沙慈＆ルイス」\nが使用可能となりました",
+    "Text": "戦術支援「沙慈＆ルイス」\nが使用可能となりました"
+  },
+  {
+    "Offset": "0xB6720",
+    "Label": "Message: Tactical supports: 2",
+    "Japanese": "戦術支援の実行回数が２になりました。\n出撃前に２つ戦術支援をセットできます。",
+    "Text": "戦術支援の実行回数が２になりました。\n出撃前に２つ戦術支援をセットできます。"
+  },
+  {
+    "Offset": "0xB67A0",
+    "Label": "Message: Tactical supports: 3",
+    "Japanese": "戦術支援の実行回数が３になりました。\n出撃前に３つ戦術支援をセットできます。",
+    "Text": "戦術支援の実行回数が３になりました。\n出撃前に３つ戦術支援をセットできます。"
+  },
+  {
+    "Offset": "0xB6820",
+    "Label": "Message: Tactical supports: 4",
+    "Japanese": "戦術支援の実行回数が４になりました。\n出撃前に４つ戦術支援をセットできます。",
+    "Text": "戦術支援の実行回数が４になりました。\n出撃前に４つ戦術支援をセットできます。"
+  },
+  {
+    "Offset": "0xB68A0",
+    "Label": "Message: New mission offered",
+    "Japanese": "新たなミッションが提示されました。",
+    "Text": "新たなミッションが提示されました。"
+  },
+  {
+    "Offset": "0xB6964",
+    "Label": "Question: save?",
+    "Japanese": "セーブしますか？",
+    "Text": "セーブしますか？"
+  }
+]

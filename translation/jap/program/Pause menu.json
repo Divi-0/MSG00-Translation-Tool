@@ -1,0 +1,92 @@
+[
+  {
+    "Offset": "0xB4A9C",
+    "Label": "Menu: victory conditions",
+    "Japanese": "勝利条件確認",
+    "Text": "勝利条件確認"
+  },
+  {
+    "Offset": "0xB4AAC",
+    "Label": "Menu: retreat",
+    "Japanese": "撤退する",
+    "Text": "撤退する"
+  },
+  {
+    "Offset": "0xB4AB8",
+    "Label": "Menu: back to title",
+    "Japanese": "タイトル画面に戻る",
+    "Text": "タイトル画面に戻る"
+  },
+  {
+    "Offset": "0xB4A14",
+    "Label": "Help: victory conditions",
+    "Japanese": "勝利条件を確認します。",
+    "Text": "勝利条件を確認します。"
+  },
+  {
+    "Offset": "0xB4A2C",
+    "Label": "Help: retreat",
+    "Japanese": "戦闘を切り上げ、撤退します。",
+    "Text": "戦闘を切り上げ、撤退します。"
+  },
+  {
+    "Offset": "0xB4A4C",
+    "Label": "Help: back to title (3 lines)",
+    "Japanese": "ゲームを終了し、タイトル画面に\n戻ります。現在行っている戦闘は\n記録されません。",
+    "Text": "ゲームを終了し、タイトル画面に\n戻ります。現在行っている戦闘は\n記録されません。"
+  },
+  {
+    "Offset": "0xB4B20",
+    "Label": "Help (2nd table): victory conditions",
+    "Japanese": "勝利条件を確認します。",
+    "Text": "勝利条件を確認します。"
+  },
+  {
+    "Offset": "0xB4B38",
+    "Label": "Help (2nd table): retreat",
+    "Japanese": "戦闘を切り上げ、撤退します。",
+    "Text": "戦闘を切り上げ、撤退します。"
+  },
+  {
+    "Offset": "0xB4B58",
+    "Label": "Help (2nd table): back to title (3 lines)",
+    "Japanese": "ゲームを終了し、タイトル画面に\n戻ります。現在行っている戦闘は\n記録されません。",
+    "Text": "ゲームを終了し、タイトル画面に\n戻ります。現在行っている戦闘は\n記録されません。"
+  },
+  {
+    "Offset": "0xB48AC",
+    "Label": "Question: retreat? (lines start with a line break / space)",
+    "Japanese": "\n 日数が経過し、敵勢力も若干上昇して\n しまいますが、撤退しますか？",
+    "Text": "\n 日数が経過し、敵勢力も若干上昇して\n しまいますが、撤退しますか？"
+  },
+  {
+    "Offset": "0xB48F0",
+    "Label": "Question: back to title? (lines start with a space)",
+    "Japanese": " タイトル画面に戻ります。\n セーブした所から再開する事に\n なりますがよろしいですか？",
+    "Text": " タイトル画面に戻ります。\n セーブした所から再開する事に\n なりますがよろしいですか？"
+  },
+  {
+    "Offset": "0xB49F4",
+    "Label": "Buttons: A confirm, B/START back",
+    "Japanese": "Ａ：決定\u3000Ｂ／ＳＴＡＲＴ:戻る",
+    "Text": "Ａ：決定\u3000Ｂ／ＳＴＡＲＴ:戻る"
+  },
+  {
+    "Offset": "0xB4AD8",
+    "Label": "Buttons: B back",
+    "Japanese": "Ｂ:戻る",
+    "Text": "Ｂ:戻る"
+  },
+  {
+    "Offset": "0xB4AEC",
+    "Label": "Buttons: A confirm, B back",
+    "Japanese": "Ａ：決定\u3000Ｂ:戻る",
+    "Text": "Ａ：決定\u3000Ｂ:戻る"
+  },
+  {
+    "Offset": "0xB4B0C",
+    "Label": "Buttons: A confirm, B back (2nd table)",
+    "Japanese": "Ａ：決定\u3000Ｂ:戻る",
+    "Text": "Ａ：決定\u3000Ｂ:戻る"
+  }
+]

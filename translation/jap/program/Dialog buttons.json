@@ -1,0 +1,44 @@
+[
+  {
+    "Offset": "0xB33F0",
+    "Label": "YES (set 1)",
+    "Japanese": "ＹＥＳ",
+    "Text": "ＹＥＳ"
+  },
+  {
+    "Offset": "0xB33F8",
+    "Label": "NO (set 1)",
+    "Japanese": "ＮＯ",
+    "Text": "ＮＯ"
+  },
+  {
+    "Offset": "0xB3400",
+    "Label": "OK (set 1)",
+    "Japanese": "ＯＫ",
+    "Text": "ＯＫ"
+  },
+  {
+    "Offset": "0xB340C",
+    "Label": "YES (set 2)",
+    "Japanese": "ＹＥＳ",
+    "Text": "ＹＥＳ"
+  },
+  {
+    "Offset": "0xB3414",
+    "Label": "NO (set 2)",
+    "Japanese": "ＮＯ",
+    "Text": "ＮＯ"
+  },
+  {
+    "Offset": "0xB341C",
+    "Label": "YES (set 3)",
+    "Japanese": "ＹＥＳ",
+    "Text": "ＹＥＳ"
+  },
+  {
+    "Offset": "0xB3424",
+    "Label": "NO (set 3)",
+    "Japanese": "ＮＯ",
+    "Text": "ＮＯ"
+  }
+]

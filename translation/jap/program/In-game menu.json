@@ -1,0 +1,104 @@
+[
+  {
+    "Offset": "0xB9CFC",
+    "Label": "Menu: mission select",
+    "Japanese": "ミッション選択",
+    "Text": "ミッション選択"
+  },
+  {
+    "Offset": "0xB9D30",
+    "Label": "Menu: save",
+    "Japanese": "ＳＡＶＥ",
+    "Text": "ＳＡＶＥ"
+  },
+  {
+    "Offset": "0xB9D3C",
+    "Label": "Menu: load",
+    "Japanese": "ＬＯＡＤ",
+    "Text": "ＬＯＡＤ"
+  },
+  {
+    "Offset": "0xB9D0C",
+    "Label": "Menu: button config",
+    "Japanese": "ボタンコンフィグ",
+    "Text": "ボタンコンフィグ"
+  },
+  {
+    "Offset": "0xB9D20",
+    "Label": "Menu: back to title",
+    "Japanese": "タイトルに戻る",
+    "Text": "タイトルに戻る"
+  },
+  {
+    "Offset": "0xB9C98",
+    "Label": "Help: mission select",
+    "Japanese": "ミッションを選択します",
+    "Text": "ミッションを選択します"
+  },
+  {
+    "Offset": "0xB9CDC",
+    "Label": "Help: save",
+    "Japanese": "セーブします",
+    "Text": "セーブします"
+  },
+  {
+    "Offset": "0xB9CEC",
+    "Label": "Help: load",
+    "Japanese": "ロードします",
+    "Text": "ロードします"
+  },
+  {
+    "Offset": "0xB9CB0",
+    "Label": "Help: button config",
+    "Japanese": "操作方法を設定します",
+    "Text": "操作方法を設定します"
+  },
+  {
+    "Offset": "0xB9CC8",
+    "Label": "Help: back to title",
+    "Japanese": "タイトルに戻ります",
+    "Text": "タイトルに戻ります"
+  },
+  {
+    "Offset": "0xB9D68",
+    "Label": "Help (2nd table): mission select",
+    "Japanese": "ミッションを選択します",
+    "Text": "ミッションを選択します"
+  },
+  {
+    "Offset": "0xB9DAC",
+    "Label": "Help (2nd table): save",
+    "Japanese": "セーブします",
+    "Text": "セーブします"
+  },
+  {
+    "Offset": "0xB9DBC",
+    "Label": "Help (2nd table): load",
+    "Japanese": "ロードします",
+    "Text": "ロードします"
+  },
+  {
+    "Offset": "0xB9D80",
+    "Label": "Help (2nd table): button config",
+    "Japanese": "操作方法を設定します",
+    "Text": "操作方法を設定します"
+  },
+  {
+    "Offset": "0xB9D98",
+    "Label": "Help (2nd table): back to title",
+    "Japanese": "タイトルに戻ります",
+    "Text": "タイトルに戻ります"
+  },
+  {
+    "Offset": "0xB8DF8",
+    "Label": "Question: back to title?",
+    "Japanese": "セーブしたところから再開することに\nなりますがタイトルに戻りますか？",
+    "Text": "セーブしたところから再開することに\nなりますがタイトルに戻りますか？"
+  },
+  {
+    "Offset": "0xB8E3C",
+    "Label": "Question: choose MS / pilot again?",
+    "Japanese": "セットした「戦術支援」が解除されます。\nＭＳ／パイロットを選びなおしますか？",
+    "Text": "セットした「戦術支援」が解除されます。\nＭＳ／パイロットを選びなおしますか？"
+  }
+]

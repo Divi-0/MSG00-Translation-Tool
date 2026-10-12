@@ -1,0 +1,32 @@
+[
+  {
+    "Index": 45,
+    "Kind": "Battle",
+    "Original": "ミッション遂行時間、残り１分です",
+    "Text": "ミッション遂行時間、残り１分です"
+  },
+  {
+    "Index": 48,
+    "Kind": "Battle",
+    "Original": "時間がないわ！急いで！",
+    "Text": "時間がないわ！急いで！"
+  },
+  {
+    "Index": 56,
+    "Kind": "Battle",
+    "Original": "攻撃目標全滅を確認\u3000タイマーを解除",
+    "Text": "攻撃目標全滅を確認\u3000タイマーを解除"
+  },
+  {
+    "Index": 59,
+    "Kind": "Battle",
+    "Original": "残りの脅威を排除してください",
+    "Text": "残りの脅威を排除してください"
+  },
+  {
+    "Index": 78,
+    "Kind": "Battle",
+    "Original": "敵の増援を確認",
+    "Text": "敵の増援を確認"
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "Offset": "0xB9DD8",
+    "Label": "Help: select the map",
+    "Japanese": "出撃先のマップを選択してください",
+    "Text": "出撃先のマップを選択してください"
+  },
+  {
+    "Offset": "0xB9EA4",
+    "Label": "Button help (screen not confirmed)",
+    "Japanese": "Ａボタン：決定\u3000Ｂボタン：戻る",
+    "Text": "Ａボタン：決定\u3000Ｂボタン：戻る"
+  }
+]

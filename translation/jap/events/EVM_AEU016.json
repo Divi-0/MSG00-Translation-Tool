@@ -1,0 +1,26 @@
+[
+  {
+    "Index": 35,
+    "Kind": "Battle",
+    "Original": "攻撃目標の全破壊を確認",
+    "Text": "攻撃目標の全破壊を確認"
+  },
+  {
+    "Index": 37,
+    "Kind": "Battle",
+    "Original": "残りの敵機を掃討してください",
+    "Text": "残りの敵機を掃討してください"
+  },
+  {
+    "Index": 67,
+    "Kind": "Battle",
+    "Original": "高速で接近してくる機体を確認",
+    "Text": "高速で接近してくる機体を確認"
+  },
+  {
+    "Index": 69,
+    "Kind": "Battle",
+    "Original": "注意して下さい！",
+    "Text": "注意して下さい！"
+  }
+]

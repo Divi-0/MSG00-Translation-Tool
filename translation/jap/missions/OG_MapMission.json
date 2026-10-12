@@ -1,0 +1,1610 @@
+[
+  {
+    "Table": "OG_MAP",
+    "Row": 0,
+    "Column": 0,
+    "Label": "Field name · row 0",
+    "Original": "ユニオン主要都市",
+    "Text": "ユニオン主要都市"
+  },
+  {
+    "Table": "OG_MAP",
+    "Row": 1,
+    "Column": 0,
+    "Label": "Field name · row 1",
+    "Original": "ユニオン軌道ＥＶ",
+    "Text": "ユニオン軌道ＥＶ"
+  },
+  {
+    "Table": "OG_MAP",
+    "Row": 2,
+    "Column": 0,
+    "Label": "Field name · row 2",
+    "Original": "ユニオン軍港",
+    "Text": "ユニオン軍港"
+  },
+  {
+    "Table": "OG_MAP",
+    "Row": 3,
+    "Column": 0,
+    "Label": "Field name · row 3",
+    "Original": "ユニオン空軍基地",
+    "Text": "ユニオン空軍基地"
+  },
+  {
+    "Table": "OG_MAP",
+    "Row": 4,
+    "Column": 0,
+    "Label": "Field name · row 4",
+    "Original": "北太平洋",
+    "Text": "北太平洋"
+  },
+  {
+    "Table": "OG_MAP",
+    "Row": 5,
+    "Column": 0,
+    "Label": "Field name · row 5",
+    "Original": "ユニオン領内上空",
+    "Text": "ユニオン領内上空"
+  },
+  {
+    "Table": "OG_MAP",
+    "Row": 6,
+    "Column": 0,
+    "Label": "Field name · row 6",
+    "Original": "タリビア共和国",
+    "Text": "タリビア共和国"
+  },
+  {
+    "Table": "OG_MAP",
+    "Row": 7,
+    "Column": 0,
+    "Label": "Field name · row 7",
+    "Original": "タリビア近海",
+    "Text": "タリビア近海"
+  },
+  {
+    "Table": "OG_MAP",
+    "Row": 8,
+    "Column": 0,
+    "Label": "Field name · row 8",
+    "Original": "ユニオン山岳要塞",
+    "Text": "ユニオン山岳要塞"
+  },
+  {
+    "Table": "OG_MAP",
+    "Row": 9,
+    "Column": 0,
+    "Label": "Field name · row 9",
+    "Original": "ユニオン兵器実験場",
+    "Text": "ユニオン兵器実験場"
+  },
+  {
+    "Table": "OG_MAP",
+    "Row": 10,
+    "Column": 0,
+    "Label": "Field name · row 10",
+    "Original": "ユニオン山岳地帯",
+    "Text": "ユニオン山岳地帯"
+  },
+  {
+    "Table": "OG_MAP",
+    "Row": 11,
+    "Column": 0,
+    "Label": "Field name · row 11",
+    "Original": "ＡＥＵ主要都市",
+    "Text": "ＡＥＵ主要都市"
+  },
+  {
+    "Table": "OG_MAP",
+    "Row": 12,
+    "Column": 0,
+    "Label": "Field name · row 12",
+    "Original": "ＡＥＵ軌道ＥＶ",
+    "Text": "ＡＥＵ軌道ＥＶ"
+  },
+  {
+    "Table": "OG_MAP",
+    "Row": 13,
+    "Column": 0,
+    "Label": "Field name · row 13",
+    "Original": "南大西洋",
+    "Text": "南大西洋"
+  },
+  {
+    "Table": "OG_MAP",
+    "Row": 14,
+    "Column": 0,
+    "Label": "Field name · row 14",
+    "Original": "インド洋",
+    "Text": "インド洋"
+  },
+  {
+    "Table": "OG_MAP",
+    "Row": 15,
+    "Column": 0,
+    "Label": "Field name · row 15",
+    "Original": "インド洋上空",
+    "Text": "インド洋上空"
+  },
+  {
+    "Table": "OG_MAP",
+    "Row": 16,
+    "Column": 0,
+    "Label": "Field name · row 16",
+    "Original": "ＡＥＵ山岳要塞",
+    "Text": "ＡＥＵ山岳要塞"
+  },
+  {
+    "Table": "OG_MAP",
+    "Row": 17,
+    "Column": 0,
+    "Label": "Field name · row 17",
+    "Original": "ＡＥＵ山岳基地",
+    "Text": "ＡＥＵ山岳基地"
+  },
+  {
+    "Table": "OG_MAP",
+    "Row": 18,
+    "Column": 0,
+    "Label": "Field name · row 18",
+    "Original": "ＡＥＵ兵器実験場",
+    "Text": "ＡＥＵ兵器実験場"
+  },
+  {
+    "Table": "OG_MAP",
+    "Row": 19,
+    "Column": 0,
+    "Label": "Field name · row 19",
+    "Original": "モラリア共和国",
+    "Text": "モラリア共和国"
+  },
+  {
+    "Table": "OG_MAP",
+    "Row": 20,
+    "Column": 0,
+    "Label": "Field name · row 20",
+    "Original": "ＡＥＵ採掘場",
+    "Text": "ＡＥＵ採掘場"
+  },
+  {
+    "Table": "OG_MAP",
+    "Row": 21,
+    "Column": 0,
+    "Label": "Field name · row 21",
+    "Original": "人革連国境付近",
+    "Text": "人革連国境付近"
+  },
+  {
+    "Table": "OG_MAP",
+    "Row": 22,
+    "Column": 0,
+    "Label": "Field name · row 22",
+    "Original": "ＡＥＵ山岳地帯",
+    "Text": "ＡＥＵ山岳地帯"
+  },
+  {
+    "Table": "OG_MAP",
+    "Row": 23,
+    "Column": 0,
+    "Label": "Field name · row 23",
+    "Original": "ＡＥＵ砂漠地帯",
+    "Text": "ＡＥＵ砂漠地帯"
+  },
+  {
+    "Table": "OG_MAP",
+    "Row": 24,
+    "Column": 0,
+    "Label": "Field name · row 24",
+    "Original": "人革連主要都市",
+    "Text": "人革連主要都市"
+  },
+  {
+    "Table": "OG_MAP",
+    "Row": 25,
+    "Column": 0,
+    "Label": "Field name · row 25",
+    "Original": "人革連軌道ＥＶ",
+    "Text": "人革連軌道ＥＶ"
+  },
+  {
+    "Table": "OG_MAP",
+    "Row": 26,
+    "Column": 0,
+    "Label": "Field name · row 26",
+    "Original": "天柱付近",
+    "Text": "天柱付近"
+  },
+  {
+    "Table": "OG_MAP",
+    "Row": 27,
+    "Column": 0,
+    "Label": "Field name · row 27",
+    "Original": "人革連領内上空",
+    "Text": "人革連領内上空"
+  },
+  {
+    "Table": "OG_MAP",
+    "Row": 28,
+    "Column": 0,
+    "Label": "Field name · row 28",
+    "Original": "人革連秘密施設",
+    "Text": "人革連秘密施設"
+  },
+  {
+    "Table": "OG_MAP",
+    "Row": 29,
+    "Column": 0,
+    "Label": "Field name · row 29",
+    "Original": "人革連山岳基地",
+    "Text": "人革連山岳基地"
+  },
+  {
+    "Table": "OG_MAP",
+    "Row": 30,
+    "Column": 0,
+    "Label": "Field name · row 30",
+    "Original": "人革連砂漠地帯",
+    "Text": "人革連砂漠地帯"
+  },
+  {
+    "Table": "OG_MAP",
+    "Row": 31,
+    "Column": 0,
+    "Label": "Field name · row 31",
+    "Original": "セイロン島",
+    "Text": "セイロン島"
+  },
+  {
+    "Table": "OG_MAP",
+    "Row": 32,
+    "Column": 0,
+    "Label": "Field name · row 32",
+    "Original": "合同演習場",
+    "Text": "合同演習場"
+  },
+  {
+    "Table": "OG_MAP",
+    "Row": 33,
+    "Column": 0,
+    "Label": "Field name · row 33",
+    "Original": "アザディスタン",
+    "Text": "アザディスタン"
+  },
+  {
+    "Table": "OG_MAP",
+    "Row": 34,
+    "Column": 0,
+    "Label": "Field name · row 34",
+    "Original": "ＣＢ秘密拠点",
+    "Text": "ＣＢ秘密拠点"
+  },
+  {
+    "Table": "OG_MAP",
+    "Row": 35,
+    "Column": 0,
+    "Label": "Field name · row 35",
+    "Original": "宇宙",
+    "Text": "宇宙"
+  },
+  {
+    "Table": "OG_MAP",
+    "Row": 36,
+    "Column": 0,
+    "Label": "Field name · row 36",
+    "Original": "マーシャル諸島某島",
+    "Text": "マーシャル諸島某島"
+  },
+  {
+    "Table": "OG_MAP",
+    "Row": 37,
+    "Column": 0,
+    "Label": "Field name · row 37",
+    "Original": "山岳地帯",
+    "Text": "山岳地帯"
+  },
+  {
+    "Table": "OG_MAP",
+    "Row": 38,
+    "Column": 0,
+    "Label": "Field name · row 38",
+    "Original": "仮想戦域１",
+    "Text": "仮想戦域１"
+  },
+  {
+    "Table": "OG_MAP",
+    "Row": 39,
+    "Column": 0,
+    "Label": "Field name · row 39",
+    "Original": "仮想戦域２",
+    "Text": "仮想戦域２"
+  },
+  {
+    "Table": "OG_MAP",
+    "Row": 40,
+    "Column": 0,
+    "Label": "Field name · row 40",
+    "Original": "仮想戦域３",
+    "Text": "仮想戦域３"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 1,
+    "Column": 6,
+    "Label": "Mission name · EVM_AEU001",
+    "Original": "チュートリアル③",
+    "Text": "チュートリアル③"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 2,
+    "Column": 6,
+    "Label": "Mission name · EVM_AEU002",
+    "Original": "新型ＭＳ披露襲撃",
+    "Text": "新型ＭＳ披露襲撃"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 3,
+    "Column": 6,
+    "Label": "Mission name · EVM_AEU003",
+    "Original": "ＡＥＵ軍事基地襲撃",
+    "Text": "ＡＥＵ軍事基地襲撃"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 4,
+    "Column": 6,
+    "Label": "Mission name · EVM_AEU004",
+    "Original": "ＡＥＵ海上演習襲撃",
+    "Text": "ＡＥＵ海上演習襲撃"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 5,
+    "Column": 6,
+    "Label": "Mission name · EVM_AEU005",
+    "Original": "モラリアへの武力介入①",
+    "Text": "モラリアへの武力介入①"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 6,
+    "Column": 6,
+    "Label": "Mission name · EVM_AEU006",
+    "Original": "ＡＥＵのＣＢ攻略戦",
+    "Text": "ＡＥＵのＣＢ攻略戦"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 7,
+    "Column": 6,
+    "Label": "Mission name · EVM_AEU007",
+    "Original": "ＡＥＵ輸送部隊襲撃",
+    "Text": "ＡＥＵ輸送部隊襲撃"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 8,
+    "Column": 6,
+    "Label": "Mission name · EVM_AEU008",
+    "Original": "モラリアへの武力介入③",
+    "Text": "モラリアへの武力介入③"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 9,
+    "Column": 6,
+    "Label": "Mission name · EVM_AEU009",
+    "Original": "ＡＥＵ採掘施設襲撃",
+    "Text": "ＡＥＵ採掘施設襲撃"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 10,
+    "Column": 6,
+    "Label": "Mission name · EVM_AEU010",
+    "Original": "ＡＥＵ勢力誇示の阻止",
+    "Text": "ＡＥＵ勢力誇示の阻止"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 11,
+    "Column": 6,
+    "Label": "Mission name · EVM_AEU011",
+    "Original": "ＡＥＵへの侵攻阻止①",
+    "Text": "ＡＥＵへの侵攻阻止①"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 12,
+    "Column": 6,
+    "Label": "Mission name · EVM_AEU012",
+    "Original": "ＡＥＵへの侵攻阻止②",
+    "Text": "ＡＥＵへの侵攻阻止②"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 13,
+    "Column": 6,
+    "Label": "Mission name · EVM_AEU013",
+    "Original": "ＡＥＵの強大化阻止①",
+    "Text": "ＡＥＵの強大化阻止①"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 14,
+    "Column": 6,
+    "Label": "Mission name · EVM_AEU014",
+    "Original": "ＡＥＵの強大化阻止②",
+    "Text": "ＡＥＵの強大化阻止②"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 15,
+    "Column": 6,
+    "Label": "Mission name · EVM_AEU015",
+    "Original": "ＡＥＵの侵攻阻止",
+    "Text": "ＡＥＵの侵攻阻止"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 16,
+    "Column": 6,
+    "Label": "Mission name · EVM_AEU016",
+    "Original": "モラリアへの武力介入②",
+    "Text": "モラリアへの武力介入②"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 17,
+    "Column": 6,
+    "Label": "Mission name · EVM_AEU017",
+    "Original": "ラ・イデンラ壊滅作戦③",
+    "Text": "ラ・イデンラ壊滅作戦③"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 18,
+    "Column": 6,
+    "Label": "Mission name · EVM_AEU018",
+    "Original": "ＡＥＵ過剰戦力の消去",
+    "Text": "ＡＥＵ過剰戦力の消去"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 19,
+    "Column": 6,
+    "Label": "Mission name · EVM_AEU019",
+    "Original": "ＡＥＵ秘密基地襲撃",
+    "Text": "ＡＥＵ秘密基地襲撃"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 20,
+    "Column": 6,
+    "Label": "Mission name · EVM_AEU020",
+    "Original": "ＡＥＵクーデター阻止",
+    "Text": "ＡＥＵクーデター阻止"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 21,
+    "Column": 6,
+    "Label": "Mission name · EVM_HRL001",
+    "Original": "チュートリアル②",
+    "Text": "チュートリアル②"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 22,
+    "Column": 6,
+    "Label": "Mission name · EVM_HRL002",
+    "Original": "軌道ＥＶテロ阻止",
+    "Text": "軌道ＥＶテロ阻止"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 23,
+    "Column": 6,
+    "Label": "Mission name · EVM_HRL003",
+    "Original": "人革連ＭＳ演習襲撃",
+    "Text": "人革連ＭＳ演習襲撃"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 24,
+    "Column": 6,
+    "Label": "Mission name · EVM_HRL004",
+    "Original": "人革連輸送艦襲撃",
+    "Text": "人革連輸送艦襲撃"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 25,
+    "Column": 6,
+    "Label": "Mission name · EVM_HRL005",
+    "Original": "セイロン島民族紛争介入①",
+    "Text": "セイロン島民族紛争介入①"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 26,
+    "Column": 6,
+    "Label": "Mission name · EVM_HRL006",
+    "Original": "セイロン島軍事介入阻止",
+    "Text": "セイロン島軍事介入阻止"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 27,
+    "Column": 6,
+    "Label": "Mission name · EVM_HRL007",
+    "Original": "オービタルリング崩落阻止",
+    "Text": "オービタルリング崩落阻止"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 28,
+    "Column": 6,
+    "Label": "Mission name · EVM_HRL008",
+    "Original": "人革連の反撃①",
+    "Text": "人革連の反撃①"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 29,
+    "Column": 6,
+    "Label": "Mission name · EVM_HRL009",
+    "Original": "人革連のＣＢ攻略戦",
+    "Text": "人革連のＣＢ攻略戦"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 30,
+    "Column": 6,
+    "Label": "Mission name · EVM_HRL010",
+    "Original": "セイロン島民族紛争介入②",
+    "Text": "セイロン島民族紛争介入②"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 31,
+    "Column": 6,
+    "Label": "Mission name · EVM_HRL011",
+    "Original": "セイロン島民族紛争介入③",
+    "Text": "セイロン島民族紛争介入③"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 32,
+    "Column": 6,
+    "Label": "Mission name · EVM_HRL012",
+    "Original": "人革連の反撃②",
+    "Text": "人革連の反撃②"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 33,
+    "Column": 6,
+    "Label": "Mission name · EVM_HRL013",
+    "Original": "超兵機関襲撃",
+    "Text": "超兵機関襲撃"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 34,
+    "Column": 6,
+    "Label": "Mission name · EVM_HRL014",
+    "Original": "人革連前線基地襲撃",
+    "Text": "人革連前線基地襲撃"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 35,
+    "Column": 6,
+    "Label": "Mission name · EVM_HRL015",
+    "Original": "人革連武力介入阻止",
+    "Text": "人革連武力介入阻止"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 36,
+    "Column": 6,
+    "Label": "Mission name · EVM_HRL016",
+    "Original": "人革連への侵攻阻止①",
+    "Text": "人革連への侵攻阻止①"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 37,
+    "Column": 6,
+    "Label": "Mission name · EVM_HRL017",
+    "Original": "人革連への侵攻阻止②",
+    "Text": "人革連への侵攻阻止②"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 38,
+    "Column": 6,
+    "Label": "Mission name · EVM_HRL018",
+    "Original": "人革連の強大化阻止①",
+    "Text": "人革連の強大化阻止①"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 39,
+    "Column": 6,
+    "Label": "Mission name · EVM_HRL019",
+    "Original": "人革連の強大化阻止②",
+    "Text": "人革連の強大化阻止②"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 40,
+    "Column": 6,
+    "Label": "Mission name · EVM_HRL020",
+    "Original": "人革連軍備再編阻止",
+    "Text": "人革連軍備再編阻止"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 41,
+    "Column": 6,
+    "Label": "Mission name · EVM_UNI001",
+    "Original": "ユニオン観艦式襲撃",
+    "Text": "ユニオン観艦式襲撃"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 42,
+    "Column": 6,
+    "Label": "Mission name · EVM_UNI002",
+    "Original": "ユニオン輸送部隊襲撃",
+    "Text": "ユニオン輸送部隊襲撃"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 43,
+    "Column": 6,
+    "Label": "Mission name · EVM_UNI003",
+    "Original": "ユニオンＭＳ演習襲撃",
+    "Text": "ユニオンＭＳ演習襲撃"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 44,
+    "Column": 6,
+    "Label": "Mission name · EVM_UNI004",
+    "Original": "タリビアへの武力介入①",
+    "Text": "タリビアへの武力介入①"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 45,
+    "Column": 6,
+    "Label": "Mission name · EVM_UNI005",
+    "Original": "ユニオン秘密基地襲撃",
+    "Text": "ユニオン秘密基地襲撃"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 46,
+    "Column": 6,
+    "Label": "Mission name · EVM_UNI006",
+    "Original": "タリビアへの武力介入②",
+    "Text": "タリビアへの武力介入②"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 47,
+    "Column": 6,
+    "Label": "Mission name · EVM_UNI007",
+    "Original": "ユニオンのＣＢ攻略戦",
+    "Text": "ユニオンのＣＢ攻略戦"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 48,
+    "Column": 6,
+    "Label": "Mission name · EVM_UNI008",
+    "Original": "ユニオン主要都市テロ阻止",
+    "Text": "ユニオン主要都市テロ阻止"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 49,
+    "Column": 6,
+    "Label": "Mission name · EVM_UNI009",
+    "Original": "ユニオン山岳要塞攻略",
+    "Text": "ユニオン山岳要塞攻略"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 50,
+    "Column": 6,
+    "Label": "Mission name · EVM_UNI010",
+    "Original": "ユニオンの侵攻阻止",
+    "Text": "ユニオンの侵攻阻止"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 51,
+    "Column": 6,
+    "Label": "Mission name · EVM_UNI011",
+    "Original": "ユニオンへの侵攻阻止①",
+    "Text": "ユニオンへの侵攻阻止①"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 52,
+    "Column": 6,
+    "Label": "Mission name · EVM_UNI012",
+    "Original": "ユニオンへの侵攻阻止②",
+    "Text": "ユニオンへの侵攻阻止②"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 53,
+    "Column": 6,
+    "Label": "Mission name · EVM_UNI013",
+    "Original": "ユニオンの強大化阻止①",
+    "Text": "ユニオンの強大化阻止①"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 54,
+    "Column": 6,
+    "Label": "Mission name · EVM_UNI014",
+    "Original": "ユニオンの強大化阻止②",
+    "Text": "ユニオンの強大化阻止②"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 55,
+    "Column": 6,
+    "Label": "Mission name · EVM_UNI015",
+    "Original": "ユニオン空軍基地襲撃",
+    "Text": "ユニオン空軍基地襲撃"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 56,
+    "Column": 6,
+    "Label": "Mission name · EVM_UNI016",
+    "Original": "ラ・イデンラ壊滅作戦②",
+    "Text": "ラ・イデンラ壊滅作戦②"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 57,
+    "Column": 6,
+    "Label": "Mission name · EVM_UNI017",
+    "Original": "アザディスタン反乱阻止①",
+    "Text": "アザディスタン反乱阻止①"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 58,
+    "Column": 6,
+    "Label": "Mission name · EVM_UNI018",
+    "Original": "ユニオン新部隊結成妨害",
+    "Text": "ユニオン新部隊結成妨害"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 59,
+    "Column": 6,
+    "Label": "Mission name · EVM_UNI019",
+    "Original": "オーバーフラッグス襲撃",
+    "Text": "オーバーフラッグス襲撃"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 60,
+    "Column": 6,
+    "Label": "Mission name · EVM_UNI020",
+    "Original": "ユニオン重要人物抹殺",
+    "Text": "ユニオン重要人物抹殺"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 61,
+    "Column": 6,
+    "Label": "Mission name · EVM_ETC001",
+    "Original": "チュートリアル①",
+    "Text": "チュートリアル①"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 62,
+    "Column": 6,
+    "Label": "Mission name · EVM_ETC002",
+    "Original": "テロ組織山岳施設襲撃",
+    "Text": "テロ組織山岳施設襲撃"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 63,
+    "Column": 6,
+    "Label": "Mission name · EVM_ETC003",
+    "Original": "宇宙輸送艇防衛",
+    "Text": "宇宙輸送艇防衛"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 64,
+    "Column": 6,
+    "Label": "Mission name · EVM_ETC004",
+    "Original": "アザディスタン反乱阻止②",
+    "Text": "アザディスタン反乱阻止②"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 65,
+    "Column": 6,
+    "Label": "Mission name · EVM_ETC005",
+    "Original": "要人暗殺テロ阻止",
+    "Text": "要人暗殺テロ阻止"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 66,
+    "Column": 6,
+    "Label": "Mission name · EVM_ETC006",
+    "Original": "最悪のテロ",
+    "Text": "最悪のテロ"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 67,
+    "Column": 6,
+    "Label": "Mission name · EVM_ETC007",
+    "Original": "テロ組織ミサイル施設襲撃",
+    "Text": "テロ組織ミサイル施設襲撃"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 68,
+    "Column": 6,
+    "Label": "Mission name · EVM_ETC008",
+    "Original": "偽装輸送艦襲撃",
+    "Text": "偽装輸送艦襲撃"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 69,
+    "Column": 6,
+    "Label": "Mission name · EVM_ETC009",
+    "Original": "ラ・イデンラ壊滅作戦①",
+    "Text": "ラ・イデンラ壊滅作戦①"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 70,
+    "Column": 6,
+    "Label": "Mission name · EVM_ETC010",
+    "Original": "軍事物資の流通阻止",
+    "Text": "軍事物資の流通阻止"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 71,
+    "Column": 6,
+    "Label": "Mission name · EVM_ETC011",
+    "Original": "プトレマイオス防衛",
+    "Text": "プトレマイオス防衛"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 72,
+    "Column": 6,
+    "Label": "Mission name · EVM_ETC012",
+    "Original": "特殊模擬戦①",
+    "Text": "特殊模擬戦①"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 73,
+    "Column": 6,
+    "Label": "Mission name · EVM_ETC013",
+    "Original": "特殊模擬戦②",
+    "Text": "特殊模擬戦②"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 74,
+    "Column": 6,
+    "Label": "Mission name · EVM_ETC014",
+    "Original": "特殊模擬戦③",
+    "Text": "特殊模擬戦③"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 75,
+    "Column": 6,
+    "Label": "Mission name · EVM_ETC015",
+    "Original": "アザディスタン反乱阻止③",
+    "Text": "アザディスタン反乱阻止③"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 76,
+    "Column": 6,
+    "Label": "Mission name · EVM_ETC016",
+    "Original": "３勢力合同軍事演習①",
+    "Text": "３勢力合同軍事演習①"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 77,
+    "Column": 6,
+    "Label": "Mission name · EVM_ETC017",
+    "Original": "３勢力合同軍事演習②",
+    "Text": "３勢力合同軍事演習②"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 78,
+    "Column": 6,
+    "Label": "Mission name · EVM_ETC018",
+    "Original": "３勢力合同軍事演習③",
+    "Text": "３勢力合同軍事演習③"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 79,
+    "Column": 6,
+    "Label": "Mission name · EVM_ETC019",
+    "Original": "３勢力合同軍事演習④",
+    "Text": "３勢力合同軍事演習④"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 80,
+    "Column": 6,
+    "Label": "Mission name · EVM_ETC020",
+    "Original": "謎のガンダム部隊襲来",
+    "Text": "謎のガンダム部隊襲来"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 1,
+    "Column": 7,
+    "Label": "Mission description · EVM_AEU001",
+    "Original": "戦闘を有利に進めるためのテクニックを\n習得せよ。\nこれが最終のチュートリアルとなる。",
+    "Text": "戦闘を有利に進めるためのテクニックを\n習得せよ。\nこれが最終のチュートリアルとなる。"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 2,
+    "Column": 7,
+    "Label": "Mission description · EVM_AEU002",
+    "Original": "ＡＥＵが新型ＭＳ発表会を行うとの情報\nが入った。式典を襲撃し、世界にソレス\nタルビーイングの存在を知らしめよ。",
+    "Text": "ＡＥＵが新型ＭＳ発表会を行うとの情報\nが入った。式典を襲撃し、世界にソレス\nタルビーイングの存在を知らしめよ。"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 3,
+    "Column": 7,
+    "Label": "Mission description · EVM_AEU003",
+    "Original": "軍備増強を進めているＡＥＵに対し、基\n地施設への攻撃を行う。施設破壊後、基\n地に駐屯するＭＳ部隊も殲滅せよ。",
+    "Text": "軍備増強を進めているＡＥＵに対し、基\n地施設への攻撃を行う。施設破壊後、基\n地に駐屯するＭＳ部隊も殲滅せよ。"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 4,
+    "Column": 7,
+    "Label": "Mission description · EVM_AEU004",
+    "Original": "洋上にて演習を行っているＡＥＵの部隊\nを襲撃せよ。艦隊への攻撃を優先とし、\n艦隊殲滅をもって任務成功とする。",
+    "Text": "洋上にて演習を行っているＡＥＵの部隊\nを襲撃せよ。艦隊への攻撃を優先とし、\n艦隊殲滅をもって任務成功とする。"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 5,
+    "Column": 7,
+    "Label": "Mission description · EVM_AEU005",
+    "Original": "ＡＥＵ、モラリア、ＰＭＣ共同軍事演習\nに対し武力介入を行う。演習予定地近郊\nの都市駐屯部隊を襲撃せよ。",
+    "Text": "ＡＥＵ、モラリア、ＰＭＣ共同軍事演習\nに対し武力介入を行う。演習予定地近郊\nの都市駐屯部隊を襲撃せよ。"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 6,
+    "Column": 7,
+    "Label": "Mission description · EVM_AEU006",
+    "Original": "プトレマイオスがＡＥＵに捕捉された。\nミサイルとＭＳによる波状攻撃が予想\nされる。敵部隊を排除し、防衛せよ。",
+    "Text": "プトレマイオスがＡＥＵに捕捉された。\nミサイルとＭＳによる波状攻撃が予想\nされる。敵部隊を排除し、防衛せよ。"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 7,
+    "Column": 7,
+    "Label": "Mission description · EVM_AEU007",
+    "Original": "ＡＥＵは各基地の戦力増強を画策。大規\n模な輸送部隊の移動を確認。この輸送機\nを最優先攻撃目標とし、全機撃墜せよ。",
+    "Text": "ＡＥＵは各基地の戦力増強を画策。大規\n模な輸送部隊の移動を確認。この輸送機\nを最優先攻撃目標とし、全機撃墜せよ。"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 8,
+    "Column": 7,
+    "Label": "Mission description · EVM_AEU008",
+    "Original": "モラリア軍の中枢である軍事基地に対し\n直接攻撃を行う。主要施設、敵守備隊を\n殲滅し、無条件降伏に追い込め。",
+    "Text": "モラリア軍の中枢である軍事基地に対し\n直接攻撃を行う。主要施設、敵守備隊を\n殲滅し、無条件降伏に追い込め。"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 9,
+    "Column": 7,
+    "Label": "Mission description · EVM_AEU009",
+    "Original": "ＡＥＵに誘致された軍需産業の採掘施設\nを襲撃する。主要施設の破壊後は、敵守\n備隊を殲滅せよ。",
+    "Text": "ＡＥＵに誘致された軍需産業の採掘施設\nを襲撃する。主要施設の破壊後は、敵守\n備隊を殲滅せよ。"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 10,
+    "Column": 7,
+    "Label": "Mission description · EVM_AEU010",
+    "Original": "モラリアの一件で多大な被害を受けたＡ\nＥＵが、その勢力を誇示するため、人革\n連領土に侵攻中。これを殲滅せよ。",
+    "Text": "モラリアの一件で多大な被害を受けたＡ\nＥＵが、その勢力を誇示するため、人革\n連領土に侵攻中。これを殲滅せよ。"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 11,
+    "Column": 7,
+    "Label": "Mission description · EVM_AEU011",
+    "Original": "弱体化したＡＥＵの主要都市に、人革連\n＆ユニオンの両勢力が侵攻を開始した。\n武力介入を行い、これを阻止せよ。",
+    "Text": "弱体化したＡＥＵの主要都市に、人革連\n＆ユニオンの両勢力が侵攻を開始した。\n武力介入を行い、これを阻止せよ。"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 12,
+    "Column": 7,
+    "Label": "Mission description · EVM_AEU012",
+    "Original": "ＡＥＵに対する人革連＆ユニオンの両勢\n力の侵攻が続いている。主力と思われる\n部隊を撃破し、侵攻を阻止せよ。",
+    "Text": "ＡＥＵに対する人革連＆ユニオンの両勢\n力の侵攻が続いている。主力と思われる\n部隊を撃破し、侵攻を阻止せよ。"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 13,
+    "Column": 7,
+    "Label": "Mission description · EVM_AEU013",
+    "Original": "ＡＥＵが他勢力に対する大規模な侵攻を\n開始した。ユニオンの軌道ＥＶへ発射さ\nれたミサイルを迎撃。部隊を殲滅せよ。",
+    "Text": "ＡＥＵが他勢力に対する大規模な侵攻を\n開始した。ユニオンの軌道ＥＶへ発射さ\nれたミサイルを迎撃。部隊を殲滅せよ。"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 14,
+    "Column": 7,
+    "Label": "Mission description · EVM_AEU014",
+    "Original": "ＡＥＵの他勢力に対する大規模戦闘は終\nわらない。人革連の軌道ＥＶへ進軍する\n部隊を殲滅せよ。",
+    "Text": "ＡＥＵの他勢力に対する大規模戦闘は終\nわらない。人革連の軌道ＥＶへ進軍する\n部隊を殲滅せよ。"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 15,
+    "Column": 7,
+    "Label": "Mission description · EVM_AEU015",
+    "Original": "宇宙での人革連の大作戦失敗を観測した\nＡＥＵが人革連領土への侵攻を始めた。\nミサイルを優先破壊し、敵を殲滅せよ。",
+    "Text": "宇宙での人革連の大作戦失敗を観測した\nＡＥＵが人革連領土への侵攻を始めた。\nミサイルを優先破壊し、敵を殲滅せよ。"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 16,
+    "Column": 7,
+    "Label": "Mission description · EVM_AEU016",
+    "Original": "ＡＥＵ、モラリア、ＰＭＣ共同軍事演習\nに対し武力介入を行う。演習予定地に集\n結中の敵部隊を殲滅せよ。",
+    "Text": "ＡＥＵ、モラリア、ＰＭＣ共同軍事演習\nに対し武力介入を行う。演習予定地に集\n結中の敵部隊を殲滅せよ。"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 17,
+    "Column": 7,
+    "Label": "Mission description · EVM_AEU017",
+    "Original": "国際テロネットワーク「ラ・イデンラ」\nの移動拠点となっている艦艇を確認。\n艦艇を優先し破壊、敵を殲滅せよ。",
+    "Text": "国際テロネットワーク「ラ・イデンラ」\nの移動拠点となっている艦艇を確認。\n艦艇を優先し破壊、敵を殲滅せよ。"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 18,
+    "Column": 7,
+    "Label": "Mission description · EVM_AEU018",
+    "Original": "ＡＥＵが大規模な部隊を温存していると\nの情報を得た。ＡＥＵ領内に入り、敵Ｍ\nＳ部隊を殲滅せよ。",
+    "Text": "ＡＥＵが大規模な部隊を温存していると\nの情報を得た。ＡＥＵ領内に入り、敵Ｍ\nＳ部隊を殲滅せよ。"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 19,
+    "Column": 7,
+    "Label": "Mission description · EVM_AEU019",
+    "Original": "山岳地帯にてＡＥＵの秘密基地が確認さ\nれた。過剰戦力を排除するべく施設破壊\nを優先し、その後、敵部隊を殲滅せよ。",
+    "Text": "山岳地帯にてＡＥＵの秘密基地が確認さ\nれた。過剰戦力を排除するべく施設破壊\nを優先し、その後、敵部隊を殲滅せよ。"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 20,
+    "Column": 7,
+    "Label": "Mission description · EVM_AEU020",
+    "Original": "ＡＥＵの首都防空隊がクーデターを起こ\nした。人口密集地への被害を最小限にす\nるため、放たれたミサイルを迎撃せよ。",
+    "Text": "ＡＥＵの首都防空隊がクーデターを起こ\nした。人口密集地への被害を最小限にす\nるため、放たれたミサイルを迎撃せよ。"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 21,
+    "Column": 7,
+    "Label": "Mission description · EVM_HRL001",
+    "Original": "遠隔操作された現用ＭＳを仮想敵とし、\n実戦形式の模擬戦を行う。戦闘の基本と\nなる攻撃全般を習得せよ。",
+    "Text": "遠隔操作された現用ＭＳを仮想敵とし、\n実戦形式の模擬戦を行う。戦闘の基本と\nなる攻撃全般を習得せよ。"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 22,
+    "Column": 7,
+    "Label": "Mission description · EVM_HRL002",
+    "Original": "テロリストが人革連の軌道ＥＶ「天柱」\nの破壊を計画中との情報が入った。\nミサイル群を破壊しこれを阻止せよ。",
+    "Text": "テロリストが人革連の軌道ＥＶ「天柱」\nの破壊を計画中との情報が入った。\nミサイル群を破壊しこれを阻止せよ。"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 23,
+    "Column": 7,
+    "Label": "Mission description · EVM_HRL003",
+    "Original": "人革連が増産したＭＳ「ティエレン」で\n実戦演習を行っているとの情報あり。\n過剰戦力保持を阻止するべく殲滅せよ。",
+    "Text": "人革連が増産したＭＳ「ティエレン」で\n実戦演習を行っているとの情報あり。\n過剰戦力保持を阻止するべく殲滅せよ。"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 24,
+    "Column": 7,
+    "Label": "Mission description · EVM_HRL004",
+    "Original": "人革連の艦隊に不穏な動きが見られる。\n輸送艦を優先して撃沈し、戦渦の拡大を\n未然に食い止めよ。",
+    "Text": "人革連の艦隊に不穏な動きが見られる。\n輸送艦を優先して撃沈し、戦渦の拡大を\n未然に食い止めよ。"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 25,
+    "Column": 7,
+    "Label": "Mission description · EVM_HRL005",
+    "Original": "旧スリランカ、セイロン島にて民族紛争\nが発生。これに武力介入し前線に展開す\nる両勢力の部隊を殲滅せよ。",
+    "Text": "旧スリランカ、セイロン島にて民族紛争\nが発生。これに武力介入し前線に展開す\nる両勢力の部隊を殲滅せよ。"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 26,
+    "Column": 7,
+    "Label": "Mission description · EVM_HRL006",
+    "Original": "一時終息した紛争地域に、人革連が軍事\n介入を開始した。司令車両を破壊せよ。\nエースクラスに要注意。",
+    "Text": "一時終息した紛争地域に、人革連が軍事\n介入を開始した。司令車両を破壊せよ。\nエースクラスに要注意。"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 27,
+    "Column": 7,
+    "Label": "Mission description · EVM_HRL007",
+    "Original": "崩落したオービタルリングを破砕せよ。\n人革連新型ＭＳの暴走が崩落の原因らし\nい、遭遇した場合これも破壊せよ。",
+    "Text": "崩落したオービタルリングを破砕せよ。\n人革連新型ＭＳの暴走が崩落の原因らし\nい、遭遇した場合これも破壊せよ。"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 28,
+    "Column": 7,
+    "Label": "Mission description · EVM_HRL008",
+    "Original": "人革連が、その物量を武器にソレスタル\nビーイングへの反撃に出た。発見された\nプトレマイオスを全力で防衛せよ。",
+    "Text": "人革連が、その物量を武器にソレスタル\nビーイングへの反撃に出た。発見された\nプトレマイオスを全力で防衛せよ。"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 29,
+    "Column": 7,
+    "Label": "Mission description · EVM_HRL009",
+    "Original": "ガンダムの地上拠点の存在する場所が、\n人革連に察知された。接近中の敵艦隊お\nよびＭＳ部隊を排除し進軍を阻止せよ。",
+    "Text": "ガンダムの地上拠点の存在する場所が、\n人革連に察知された。接近中の敵艦隊お\nよびＭＳ部隊を排除し進軍を阻止せよ。"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 30,
+    "Column": 7,
+    "Label": "Mission description · EVM_HRL010",
+    "Original": "セイロン島の民族紛争に介入し、制限時\n間内にエリア内に展開する部隊を可能な\n限り倒し、世界への警告とせよ。",
+    "Text": "セイロン島の民族紛争に介入し、制限時\n間内にエリア内に展開する部隊を可能な\n限り倒し、世界への警告とせよ。"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 31,
+    "Column": 7,
+    "Label": "Mission description · EVM_HRL011",
+    "Original": "旧スリランカ、セイロン島にて民族紛争\nが発生。これに武力介入し紛争拡大の原\n因となる予備戦力を排除せよ。",
+    "Text": "旧スリランカ、セイロン島にて民族紛争\nが発生。これに武力介入し紛争拡大の原\n因となる予備戦力を排除せよ。"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 32,
+    "Column": 7,
+    "Label": "Mission description · EVM_HRL012",
+    "Original": "人革連のソレスタルビーイングへの反撃\nは第２段階に入った。ガンダムを捕獲す\nるために襲ってくる敵部隊を殲滅せよ。",
+    "Text": "人革連のソレスタルビーイングへの反撃\nは第２段階に入った。ガンダムを捕獲す\nるために襲ってくる敵部隊を殲滅せよ。"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 33,
+    "Column": 7,
+    "Label": "Mission description · EVM_HRL013",
+    "Original": "人革連の「超兵」研究施設に対し、武力\n介入を行う。施設を優先破壊の上、守備\n隊を殲滅せよ。",
+    "Text": "人革連の「超兵」研究施設に対し、武力\n介入を行う。施設を優先破壊の上、守備\n隊を殲滅せよ。"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 34,
+    "Column": 7,
+    "Label": "Mission description · EVM_HRL014",
+    "Original": "人革連の前線基地で不穏な動きが見られ\nる。基地施設破壊を優先し、その後、駐\n屯する敵部隊を殲滅せよ。",
+    "Text": "人革連の前線基地で不穏な動きが見られ\nる。基地施設破壊を優先し、その後、駐\n屯する敵部隊を殲滅せよ。"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 35,
+    "Column": 7,
+    "Label": "Mission description · EVM_HRL015",
+    "Original": "人革連が離反意図のある領土に対し制圧\n部隊を派遣した。飛来するミサイル群を\n優先破壊し、敵部隊を殲滅せよ。",
+    "Text": "人革連が離反意図のある領土に対し制圧\n部隊を派遣した。飛来するミサイル群を\n優先破壊し、敵部隊を殲滅せよ。"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 36,
+    "Column": 7,
+    "Label": "Mission description · EVM_HRL016",
+    "Original": "弱体化した人革連の主要都市に、ＡＥＵ\n＆ユニオンの両勢力が侵攻を開始した。\n武力介入を行い、これを阻止せよ。",
+    "Text": "弱体化した人革連の主要都市に、ＡＥＵ\n＆ユニオンの両勢力が侵攻を開始した。\n武力介入を行い、これを阻止せよ。"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 37,
+    "Column": 7,
+    "Label": "Mission description · EVM_HRL017",
+    "Original": "人革連に対するＡＥＵ＆ユニオンの両勢\n力の侵攻が続いている。主力と思われる\n部隊を撃破し、侵攻を阻止せよ。",
+    "Text": "人革連に対するＡＥＵ＆ユニオンの両勢\n力の侵攻が続いている。主力と思われる\n部隊を撃破し、侵攻を阻止せよ。"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 38,
+    "Column": 7,
+    "Label": "Mission description · EVM_HRL018",
+    "Original": "人革連が他勢力に対して大規模戦闘を開\n始するとの情報を得た。ユニオンの軌道\nＥＶへ進軍する部隊を殲滅せよ。",
+    "Text": "人革連が他勢力に対して大規模戦闘を開\n始するとの情報を得た。ユニオンの軌道\nＥＶへ進軍する部隊を殲滅せよ。"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 39,
+    "Column": 7,
+    "Label": "Mission description · EVM_HRL019",
+    "Original": "人革連の他勢力に対する大規模戦闘は終\nわらない。ＡＥＵの軌道ＥＶへ進軍する\n部隊を殲滅せよ。",
+    "Text": "人革連の他勢力に対する大規模戦闘は終\nわらない。ＡＥＵの軌道ＥＶへ進軍する\n部隊を殲滅せよ。"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 40,
+    "Column": 7,
+    "Label": "Mission description · EVM_HRL020",
+    "Original": "人革連が軍備再編のために、ＡＥＵとの\n領土境界線付近に基地を建造した。攻撃\n準備が整う前に施設を破壊、殲滅せよ。",
+    "Text": "人革連が軍備再編のために、ＡＥＵとの\n領土境界線付近に基地を建造した。攻撃\n準備が整う前に施設を破壊、殲滅せよ。"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 41,
+    "Column": 7,
+    "Label": "Mission description · EVM_UNI001",
+    "Original": "ユニオンの観艦式を襲撃せよ。\n艦船への攻撃を優先とし、艦隊の殲滅を\nもって任務成功とする。",
+    "Text": "ユニオンの観艦式を襲撃せよ。\n艦船への攻撃を優先とし、艦隊の殲滅を\nもって任務成功とする。"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 42,
+    "Column": 7,
+    "Label": "Mission description · EVM_UNI002",
+    "Original": "ユニオンの大規模輸送部隊の動きを確認\nした。輸送機を優先して撃墜せよ。\n護衛のエースクラスに要注意。",
+    "Text": "ユニオンの大規模輸送部隊の動きを確認\nした。輸送機を優先して撃墜せよ。\n護衛のエースクラスに要注意。"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 43,
+    "Column": 7,
+    "Label": "Mission description · EVM_UNI003",
+    "Original": "ユニオンの過剰戦力を削減する。演習中\nの敵部隊を襲撃せよ。敵戦力の全容が不\n明なため制限時間内で倒せるだけ倒せ。",
+    "Text": "ユニオンの過剰戦力を削減する。演習中\nの敵部隊を襲撃せよ。敵戦力の全容が不\n明なため制限時間内で倒せるだけ倒せ。"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 44,
+    "Column": 7,
+    "Label": "Mission description · EVM_UNI004",
+    "Original": "タリビアによるユニオン離反表明を紛争\n誘発行為と認識。主要都市に配備された\nタリビア軍ＭＳ部隊を殲滅せよ。",
+    "Text": "タリビアによるユニオン離反表明を紛争\n誘発行為と認識。主要都市に配備された\nタリビア軍ＭＳ部隊を殲滅せよ。"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 45,
+    "Column": 7,
+    "Label": "Mission description · EVM_UNI005",
+    "Original": "ユニオンは採掘場跡を秘密軍事施設とし\nていた。相当数の武器を保有している。\n制限時間内で可能な限り破壊せよ。",
+    "Text": "ユニオンは採掘場跡を秘密軍事施設とし\nていた。相当数の武器を保有している。\n制限時間内で可能な限り破壊せよ。"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 46,
+    "Column": 7,
+    "Label": "Mission description · EVM_UNI006",
+    "Original": "追い込まれたタリビアがユニオンに支援\n要請した。ユニオンの部隊を殲滅せよ。\nエースクラスに要注意。",
+    "Text": "追い込まれたタリビアがユニオンに支援\n要請した。ユニオンの部隊を殲滅せよ。\nエースクラスに要注意。"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 47,
+    "Column": 7,
+    "Label": "Mission description · EVM_UNI007",
+    "Original": "ガンダムの地上拠点であるコンテナが存\n在する場所がユニオンに察知された。敵\nの攻撃からコンテナを防衛せよ。",
+    "Text": "ガンダムの地上拠点であるコンテナが存\n在する場所がユニオンに察知された。敵\nの攻撃からコンテナを防衛せよ。"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 48,
+    "Column": 7,
+    "Label": "Mission description · EVM_UNI008",
+    "Original": "ユニオン主要都市にテロリストが無差別\n攻撃を計画中。\n至急現地に飛び、敵部隊を殲滅せよ。",
+    "Text": "ユニオン主要都市にテロリストが無差別\n攻撃を計画中。\n至急現地に飛び、敵部隊を殲滅せよ。"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 49,
+    "Column": 7,
+    "Label": "Mission description · EVM_UNI009",
+    "Original": "ユニオンの過剰戦力を保有する要塞を無\n力化する。援軍到着予想時間前に砲台を\n撃破し、その後、敵戦力を掃討せよ。",
+    "Text": "ユニオンの過剰戦力を保有する要塞を無\n力化する。援軍到着予想時間前に砲台を\n撃破し、その後、敵戦力を掃討せよ。"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 50,
+    "Column": 7,
+    "Label": "Mission description · EVM_UNI010",
+    "Original": "宇宙での人革連の大作戦失敗を観測した\nユニオンが人革連領土へ侵攻を始めた。\nユニオン攻撃部隊を殲滅せよ。",
+    "Text": "宇宙での人革連の大作戦失敗を観測した\nユニオンが人革連領土へ侵攻を始めた。\nユニオン攻撃部隊を殲滅せよ。"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 51,
+    "Column": 7,
+    "Label": "Mission description · EVM_UNI011",
+    "Original": "弱体化したユニオンの主要都市に人革連\n＆ＡＥＵの両勢力が侵攻を開始した。\n武力介入を行い、これを阻止せよ。",
+    "Text": "弱体化したユニオンの主要都市に人革連\n＆ＡＥＵの両勢力が侵攻を開始した。\n武力介入を行い、これを阻止せよ。"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 52,
+    "Column": 7,
+    "Label": "Mission description · EVM_UNI012",
+    "Original": "ユニオンに対する人革連＆ＡＥＵの両勢\n力の侵攻が続いている。主力と思われる\n部隊を撃破し、侵攻を阻止せよ。",
+    "Text": "ユニオンに対する人革連＆ＡＥＵの両勢\n力の侵攻が続いている。主力と思われる\n部隊を撃破し、侵攻を阻止せよ。"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 53,
+    "Column": 7,
+    "Label": "Mission description · EVM_UNI013",
+    "Original": "ユニオンが他勢力に対して大規模戦闘を\n開始するとの情報を得た。人革連の軌道\nＥＶへ進軍する部隊を殲滅せよ。",
+    "Text": "ユニオンが他勢力に対して大規模戦闘を\n開始するとの情報を得た。人革連の軌道\nＥＶへ進軍する部隊を殲滅せよ。"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 54,
+    "Column": 7,
+    "Label": "Mission description · EVM_UNI014",
+    "Original": "ユニオンの他勢力への大規模戦闘は終わ\nらない。ＡＥＵの軌道ＥＶへ進軍する部\n隊を殲滅せよ。",
+    "Text": "ユニオンの他勢力への大規模戦闘は終わ\nらない。ＡＥＵの軌道ＥＶへ進軍する部\n隊を殲滅せよ。"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 55,
+    "Column": 7,
+    "Label": "Mission description · EVM_UNI015",
+    "Original": "ユニオン空軍基地を襲撃し、軍備拡張派\nの重要人物が搭乗している輸送機を破壊\nせよ。護衛のエースクラスに要注意。",
+    "Text": "ユニオン空軍基地を襲撃し、軍備拡張派\nの重要人物が搭乗している輸送機を破壊\nせよ。護衛のエースクラスに要注意。"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 56,
+    "Column": 7,
+    "Label": "Mission description · EVM_UNI016",
+    "Original": "国際テロネットワーク「ラ・イデンラ」\nの拠点の１つを確認。施設の破壊を優先\nし、敵を殲滅せよ。",
+    "Text": "国際テロネットワーク「ラ・イデンラ」\nの拠点の１つを確認。施設の破壊を優先\nし、敵を殲滅せよ。"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 57,
+    "Column": 7,
+    "Label": "Mission description · EVM_UNI017",
+    "Original": "アザディスタンで発生したクーデターを\n鎮圧するために派遣された、ユニオンの\n特殊ＭＳ部隊を殲滅せよ。",
+    "Text": "アザディスタンで発生したクーデターを\n鎮圧するために派遣された、ユニオンの\n特殊ＭＳ部隊を殲滅せよ。"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 58,
+    "Column": 7,
+    "Label": "Mission description · EVM_UNI018",
+    "Original": "ユニオンが対ガンダムのための特務部隊\n「オーバーフラッグス」発足の選抜試験\nを実施する。これを妨害せよ。",
+    "Text": "ユニオンが対ガンダムのための特務部隊\n「オーバーフラッグス」発足の選抜試験\nを実施する。これを妨害せよ。"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 59,
+    "Column": 7,
+    "Label": "Mission description · EVM_UNI019",
+    "Original": "ユニオンが発足させた特殊ＭＳ部隊「オ\nーバーフラッグス」の拠点を襲撃、施設\nを破壊し、反撃する敵部隊を殲滅せよ。",
+    "Text": "ユニオンが発足させた特殊ＭＳ部隊「オ\nーバーフラッグス」の拠点を襲撃、施設\nを破壊し、反撃する敵部隊を殲滅せよ。"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 60,
+    "Column": 7,
+    "Label": "Mission description · EVM_UNI020",
+    "Original": "ユニオンの軍備拡張を促進しているアイ\nリス社の重要人物が乗る輸送機を山岳部\nにて待ち伏せし、撃墜せよ。",
+    "Text": "ユニオンの軍備拡張を促進しているアイ\nリス社の重要人物が乗る輸送機を山岳部\nにて待ち伏せし、撃墜せよ。"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 61,
+    "Column": 7,
+    "Label": "Mission description · EVM_ETC001",
+    "Original": "遠隔操作された現用ＭＳを仮想敵とし、\n実戦形式の模擬戦を行う。ガンダムの基\n本操作を習得せよ。",
+    "Text": "遠隔操作された現用ＭＳを仮想敵とし、\n実戦形式の模擬戦を行う。ガンダムの基\n本操作を習得せよ。"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 62,
+    "Column": 7,
+    "Label": "Mission description · EVM_ETC002",
+    "Original": "山岳部に建造されたテロリストの施設を\n破壊し、同施設に配備されている敵戦力\nを掃討せよ。",
+    "Text": "山岳部に建造されたテロリストの施設を\n破壊し、同施設に配備されている敵戦力\nを掃討せよ。"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 63,
+    "Column": 7,
+    "Label": "Mission description · EVM_ETC003",
+    "Original": "テロリストによる民間の宇宙輸送艇への\n襲撃計画をつかんだ。輸送艇を防衛し、\nテロリストを殲滅せよ。",
+    "Text": "テロリストによる民間の宇宙輸送艇への\n襲撃計画をつかんだ。輸送艇を防衛し、\nテロリストを殲滅せよ。"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 64,
+    "Column": 7,
+    "Label": "Mission description · EVM_ETC004",
+    "Original": "アザディスタンのクーデター軍が、主要\n都市に向けてミサイル攻撃を決行した。\nミサイル攻撃を阻止せよ。",
+    "Text": "アザディスタンのクーデター軍が、主要\n都市に向けてミサイル攻撃を決行した。\nミサイル攻撃を阻止せよ。"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 65,
+    "Column": 7,
+    "Label": "Mission description · EVM_ETC005",
+    "Original": "世界平和支持の重要人物が乗る輸送機を\nテロリストが狙っている。輸送機を護衛\nし、全力でこれを阻止せよ。",
+    "Text": "世界平和支持の重要人物が乗る輸送機を\nテロリストが狙っている。輸送機を護衛\nし、全力でこれを阻止せよ。"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 66,
+    "Column": 7,
+    "Label": "Mission description · EVM_ETC006",
+    "Original": "「ラ・イデンラ」が、ついに最終計画を\n実行した。大規模崩壊したオービタルリ\nングの崩落ブロックを全て撃破せよ。",
+    "Text": "「ラ・イデンラ」が、ついに最終計画を\n実行した。大規模崩壊したオービタルリ\nングの崩落ブロックを全て撃破せよ。"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 67,
+    "Column": 7,
+    "Label": "Mission description · EVM_ETC007",
+    "Original": "テロ組織が紛争誘発を目論み、ミサイル\n攻撃を準備中との情報が入った。制限時\n間内に砲台を撃破。その後、殲滅せよ。",
+    "Text": "テロ組織が紛争誘発を目論み、ミサイル\n攻撃を準備中との情報が入った。制限時\n間内に砲台を撃破。その後、殲滅せよ。"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 68,
+    "Column": 7,
+    "Label": "Mission description · EVM_ETC008",
+    "Original": "テロ組織が民間輸送艦に偽装して武器を\n各軌道ＥＶに持ち込もうとしている。\n偽装輸送艦を１隻も逃がさず撃破せよ。",
+    "Text": "テロ組織が民間輸送艦に偽装して武器を\n各軌道ＥＶに持ち込もうとしている。\n偽装輸送艦を１隻も逃がさず撃破せよ。"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 69,
+    "Column": 7,
+    "Label": "Mission description · EVM_ETC009",
+    "Original": "国際テロネットワーク「ラ・イデンラ」\nの拠点の１つを確認。施設の破壊を優先\nし、敵を殲滅せよ。",
+    "Text": "国際テロネットワーク「ラ・イデンラ」\nの拠点の１つを確認。施設の破壊を優先\nし、敵を殲滅せよ。"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 70,
+    "Column": 7,
+    "Label": "Mission description · EVM_ETC010",
+    "Original": "ユニオンの軍港にて、軍事メーカーが、\n各地への兵器輸出を画策している。制限\n時間内に砲台を撃破した後、殲滅せよ。",
+    "Text": "ユニオンの軍港にて、軍事メーカーが、\n各地への兵器輸出を画策している。制限\n時間内に砲台を撃破した後、殲滅せよ。"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 71,
+    "Column": 7,
+    "Label": "Mission description · EVM_ETC011",
+    "Original": "偶然にも活動中のテロリストにプトレマ\nイオスが発見されてしまった。ミサイル\n攻撃に注意し、全力で防衛にあたれ。",
+    "Text": "偶然にも活動中のテロリストにプトレマ\nイオスが発見されてしまった。ミサイル\n攻撃に注意し、全力で防衛にあたれ。"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 72,
+    "Column": 7,
+    "Label": "Mission description · EVM_ETC012",
+    "Original": "世界中のエースパイロットのデータを集\n積し、対エース用シミュレーターが完成\nした。全てのエースを撃破せよ。",
+    "Text": "世界中のエースパイロットのデータを集\n積し、対エース用シミュレーターが完成\nした。全てのエースを撃破せよ。"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 73,
+    "Column": 7,
+    "Label": "Mission description · EVM_ETC013",
+    "Original": "ガンダムマイスターの戦闘データを元に\n対ガンダム用シミュレーターが完成。\n全マイスターを打ち破り最強を目指せ。",
+    "Text": "ガンダムマイスターの戦闘データを元に\n対ガンダム用シミュレーターが完成。\n全マイスターを打ち破り最強を目指せ。"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 74,
+    "Column": 7,
+    "Label": "Mission description · EVM_ETC014",
+    "Original": "ヴェーダの深層に存在した謎のデータか\nら対ガンダムスローネ用シミュレーター\nが完成した。３機全てを撃破せよ。",
+    "Text": "ヴェーダの深層に存在した謎のデータか\nら対ガンダムスローネ用シミュレーター\nが完成した。３機全てを撃破せよ。"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 75,
+    "Column": 7,
+    "Label": "Mission description · EVM_ETC015",
+    "Original": "マスード・ラフマディー氏が、誘拐監禁\nされている施設を特定した。施設を防衛\nし、内戦を誘発させた組織を殲滅せよ。",
+    "Text": "マスード・ラフマディー氏が、誘拐監禁\nされている施設を特定した。施設を防衛\nし、内戦を誘発させた組織を殲滅せよ。"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 76,
+    "Column": 7,
+    "Label": "Mission description · EVM_ETC016",
+    "Original": "３勢力が合同軍事演習を開催する。これ\nは完全に罠である。しかし、無視はでき\nない…武力介入を決行せよ。",
+    "Text": "３勢力が合同軍事演習を開催する。これ\nは完全に罠である。しかし、無視はでき\nない…武力介入を決行せよ。"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 77,
+    "Column": 7,
+    "Label": "Mission description · EVM_ETC017",
+    "Original": "３勢力による合同軍事演習は継続中だ。\n特に戦力が集中しているポイントで一定\n時間以内に、より多くの敵を撃破せよ。",
+    "Text": "３勢力による合同軍事演習は継続中だ。\n特に戦力が集中しているポイントで一定\n時間以内に、より多くの敵を撃破せよ。"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 78,
+    "Column": 7,
+    "Label": "Mission description · EVM_ETC018",
+    "Original": "合同軍事演習はいまだ継続中だ。敵戦力\nの集中するエリアを強襲し、一定時間内\nで、より多くの敵を撃破せよ。",
+    "Text": "合同軍事演習はいまだ継続中だ。敵戦力\nの集中するエリアを強襲し、一定時間内\nで、より多くの敵を撃破せよ。"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 79,
+    "Column": 7,
+    "Label": "Mission description · EVM_ETC019",
+    "Original": "３勢力による合同軍事演習は継続中だ。\nこれまでの戦闘の残存兵力と予備部隊の\n再集結ポイントにて、一気に殲滅せよ。",
+    "Text": "３勢力による合同軍事演習は継続中だ。\nこれまでの戦闘の残存兵力と予備部隊の\n再集結ポイントにて、一気に殲滅せよ。"
+  },
+  {
+    "Table": "OG_MISSION",
+    "Row": 80,
+    "Column": 7,
+    "Label": "Mission description · EVM_ETC020",
+    "Original": "予想以上の武力を示した我々に対し、上\n位組織「監視者」が刺客を放った。真の\n理想を実現するためにも必ず生き残れ。",
+    "Text": "予想以上の武力を示した我々に対し、上\n位組織「監視者」が刺客を放った。真の\n理想を実現するためにも必ず生き残れ。"
+  }
+]
