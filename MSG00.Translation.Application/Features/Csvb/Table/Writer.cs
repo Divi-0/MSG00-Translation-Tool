@@ -1,3 +1,4 @@
+using MSG00.Translation.Application.Features.Font;
 using System.Text;
 
 namespace MSG00.Translation.Application.Features.Csvb.Table;
@@ -17,7 +18,7 @@ public class Writer : IWriter
     private const int OffsetToEndOfTextTable = 0x14;
     private const int OffsetToEndOfExtraTable = 0x18;
 
-    private static readonly Encoding ShiftJis = Encoding.GetEncoding("Shift-JIS");
+    private static readonly Encoding ShiftJis = GameEncoding.Instance;
 
     public async Task WriteFileAsync(Stream stream, TableCsvb tableCsvb)
     {

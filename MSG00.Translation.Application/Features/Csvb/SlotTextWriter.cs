@@ -1,3 +1,4 @@
+using MSG00.Translation.Application.Features.Font;
 using System.Text;
 
 namespace MSG00.Translation.Application.Features.Csvb;
@@ -22,7 +23,7 @@ public static class SlotTextWriter
     private const int OffsetToEndOfTextTable = 0x14;
     private const int OffsetToEndOfExtraTable = 0x18;
 
-    private static readonly Encoding ShiftJis = Encoding.GetEncoding("Shift-JIS");
+    private static readonly Encoding ShiftJis = GameEncoding.Instance;
 
     /// <param name="texts">all text references of the file, changed or not</param>
     /// <param name="protectedTextOffsets">texts used by other references (e.g. labels) that must never be overwritten</param>

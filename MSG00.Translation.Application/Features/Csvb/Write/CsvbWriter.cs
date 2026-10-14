@@ -1,3 +1,4 @@
+using MSG00.Translation.Application.Features.Font;
 using System.Text;
 
 namespace MSG00.Translation.Application.Features.Csvb.Write;
@@ -8,7 +9,7 @@ public abstract class CsvbWriter
 
     public CsvbWriter()
     {
-        _shiftJISEncoding = Encoding.GetEncoding("Shift-JIS");
+        _shiftJISEncoding = GameEncoding.Instance;
     }
 
     protected virtual async Task CreateCsvbHeaderAsync(Stream stream)

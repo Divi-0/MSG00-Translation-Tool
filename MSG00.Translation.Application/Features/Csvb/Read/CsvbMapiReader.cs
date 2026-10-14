@@ -1,3 +1,4 @@
+using MSG00.Translation.Application.Features.Font;
 using MSG00.Translation.Application.Features.Csvb;
 using System.Collections.ObjectModel;
 using System.Text;
@@ -10,7 +11,7 @@ namespace MSG00.Translation.Application.Features.Csvb.Read
 
         public CsvbMapiReader()
         {
-            _shiftJISEncoding = Encoding.GetEncoding("Shift-JIS");
+            _shiftJISEncoding = GameEncoding.Instance;
         }
 
         protected static async Task<byte[]> GetMapiHeader(Stream fileStream)

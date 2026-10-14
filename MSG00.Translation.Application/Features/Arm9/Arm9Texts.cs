@@ -1,3 +1,4 @@
+using MSG00.Translation.Application.Features.Font;
 using System.Text;
 using System.Text.RegularExpressions;
 
@@ -33,7 +34,7 @@ public static partial class Arm9Texts
 
     public const string TacticalSupport = "Tactical support";
 
-    private static readonly Encoding ShiftJis = Encoding.GetEncoding("Shift-JIS");
+    private static readonly Encoding ShiftJis = GameEncoding.Instance;
 
     /// <summary>
     /// Known texts; a fixed list so resource names in the same area (e.g. "SELECT_MOBJ00") are never edited.

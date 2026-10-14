@@ -1,3 +1,4 @@
+using MSG00.Translation.Application.Features.Font;
 using System.Text;
 
 namespace MSG00.Translation.Application.Features.Csvb.EvmBase;
@@ -30,7 +31,7 @@ public static class EvmMessages
 {
     public const int LabelCommand = 0x03;
 
-    private static readonly Encoding ShiftJis = Encoding.GetEncoding("Shift-JIS");
+    private static readonly Encoding ShiftJis = GameEncoding.Instance;
 
     public static IReadOnlyList<EvmMessage> Find(EvmBaseCsvb evmBaseCsvb) =>
         evmBaseCsvb.PointerAndValue

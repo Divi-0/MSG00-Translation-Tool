@@ -1,10 +1,11 @@
+using MSG00.Translation.Application.Features.Font;
 using System.Text;
 
 namespace MSG00.Translation.Application.Features.Csvb.Table;
 
 public static class TableCells
 {
-    private static readonly Encoding ShiftJis = Encoding.GetEncoding("Shift-JIS");
+    private static readonly Encoding ShiftJis = GameEncoding.Instance;
 
     /// <summary>text of a cell that holds a text offset, e.g. the id column (type 0x09) used as row label</summary>
     public static string ReadText(TableCsvb tableCsvb, CsvbTable table, int row, int column)

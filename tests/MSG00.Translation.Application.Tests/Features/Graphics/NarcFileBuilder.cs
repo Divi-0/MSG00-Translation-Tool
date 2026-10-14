@@ -142,7 +142,7 @@ internal static class NarcFileBuilder
     }
 
     /// <summary>BTAF (offsets), BTNF (root folder with sub folder "dst"), GMIF (data, 4-byte aligned)</summary>
-    private static byte[] Narc((string Name, byte[] Data)[] files)
+    internal static byte[] Narc((string Name, byte[] Data)[] files)
     {
         var btaf = new List<byte>();
         btaf.AddRange(BitConverter.GetBytes(files.Length));

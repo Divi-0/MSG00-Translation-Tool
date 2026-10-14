@@ -1,3 +1,4 @@
+using MSG00.Translation.Application.Features.Font;
 using System.Text;
 using MSG00.Translation.Application.Features.Csvb.Mapi;
 
@@ -19,7 +20,7 @@ internal sealed class Reader : IReader
 
     private const int PointerTableStart = 0x50;
 
-    private static readonly Encoding ShiftJis = Encoding.GetEncoding("Shift-JIS");
+    private static readonly Encoding ShiftJis = GameEncoding.Instance;
 
     public async Task<StaffRollTextCsvb> ReadFileAsync(MapiCsvb mapiCsvb, Stream stream)
     {

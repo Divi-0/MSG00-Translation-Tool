@@ -36,9 +36,15 @@ public sealed class ProgramTextRow : NotifyBase
                 RaisePropertyChanged(nameof(IsTooLong));
                 RaisePropertyChanged(nameof(PlaceholderWarning));
                 RaisePropertyChanged(nameof(HasPlaceholderWarning));
+                RaisePropertyChanged(nameof(MissingCharactersWarning));
+                RaisePropertyChanged(nameof(HasMissingCharactersWarning));
             }
         }
     }
+
+    public string MissingCharactersWarning => FontWarning.Of(Text);
+
+    public bool HasMissingCharactersWarning => MissingCharactersWarning.Length > 0;
 
     /// <summary>texts like "%02ddays" are filled in by the game; the placeholders must stay</summary>
     public string PlaceholderWarning => Arm9Texts.HasSamePlaceholders(Entry, Text)

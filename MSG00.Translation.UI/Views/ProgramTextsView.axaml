@@ -27,6 +27,7 @@
 							<StackPanel Grid.Column="4" Orientation="Vertical" VerticalAlignment="Center">
 								<TextBlock Text="too long" Foreground="Red" IsVisible="{Binding IsTooLong, Mode=OneWay}"/>
 								<TextBlock Text="{Binding PlaceholderWarning, Mode=OneWay}" Foreground="Red" IsVisible="{Binding HasPlaceholderWarning, Mode=OneWay}"/>
+								<TextBlock Text="{Binding MissingCharactersWarning, Mode=OneWay}" Foreground="Red" IsVisible="{Binding HasMissingCharactersWarning, Mode=OneWay}" TextWrapping="Wrap" MaxWidth="320"/>
 							</StackPanel>
 						</Grid>
 					</DataTemplate>

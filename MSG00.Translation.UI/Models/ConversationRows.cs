@@ -1,3 +1,4 @@
+using MSG00.Translation.Application.Features.Font;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -100,7 +101,7 @@ public sealed class ConversationTextEntry : ConversationRow
 
     public const int MaxLines = 3;
 
-    private static readonly Encoding ShiftJisEncoding = Encoding.GetEncoding("Shift-JIS");
+    private static readonly Encoding ShiftJisEncoding = GameEncoding.Instance;
 
     public ConversationTextEntry(ConversationPointerText pointer)
     {
@@ -155,7 +156,8 @@ public sealed class ConversationTextEntry : ConversationRow
                 warnings.Insert(0, $"{lines.Length} lines, the text box shows {MaxLines}");
             }
 
-            return string.Join("\n", warnings);
+            warnings.Add(FontWarning.Of(Text));
+            return string.Join("\n", warnings.Where(x => x.Length > 0));
         }
     }
 

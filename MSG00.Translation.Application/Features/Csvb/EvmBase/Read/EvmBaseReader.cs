@@ -1,3 +1,4 @@
+using MSG00.Translation.Application.Features.Font;
 using MSG00.Translation.Application.Features.Csvb.Read;
 using System.Text;
 
@@ -125,7 +126,7 @@ namespace MSG00.Translation.Application.Features.Csvb.EvmBase.Read
 
         private static string ReadText(Stream stream, EvmBaseCsvb evmBaseCsvb, int offsetInTextTable)
         {
-            var shiftJisEncoder = Encoding.GetEncoding("Shift-JIS");
+            var shiftJisEncoder = GameEncoding.Instance;
 
             stream.Seek(evmBaseCsvb.CsvbHeader.OffsetToEndOfFullHeader + offsetInTextTable, SeekOrigin.Begin);
 

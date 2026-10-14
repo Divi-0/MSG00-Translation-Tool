@@ -1,3 +1,4 @@
+using MSG00.Translation.Application.Features.Font;
 using System.Text;
 using MSG00.Translation.Application.Features.Csvb;
 
@@ -20,7 +21,7 @@ internal sealed class Reader : IReader
     private const int FirstDescriptor = 0x20;
     private const int DescriptorSize = 40;
 
-    private static readonly Encoding ShiftJis = Encoding.GetEncoding("Shift-JIS");
+    private static readonly Encoding ShiftJis = GameEncoding.Instance;
 
     public async Task<CutInCsvb> ReadFileAsync(CsvbFile csvbFile, Stream stream)
     {

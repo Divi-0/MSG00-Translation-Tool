@@ -1,3 +1,4 @@
+using MSG00.Translation.Application.Features.Font;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,7 +15,7 @@ public sealed class StaffRollTextRow : NotifyBase
     /// <summary>longest original lines are 21 full-width characters (indentation included)</summary>
     public const int MaxBytesPerLine = 42;
 
-    private static readonly Encoding ShiftJisEncoding = Encoding.GetEncoding("Shift-JIS");
+    private static readonly Encoding ShiftJisEncoding = GameEncoding.Instance;
 
     public StaffRollTextRow(StaffRollText text, int index)
     {
@@ -65,7 +66,8 @@ public sealed class StaffRollTextRow : NotifyBase
                 .Select((line, index) => (index, bytes: ShiftJisEncoding.GetByteCount(line)))
                 .Where(x => x.bytes > MaxBytesPerLine)
                 .Select(x => $"Line {x.index + 1} is {x.bytes}/{MaxBytesPerLine} bytes"));
-            return string.Join("\n", warnings);
+            warnings.Add(FontWarning.Of(Text));
+            return string.Join("\n", warnings.Where(x => x.Length > 0));
         }
     }
 

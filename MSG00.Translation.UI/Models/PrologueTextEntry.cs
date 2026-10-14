@@ -1,3 +1,4 @@
+using MSG00.Translation.Application.Features.Font;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -26,7 +27,7 @@ public class PrologueTextEntry : NotifyBase
 
     public const double FramesPerSecond = 60;
 
-    private static readonly Encoding ShiftJisEncoding = Encoding.GetEncoding("Shift-JIS");
+    private static readonly Encoding ShiftJisEncoding = GameEncoding.Instance;
 
     private readonly IReadOnlyList<ProloguePointer> _images;
     private readonly int _transitionFrames;
@@ -134,7 +135,9 @@ public class PrologueTextEntry : NotifyBase
     public string LineWarning => string.Join("\n", Text.Split('\n')
         .Select((line, index) => (line, index, bytes: ShiftJisEncoding.GetByteCount(line)))
         .Where(x => x.bytes > MaxBytesPerLine)
-        .Select(x => $"Line {x.index + 1} is {x.bytes}/{MaxBytesPerLine} bytes and will be cut off: \"{x.line}\""));
+        .Select(x => $"Line {x.index + 1} is {x.bytes}/{MaxBytesPerLine} bytes and will be cut off: \"{x.line}\"")
+        .Append(FontWarning.Of(Text))
+        .Where(x => x.Length > 0));
 
     public bool HasLineWarning => LineWarning.Length > 0;
 

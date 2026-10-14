@@ -10,6 +10,7 @@ using MSG00.Translation.Application.Features.Arm9;
 using MSG00.Translation.Application.Features.Csvb.Mapi.PrologueEpilogue;
 using MSG00.Translation.Application.Features.Csvb.EvmBase.Write;
 using MSG00.Translation.Application.Features.Csvb.Read;
+using MSG00.Translation.Application.Features.Font;
 using MSG00.Translation.Application.Features.Rom;
 using MSG00.Translation.Application.Features.Csvb.CutIn;
 using MSG00.Translation.Application.Features.Csvb.EvmBase;
@@ -46,6 +47,9 @@ namespace MSG00.Translation.UI.ViewModels
         /// <summary>texts inside the ARM9 program instead of a csvb, e.g. the in-game menu</summary>
         private const string ProgramTextsCategory = "Program texts";
 
+        /// <summary>extra characters of the game font, kept in every copy of LC_font_12.NFTR</summary>
+        private const string FontCategory = "Font";
+
         private readonly IMediator _mediator;
         private readonly IStorageProvider _storageProvider;
         private readonly IWriter _writer;
@@ -56,11 +60,13 @@ namespace MSG00.Translation.UI.ViewModels
         private readonly GraphicsReader _graphicsReader;
         private readonly GraphicsWriter _graphicsWriter;
         private readonly IRomService _romService;
+        private readonly IFontService _fontService;
         private readonly ILogger<CsvbSelectViewModel> _logger;
         private Uri? _openedRomUri;
 
-        public CsvbSelectViewModel(IMediator mediator, IStorageProvider storageProvider, IWriter writer, ConversationWriter conversationWriter, TableWriter tableWriter, CutInWriter cutInWriter, StaffRollWriter staffRollWriter, GraphicsReader graphicsReader, GraphicsWriter graphicsWriter, IRomService romService, ILogger<CsvbSelectViewModel> logger)
+        public CsvbSelectViewModel(IMediator mediator, IStorageProvider storageProvider, IWriter writer, ConversationWriter conversationWriter, TableWriter tableWriter, CutInWriter cutInWriter, StaffRollWriter staffRollWriter, GraphicsReader graphicsReader, GraphicsWriter graphicsWriter, IRomService romService, IFontService fontService, ILogger<CsvbSelectViewModel> logger)
         {
+            _fontService = fontService;
             _staffRollWriter = staffRollWriter;
             _graphicsReader = graphicsReader;
             _graphicsWriter = graphicsWriter;
@@ -156,13 +162,17 @@ namespace MSG00.Translation.UI.ViewModels
                     await _romService.OpenAsync(stream, files[0].Name);
                 }
 
+                // texts are read with the extra characters of this ROM's font (none in the original ROM)
+                await Task.Run(_fontService.LoadCharacterTable);
+
                 _openedRomUri = files[0].Path;
                 CurrentView = null;
                 Categories = new ObservableCollection<RomCategory>(_romService.CsvbFiles
                     .GroupBy(x => x.Category)
                     .OrderBy(x => CsvbCategories.Names.ToList().IndexOf(x.Key))
                     .Select(x => new RomCategory(x.Key, x.OrderBy(file => file.Path, StringComparer.OrdinalIgnoreCase).ToList()))
-                    .Prepend(new RomCategory(ProgramTextsCategory, Arm9Texts.Sections.Select(x => new RomFile(RomPaths.Arm9, x, ProgramTextsCategory, 0)).ToList())));
+                    .Prepend(new RomCategory(ProgramTextsCategory, Arm9Texts.Sections.Select(x => new RomFile(RomPaths.Arm9, x, ProgramTextsCategory, 0)).ToList()))
+                    .Prepend(new RomCategory(FontCategory, [new RomFile("LC_font_12.NFTR", "Extra characters", FontCategory, 0)])));
             }
             catch (Exception e)
             {
@@ -276,6 +286,12 @@ namespace MSG00.Translation.UI.ViewModels
         /// <summary>reads the file, checks it can be written back unchanged and creates the editor; runs on a worker thread</summary>
         private async Task<ViewModelBase> LoadEditorAsync(RomFile file)
         {
+            if (file.Category == FontCategory)
+            {
+                _logger.LogInformation("Opened the font editor ({Files})", _fontService.FontFiles);
+                return new FontViewModel(_fontService, _storageProvider);
+            }
+
             if (file.Path == RomPaths.Arm9)
             {
                 _logger.LogInformation("Opened program texts {Section}", file.Name);

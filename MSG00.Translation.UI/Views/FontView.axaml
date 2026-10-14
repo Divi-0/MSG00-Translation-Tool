@@ -1,0 +1,125 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:vm="using:MSG00.Translation.UI.ViewModels"
+			 xmlns:font="using:MSG00.Translation.Application.Features.Font"
+             mc:Ignorable="d" d:DesignWidth="900" d:DesignHeight="600"
+			 x:DataType="vm:FontViewModel"
+             x:Class="MSG00.Translation.UI.Views.FontView">
+	<UserControl.Styles>
+		<Style Selector="ToggleButton.pixel">
+			<Setter Property="Width" Value="22"/>
+			<Setter Property="Height" Value="22"/>
+			<Setter Property="MinWidth" Value="0"/>
+			<Setter Property="MinHeight" Value="0"/>
+			<Setter Property="Padding" Value="0"/>
+			<Setter Property="Margin" Value="0"/>
+			<Setter Property="CornerRadius" Value="0"/>
+			<Setter Property="BorderThickness" Value="0.5"/>
+			<Setter Property="BorderBrush" Value="#C0C0C0"/>
+			<Setter Property="Background" Value="White"/>
+		</Style>
+		<Style Selector="ToggleButton.pixel.guide">
+			<Setter Property="Background" Value="#E8EEF6"/>
+		</Style>
+		<Style Selector="ToggleButton.pixel:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+			<Setter Property="Background" Value="#A0B8D8"/>
+			<Setter Property="BorderBrush" Value="#C0C0C0"/>
+		</Style>
+		<Style Selector="ToggleButton.pixel:checked /template/ ContentPresenter#PART_ContentPresenter">
+			<Setter Property="Background" Value="Black"/>
+			<Setter Property="BorderBrush" Value="#C0C0C0"/>
+		</Style>
+		<Style Selector="ToggleButton.pixel:checked:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+			<Setter Property="Background" Value="#404850"/>
+		</Style>
+	</UserControl.Styles>
+
+	<Grid RowDefinitions="auto, auto, *, auto, auto" ColumnDefinitions="220, *" Margin="12" RowSpacing="8" ColumnSpacing="16">
+		<TextBlock Grid.Row="0" Grid.ColumnSpan="2" TextWrapping="Wrap"
+				   Text="Extra characters for the game font (e.g. for a German or Spanish translation). Each one takes the place of a half-width katakana the game does not use, so it is 1 byte in the texts and 6 px wide like a letter. Nothing changes in the ROM until &quot;Apply to ROM&quot;."/>
+
+		<StackPanel Grid.Row="1" Grid.ColumnSpan="2" Orientation="Vertical" Spacing="6">
+			<StackPanel Orientation="Horizontal" Spacing="8">
+				<TextBlock Text="Preset" VerticalAlignment="Center" Width="110"/>
+				<ComboBox ItemsSource="{Binding Presets}" SelectedItem="{Binding SelectedPreset, Mode=TwoWay}" MinWidth="460">
+					<ComboBox.ItemTemplate>
+						<DataTemplate DataType="font:CharacterPreset">
+							<TextBlock Text="{Binding}"/>
+						</DataTemplate>
+					</ComboBox.ItemTemplate>
+				</ComboBox>
+				<Button Command="{Binding AddPresetCommand}">Add preset</Button>
+			</StackPanel>
+			<StackPanel Orientation="Horizontal" Spacing="8">
+				<TextBlock Text="Own characters" VerticalAlignment="Center" Width="110"/>
+				<TextBox Text="{Binding NewCharacters, Mode=TwoWay}" Width="460" PlaceholderText="type or paste characters, e.g. ąćęłńśźż"/>
+				<Button Command="{Binding AddCharactersCommand}">Add</Button>
+			</StackPanel>
+			<TextBlock Text="{Binding Message, Mode=OneWay}" Foreground="SteelBlue" TextWrapping="Wrap"/>
+		</StackPanel>
+
+		<DockPanel Grid.Row="2" Grid.Column="0">
+			<TextBlock DockPanel.Dock="Top" Text="{Binding SlotInfo, Mode=OneWay}" TextWrapping="Wrap" Margin="0,0,0,4" FontWeight="SemiBold"/>
+			<Button DockPanel.Dock="Bottom" Command="{Binding RemoveAllCommand}" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Margin="0,4,0,0">Remove all</Button>
+			<ListBox ItemsSource="{Binding Characters, Mode=OneWay}" SelectedItem="{Binding SelectedCharacter, Mode=TwoWay}">
+				<ListBox.ItemTemplate>
+					<DataTemplate DataType="vm:FontCharacterRow">
+						<Grid ColumnDefinitions="auto, *, auto" ColumnSpacing="8">
+							<Border Grid.Column="0" BorderBrush="#C0C0C0" BorderThickness="1">
+								<Image Source="{Binding Preview, Mode=OneWay}" Width="18" Height="33" Stretch="Fill" RenderOptions.BitmapInterpolationMode="None"/>
+							</Border>
+							<StackPanel Grid.Column="1" VerticalAlignment="Center">
+								<TextBlock Text="{Binding Label}" FontFamily="Consolas, Courier New, monospace"/>
+								<TextBlock Text="no pixels yet" Foreground="Red" FontSize="11" IsVisible="{Binding IsEmpty, Mode=OneWay}"/>
+							</StackPanel>
+							<Button Grid.Column="2" Command="{Binding RemoveCommand}" VerticalAlignment="Center" ToolTip.Tip="Remove">✕</Button>
+						</Grid>
+					</DataTemplate>
+				</ListBox.ItemTemplate>
+			</ListBox>
+		</DockPanel>
+
+		<StackPanel Grid.Row="2" Grid.Column="1" Orientation="Vertical" Spacing="8">
+			<TextBlock Text="{Binding SelectionInfo, Mode=OneWay}" TextWrapping="Wrap" Foreground="Gray"/>
+			<StackPanel Orientation="Horizontal" Spacing="16" IsVisible="{Binding HasSelection, Mode=OneWay}">
+				<ItemsControl ItemsSource="{Binding Pixels, Mode=OneWay}" HorizontalAlignment="Left">
+					<ItemsControl.ItemsPanel>
+						<ItemsPanelTemplate>
+							<UniformGrid Columns="6"/>
+						</ItemsPanelTemplate>
+					</ItemsControl.ItemsPanel>
+					<ItemsControl.ItemTemplate>
+						<DataTemplate DataType="vm:GlyphPixel">
+							<ToggleButton Classes="pixel" Classes.guide="{Binding IsGuide}" IsChecked="{Binding IsOn, Mode=TwoWay}"/>
+						</DataTemplate>
+					</ItemsControl.ItemTemplate>
+				</ItemsControl>
+				<StackPanel Orientation="Vertical" Spacing="4">
+					<Button Command="{Binding RedrawCommand}" ToolTip.Tip="The letter of the font with the accent, or the built-in drawing">Redraw draft</Button>
+					<Button Command="{Binding ClearCommand}">Clear</Button>
+				</StackPanel>
+			</StackPanel>
+		</StackPanel>
+
+		<StackPanel Grid.Row="3" Grid.ColumnSpan="2" Orientation="Vertical" Spacing="4">
+			<TextBlock Text="Preview (as the game draws it, applied or not)" FontWeight="SemiBold"/>
+			<TextBox Text="{Binding PreviewText, Mode=TwoWay}" AcceptsReturn="True" Foreground="Black" MaxWidth="700" HorizontalAlignment="Left" Width="700"/>
+			<Border Background="White" BorderBrush="#C0C0C0" BorderThickness="1" HorizontalAlignment="Left" Padding="4">
+				<LayoutTransformControl>
+					<LayoutTransformControl.LayoutTransform>
+						<ScaleTransform ScaleX="3" ScaleY="3"/>
+					</LayoutTransformControl.LayoutTransform>
+					<Image Source="{Binding Preview, Mode=OneWay}" Stretch="None" RenderOptions.BitmapInterpolationMode="None"/>
+				</LayoutTransformControl>
+			</Border>
+		</StackPanel>
+
+		<StackPanel Grid.Row="4" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Center" Spacing="4">
+			<Button Command="{Binding ExportCommand}">Export</Button>
+			<Button Command="{Binding ImportCommand}">Import</Button>
+			<Button Command="{Binding ApplyCommand}">Apply to ROM</Button>
+		</StackPanel>
+	</Grid>
+</UserControl>

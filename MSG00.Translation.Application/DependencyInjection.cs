@@ -5,6 +5,7 @@ using MSG00.Translation.Application.Features.Csvb.EvmBase;
 using MSG00.Translation.Application.Features.Csvb.Mapi;
 using MSG00.Translation.Application.Features.Csvb.Read;
 using MSG00.Translation.Application.Features.Csvb.Table;
+using MSG00.Translation.Application.Features.Font;
 using MSG00.Translation.Application.Features.Graphics;
 using MSG00.Translation.Application.Features.Rom;
 
@@ -24,6 +25,7 @@ public static class DependencyInjection
         services.AddTable();
         services.AddCutIn();
         services.AddGraphics();
+        services.AddFont();
         services.AddRom();
 
         return services;

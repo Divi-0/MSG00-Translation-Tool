@@ -1,3 +1,4 @@
+using MSG00.Translation.Application.Features.Font;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,7 +12,7 @@ namespace MSG00.Translation.UI.Models;
 /// </summary>
 public sealed class TableTextRow : NotifyBase
 {
-    private static readonly Encoding ShiftJisEncoding = Encoding.GetEncoding("Shift-JIS");
+    private static readonly Encoding ShiftJisEncoding = GameEncoding.Instance;
 
     public TableTextRow(TableText text, TextColumn column, string rowLabel)
     {
@@ -64,7 +65,8 @@ public sealed class TableTextRow : NotifyBase
                     .Select(x => $"Line {x.index + 1} is {x.bytes}/{max} bytes and will be cut off"));
             }
 
-            return string.Join("\n", warnings);
+            warnings.Add(FontWarning.Of(Text));
+            return string.Join("\n", warnings.Where(x => x.Length > 0));
         }
     }
 

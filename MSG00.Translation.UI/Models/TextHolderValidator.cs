@@ -1,3 +1,4 @@
+using MSG00.Translation.Application.Features.Font;
 using System.Text;
 using FluentValidation;
 using FluentValidation.Results;
@@ -6,7 +7,7 @@ namespace MSG00.Translation.UI.Models;
 
 public class TextHolderValidator : AbstractValidator<TextHolder>
 {
-    private static Encoding ShiftJisEncoding = Encoding.GetEncoding("Shift-JIS");
+    private static Encoding ShiftJisEncoding = GameEncoding.Instance;
 
     private const int MaxBytesPerLineDisplayableInTextBox = (4 * 19); //4 bytes for japanese symbol * 19 max displayable 
     

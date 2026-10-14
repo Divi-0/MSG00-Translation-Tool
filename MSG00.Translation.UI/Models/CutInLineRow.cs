@@ -1,3 +1,4 @@
+using MSG00.Translation.Application.Features.Font;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,7 +17,7 @@ public sealed class CutInLineRow : NotifyBase
 
     public const int MaxLines = 2;
 
-    private static readonly Encoding ShiftJisEncoding = Encoding.GetEncoding("Shift-JIS");
+    private static readonly Encoding ShiftJisEncoding = GameEncoding.Instance;
 
     public CutInLineRow(CutInLine line, int index)
     {
@@ -65,7 +66,8 @@ public sealed class CutInLineRow : NotifyBase
                 .Select((line, index) => (index, bytes: ShiftJisEncoding.GetByteCount(line)))
                 .Where(x => x.bytes > MaxBytesPerLine)
                 .Select(x => $"Line {x.index + 1} is {x.bytes}/{MaxBytesPerLine} bytes"));
-            return string.Join("\n", warnings);
+            warnings.Add(FontWarning.Of(Text));
+            return string.Join("\n", warnings.Where(x => x.Length > 0));
         }
     }
 
